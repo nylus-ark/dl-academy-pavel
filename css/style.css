@@ -23,20 +23,20 @@ body {
 }
 
 .visually-hidden:not(:focus):not(:active) {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    white-space: nowrap;
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	white-space: nowrap;
 }
 
-h2,
-h2 a {
-    color: inherit;
+.title-h2,
+.title-h2 a {
+	color: inherit;
 	font-family: "Montserrat", sans-serif;
 	font-weight: bold;
 	font-size: 38px;
@@ -52,7 +52,7 @@ h2 a {
 }
 
 /* HEADER
-   ========================================================================== */
+    ========================================================================== */
 
 .header {
 	padding: 50px 0;
@@ -108,7 +108,7 @@ h2 a {
 }
 
 .search-button {
-	background: url('../img/vector/icon-search.svg') no-repeat 50% 50%;
+	background: url('../img/icons/icon-search.svg') no-repeat 50% 50%;
 	border: none;
 	box-sizing: border-box;
 	padding: 0;
@@ -130,61 +130,61 @@ h2 a {
 a.header-logo:hover,
 .header-nav-list a:hover,
 .header-contacts:hover {
-    opacity: 0.5;
+	opacity: 0.5;
 }
 
 a.header-logo:active,
 .header-nav-list a:active,
 .header-contacts:active {
-    opacity: 0.2;
+	opacity: 0.2;
 }
 
 /* FOOTER
-   ========================================================================== */
+    ========================================================================== */
 
 .footer {
-    background: #434343;
-    color: #fff;
+	background: #434343;
+	color: #fff;
 }
 
 .footer-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .footer-col {
-    width: 380px;
-    margin-top: 100px;
-    margin-right: 20px;
+	width: 380px;
+	margin-top: 100px;
+	margin-right: 20px;
 }
 
 .footer-col-title {
-    color: #aaaaaa;
-    font-weight: 400;
-    line-height: 22px;
-    letter-spacing: 0em;
+	color: #aaaaaa;
+	font-weight: 400;
+	line-height: 22px;
+	letter-spacing: 0;
 	text-align: left;
 	border-bottom: 1px solid #666;
 	padding-bottom: 23px;
 }
 
 .footer-col-list {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 	list-style: none;
 }
 
 .footer-col-list li {
-	margin: 15px auto;
+	margin: 15px 0;
 }
 
 .footer-col-list a {
-    color: #fff;
-    line-height: 22px;
-    text-decoration: none;
+	color: #fff;
+	line-height: 22px;
+	text-decoration: none;
 }
 
 /*
@@ -194,16 +194,17 @@ a.header-logo:active,
 */
 
 .footer-col-container {
-    width: 100%;
+	width: 100%;
 }
 
 .footer-mail-form {
-    display: flex;
-    flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 .footer-mail-input {
 	background-color: #666;
+	outline: none;
 	border: none;
 	border-radius: 0;
 	height: 40px;
@@ -211,25 +212,25 @@ a.header-logo:active,
 }
 
 .footer-mail-input::placeholder {
-    color: #ebebeb;
-    padding-left: 15px;
+	color: #ebebeb;
+	padding-left: 15px;
 }
 
 .footer-mail-btn {
-    color: #fff;
-    font-weight: 700;
-    line-height: 21px;
-    background-color: #000;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 0px;
-    height: 40px;
-    width: 81px;
-    padding: 9px 22px;
+	color: #fff;
+	font-weight: 700;
+	line-height: 21px;
+	background-color: #000;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 0;
+	height: 40px;
+	width: 81px;
+	padding: 9px 22px;
 }
 
 .footer-socials-list {
-    display: flex;
+	display: flex;
 	flex-direction: row;
 	list-style: none;
 	margin: 0;
@@ -237,28 +238,28 @@ a.header-logo:active,
 }
 
 .footer-socials-list li {
-    margin: 25px 10px 0 0;
+	margin: 25px 10px 0 0;
 }
 
 .footer-col-list a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .footer-bottom {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    padding: 0;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	padding: 0;
 	margin-top: 13px;
-    border-top: 1px solid #666;
+	border-top: 1px solid #666;
 }
 
 .footer-bottom-col {
-    width: 380px;
-    margin: 23px 20px 100px 0;
+	width: 380px;
+	margin: 23px 20px 100px 0;
 }
 
 .footer-bottom-col a {
-    color: inherit;
-    text-decoration: none;
+	color: #a2a2a2;
+	text-decoration: none;
 }
