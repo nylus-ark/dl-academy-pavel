@@ -6,6 +6,7 @@ html {
 *::before,
 *::after {
 	box-sizing: inherit;
+	/*border: 1px dotted orange;*/
 }
 
 body {
@@ -139,6 +140,67 @@ a.header-logo:active,
 	opacity: 0.2;
 }
 
+/* MAIN
+	========================================================================== */
+
+.categories {
+	padding: 45px 0;
+}
+
+.categories-container {
+	display: flex;
+	flex-direction: column;
+	align-content: space-between;
+	width: 100%;
+}
+
+/*
+.categories-title {
+	margin-bottom: 15px;
+}
+*/
+
+.products-list {
+	display: flex;
+	flex-direction: row;
+	/*align-items: center;*/
+	list-style: none;
+	/*margin: 15px 0;*/
+	padding: 0;
+}
+
+.products-list li {
+	width: 280px;
+	height: 270px;
+}
+
+.apparel-list {
+	margin-right: 10px;
+	background-color: #DBE4DB;
+}
+
+.apparel-list img {
+	/*background-blend-mode: multiply;*/
+	background-color: #DBE4DB;
+	position: relative;
+	height: 177px;
+	width: 244px;
+	left: 18px;
+	top: 46px;
+}
+
+.apparel-list a {
+	color: #fff;
+	font-family: "Montserrat", sans-serif;
+	font-size: 26px;
+	font-weight: 700;
+	line-height: 31px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+
 /* FOOTER
     ========================================================================== */
 
@@ -151,7 +213,7 @@ a.header-logo:active,
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	padding-left: 0;
+	/*padding-left: 0;*/
 	padding-right: 0;
 }
 
@@ -169,11 +231,12 @@ a.header-logo:active,
 	text-align: left;
 	border-bottom: 1px solid #666;
 	padding-bottom: 23px;
+	margin: 0;
 }
 
 .footer-col-list {
 	margin: 0;
-	padding: 0;
+	padding: 13px 0;
 	list-style: none;
 }
 
@@ -195,6 +258,8 @@ a.header-logo:active,
 
 .footer-col-container {
 	width: 100%;
+	margin: 0;
+	padding: 25px 0;
 }
 
 .footer-mail-form {
@@ -245,12 +310,20 @@ a.header-logo:active,
 	text-decoration: none;
 }
 
+/*
 .footer-bottom {
+
+}
+*/
+
+.footer-bottom-wrapper {
 	display: flex;
 	flex-direction: row;
+	/*
 	width: 100%;
 	padding: 0;
-	margin-top: 13px;
+	margin-bottom: 100px;
+	*/
 	border-top: 1px solid #666;
 }
 
