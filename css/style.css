@@ -6,7 +6,6 @@ html {
 *::before,
 *::after {
 	box-sizing: inherit;
-	/*border: 1px dotted orange;*/
 }
 
 body {
@@ -20,7 +19,7 @@ body {
 	/*
 	Для учебного проекта
 	*/
-	min-width: 1180px;
+	min-width: 1220px;
 }
 
 .visually-hidden:not(:focus):not(:active) {
@@ -46,10 +45,21 @@ body {
 	text-transform: uppercase;
 }
 
+.title-h3 {
+	color: #fff;
+	font-family: "Montserrat", sans-serif;
+	font-size: 26px;
+	font-weight: 700;
+	line-height: 31px;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 0;
+}
+
 .container {
 	padding: 0 20px;
 	margin: 0 auto;
-	max-width: 1180px;
+	max-width: 1220px;
 }
 
 /* HEADER
@@ -150,56 +160,148 @@ a.header-logo:active,
 .categories-container {
 	display: flex;
 	flex-direction: column;
-	align-content: space-between;
+	justify-content: space-between;
 	width: 100%;
+	height: 421px;
 }
 
-/*
 .categories-title {
-	margin-bottom: 15px;
+	margin: 0;
 }
-*/
 
 .products-list {
 	display: flex;
 	flex-direction: row;
-	/*align-items: center;*/
+	justify-content: space-between;
 	list-style: none;
-	/*margin: 15px 0;*/
+	margin: 0;
 	padding: 0;
 }
 
-.products-list li {
-	width: 280px;
-	height: 270px;
+	.products-list li {
+		width: 280px;
+		height: 270px;
+	}
+
+	.product-list li a {
+		text-decoration: none;
+	}
+
+	.apparel-list {
+		background-color: #DBE4DB;
+	}
+
+		.img-apparel {
+			margin: 0; /* Скидываение отступа не применяется, но почему? */
+			position: relative;
+			left: 18px;
+			top: 46px;
+		}
+
+			.apparel-title {
+				position: absolute;
+				width: 129px;
+				height: 64px;
+				left: 57px;
+				top: 57px;
+				/*
+				box-shadow: 0px 0px 40px 0px #930303 25%;
+				
+				Нужно ли это переносить из макета?
+				*/
+			}
+
+	.shop-list {
+		background-color: #EADDD3;
+	}
+
+		.img-shop {
+			position: relative;
+			left: 36px;
+			top: 13px;
+		}
+
+			.shop-title {
+				position: absolute;
+				width: 155px;
+				height: 64px;
+				left: 26px;
+				top: 90px;
+			}
+
+	.toys-list {
+		background-color: #F8F2DA;
+	}
+
+		.img-toys {
+			position: relative;
+			left: 5px;
+		}
+
+			.toys-title {
+				position: absolute;
+				width: 71px;
+				height: 32px;
+				left: 99px;
+				top: 119px;
+			}
+
+	.access-list {
+		background-color: #D5D4E1;
+	}
+
+		.img-access {
+			position: relative;
+			left: 20px;
+			top: 10px;
+		}
+
+			.access-title {
+				position: absolute;
+				width: 192px;
+				height: 32px;
+				left: 24px;
+				top: 109px;
+			}
+
+.products-nav {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	width: 680px;
+	height: 44px;
 }
 
-.apparel-list {
-	margin-right: 10px;
-	background-color: #DBE4DB;
-}
+	.products-nav-btns {
+		display: flex;
+		flex-direction: row;
+		margin-right: 20px;
+	}
+		
+		.products-nav-btn {
+			border: none;
+			box-sizing: border-box;
+			padding: 0;
+			width: 37px;
+			height: 37px;
+		}
 
-.apparel-list img {
-	/*background-blend-mode: multiply;*/
-	background-color: #DBE4DB;
-	position: relative;
-	height: 177px;
-	width: 244px;
-	left: 18px;
-	top: 46px;
-}
+		.products-nav-btn-prev {
+			background: url('../img/icons/btn-previous.svg') no-repeat 50% 50%;
+			background-color: rgba(112, 187, 220, 0.2);
+			margin-right: 6px;
+		}
 
-.apparel-list a {
-	color: #fff;
-	font-family: "Montserrat", sans-serif;
-	font-size: 26px;
-	font-weight: 700;
-	line-height: 31px;
-	text-align: center;
-	text-decoration: none;
-	text-transform: uppercase;
-}
+		.products-nav-btn-next {
+			background: url('../img/icons/btn-next.svg') no-repeat 50% 50%;
+			background-color: rgba(112, 187, 220, 0.2);
+		}
 
+	.products-nav-text {
+		line-height: 22px;
+		margin: 0;
+	}
 
 /* FOOTER
     ========================================================================== */
@@ -213,14 +315,15 @@ a.header-logo:active,
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	/*padding-left: 0;*/
-	padding-right: 0;
 }
 
 .footer-col {
 	width: 380px;
-	margin-top: 100px;
-	margin-right: 20px;
+	margin: 100px 20px 0 0;
+}
+
+.footer-col:last-child {
+	margin-right: 0;
 }
 
 .footer-col-title {
@@ -319,17 +422,16 @@ a.header-logo:active,
 .footer-bottom-wrapper {
 	display: flex;
 	flex-direction: row;
-	/*
-	width: 100%;
-	padding: 0;
-	margin-bottom: 100px;
-	*/
 	border-top: 1px solid #666;
 }
 
 .footer-bottom-col {
 	width: 380px;
-	margin: 23px 20px 100px 0;
+	margin: 23px 0 100px 20px;
+}
+
+.footer-bottom-col:first-child {
+	margin: 23px 0 100px 0;
 }
 
 .footer-bottom-col a {
