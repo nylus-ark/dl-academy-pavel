@@ -157,8 +157,7 @@ a.header-logo:active,
  * 1. Categories
  * 2. Delivery
  * 3. Partners
- * 4. Design Life Kids
- * 5. Contacts
+ * 4. Main-bottom
 */
 
 /* 1. Categories
@@ -181,8 +180,10 @@ a.header-logo:active,
 	flex-direction: row;
 	justify-content: space-between;
 	list-style: none;
-	margin: 0;
+	width: 100%;
+	height: 270px;
 	padding: 0;
+	margin: 0;
 }
 
 	.products-list li {
@@ -199,7 +200,6 @@ a.header-logo:active,
 	}
 
 		.img-apparel {
-			margin: 0; /* Скидываение отступа не применяется, но почему? */
 			position: relative;
 			left: 18px;
 			top: 46px;
@@ -345,7 +345,7 @@ a.header-logo:active,
 }
 
 	.delivery-title {
-		padding: 0 0 7px 61px;
+		padding: 0 0 6px 61px;
 	}
 
 	.delivery-list {
@@ -397,6 +397,67 @@ a.header-logo:active,
 		padding: 9px 22px;
 		margin: 11px 0 0 60px;
 	}
+
+/* 3. Partners
+	========================================================================== */
+
+.partners {
+	padding: 45px 0;
+}
+
+.partners-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+}
+
+.partners-list {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	height: 61px;
+	padding: 0;
+	margin: 0;
+}
+
+	.partners-list li {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin-right: 127px;
+	}
+
+	.partners-list li:last-child {
+		margin: 0;
+	}
+
+		.partners-list img {
+			opacity: 0.8;
+		}
+
+/* 4. Main-bottom
+		========================================================================== */
+
+/**
+ * 4.1. Design Life Kids
+ * 4.2. Contacts
+*/
+
+.main-bottom {
+	padding: 45px 0 60px 0;
+}
+
+.main-bottom-container {
+	display: flex;
+	flex-direction: row;
+}
+
+/* 4.1. Design Life Kids
+    ========================================================================== */
+
+/* 4.2. Contacts
+    ========================================================================== */
 
 /* FOOTER
     ========================================================================== */
