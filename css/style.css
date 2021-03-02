@@ -94,7 +94,7 @@ body {
 		margin: 0 10px;
 	}
 
-		.header-nav-list li a {
+		.header-nav-list a {
 			color: #1e0606;
 			font-size: 14px;
 			line-height: 19px;
@@ -199,12 +199,7 @@ a.header-logo:active,
 		}
 
 		.products-list-item-wrapper h3 {
-			/*
-			Что бы отобразить слова в две строки, 
-			задал ширину по самому длинному загаловку.
-			Напиши есть ли какой то способ лучше.
-			*/
-			width: 192px; 
+			max-width: 200px; 
 			position: absolute;
 		}
 	
@@ -309,7 +304,7 @@ a.header-logo:active,
 		width: 326px;
 	}
 
-		.delivery-list li a {
+		.delivery-list a {
 			display: block;
 			color: inherit;
 			font-family: "Crimson Text", serif;
@@ -322,7 +317,7 @@ a.header-logo:active,
 			padding: 11px 180px 11px 60px;
 		}
 
-		.delivery-list li a:hover {
+		.delivery-list a:hover {
 			background-color: rgba(112, 187, 220, 0.2);
 			font-weight: bold;
 		}
@@ -364,8 +359,11 @@ a.header-logo:active,
 .partners-list {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
 	list-style: none;
-	height: 61px;
+	width: 100%;
+	min-height: 61px;
 	padding: 0;
 	margin: 0;
 }
@@ -374,11 +372,6 @@ a.header-logo:active,
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		margin-right: 127px;
-	}
-
-	.partners-list li:last-child {
-		margin: 0;
 	}
 
 		.partners-list img {
@@ -506,7 +499,7 @@ a.header-logo:active,
 			margin: 15px 0;
 		}
 
-			.footer-col-list li a {
+			.footer-col-list a {
 				color: #fff;
 				line-height: 22px;
 				text-decoration: none;
@@ -562,7 +555,7 @@ a.header-logo:active,
 				margin: 25px 10px 0 0;
 			}
 
-				.footer-col-list li a {
+				.footer-col-list a {
 					text-decoration: none;
 				}
 
