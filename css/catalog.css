@@ -150,42 +150,100 @@ a.header-logo:active,
 	opacity: 0.2;
 }
 
-/* MAIN
+/* CATALOG
 		========================================================================== */
 
 /**
- * 1. Categories
- * 2. Delivery
- * 3. Partners
- * 4. Main-bottom
+ * 1. Catalog-title
+ * 2. Breadcrumbs
+ * 3. Catalog
+ * 4. Description
 */
 
-/* 1. Categories
+/* 1. Catalog-title
 	========================================================================== */
 
-.categories {
+.catalog-title {
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+	font-size: 40px;
+	line-height: 49px;
+	text-transform: uppercase;
+	margin: 10px auto;
+}
+
+/* 2. Breadcrumbs
+	========================================================================== */
+
+.breadcrumbs {
+	margin: 5px auto;
+}
+
+.breadcrumbs-list {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+    .breadcrumbs-list-item:not(:last-child):after {
+		content: url(/img/icons/stroke-next.svg);
+		margin: 0 20px;
+    }
+
+        .breadcrumbs-list-item a {
+			color: inherit;
+			font-family: "Crimson Text", serif;
+			font-size: 20px;
+			font-style: italic;
+			line-height: 24px;
+			text-decoration: none;
+        }
+
+    .breadcrumbs-list-item:last-child {
+		opacity: 50%;
+    }
+
+/* 3. Catalog
+	========================================================================== */
+
+.catalog {
 	padding: 45px 0;
 }
 
-.categories-container {
+.catalog-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	width: 100%;
-	height: 421px;
+	height: 563px;
+	padding-right: 120px;
 }
 
 .products-list {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: flex-start;
 	list-style: none;
 	height: 270px;
 	padding: 0;
 	margin: 0;
 }
 
-	.products-list-item-wrapper {
+.products-list:last-child {
+	justify-content: flex-end;
+}
+
+    .products-list:last-child li {
+		padding: 0 0 0 20px;
+	}
+
+	.products-list-item {
+		padding-right: 20px;
+    }
+
+    .products-list-item-wrapper {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
@@ -219,249 +277,49 @@ a.header-logo:active,
 		background-color: #D5D4E1;
 	}
 
-.products-nav {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: flex-start;
-	width: 680px;
-	height: 44px;
-}
-
-	.products-nav-btns {
-		display: flex;
-		flex-direction: row;
-		margin-right: 20px;
-	}
-		
-		.products-nav-btn {
-			border: none;
-			box-sizing: border-box;
-			padding: 0;
-			width: 37px;
-			height: 37px;
-		}
-
-		.products-nav-btn-prev {
-			background: url('../img/icons/btn-previous.svg') no-repeat 50% 50%;
-			background-color: rgba(112, 187, 220, 0.2);
-			margin-right: 6px;
-		}
-
-		.products-nav-btn-next {
-			background: url('../img/icons/btn-next.svg') no-repeat 50% 50%;
-			background-color: rgba(112, 187, 220, 0.2);
-		}
-
-	.products-nav-text {
-		margin: 0;
+	.bg-pink {
+		background-color: #F3D0DB;
 	}
 
-/* 2. Delivery
+	.bg-blue {
+		background-color: #E5EAF8;
+
+	}
+
+/* 3. Description
 	========================================================================== */
 
-.delivery {
-	padding: 45px 0;
-}
+.description {
+	padding: 10px 0 55px 0;
+	}
 
-.delivery-container {
+	.description-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
-	width: 100%;
-	height: 559px;
-}
+	padding-left: 220px;
+	}
 
-.delivery-img {
-	overflow: hidden;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: flex-start;
-	width: 480px;
-}
-
-.delivery-aside {
+.description-container-wrapper {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	width: 540px;
-	height: 472px;
-	margin: 30px auto auto 60px;
+	width: 720px;
+	min-height: 256px;
 }
 
-	.delivery-title {
-		padding: 0 0 6px 61px;
-	}
-
-	.delivery-list {
-		display: flex;
-		flex-direction: column;
-		list-style: none;
-		padding: 0;
-		margin: 0 0 20px 0;
-		width: 326px;
-	}
-
-		.delivery-list a {
-			display: block;
-			color: inherit;
-			font-family: "Crimson Text", serif;
-			font-size: 26px;
-			font-style: italic;
-			font-weight: normal;
-			line-height: 32px;
-			text-decoration: none;
-			height: 55px;
-			padding: 11px 0 11px 60px;
-		}
-
-		.delivery-list a:hover {
-			background-color: rgba(112, 187, 220, 0.2);
-			font-weight: bold;
-		}
-
-	.delivery-text {
-		padding-left: 60px;
-		margin: 0 0 15px 0;
-	}
-
-	.learn-more-link {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		color: #fff;
-		font-weight: bold;
-		background-color: #000;
-		text-transform: uppercase;
-		text-decoration: none;
-		width: 149px;
-		height: 40px;
-		padding: 9px 22px;
-		margin: 11px 0 0 60px;
-	}
-
-/* 3. Partners
-	========================================================================== */
-
-.partners {
-	padding: 45px 0;
+.description-container-wrapper h2 {
+	margin-bottom: 25px;
 }
 
-.partners-container {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	width: 100%;
+.description-container-text {
+	text-align: left;
+	max-width: 670px;
+	margin: 0 0 15px 0;
 }
 
-.partners-list {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	list-style: none;
-	width: 100%;
-	min-height: 61px;
-	padding: 0;
+.description-container-text:last-child {
 	margin: 0;
-}
-
-	.partners-list li {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-	}
-
-		.partners-list img {
-			opacity: 0.8;
-		}
-
-/* 4. Main-bottom
-		========================================================================== */
-
-/**
- * 4.1. Design Life Kids
- * 4.2. Contacts
-*/
-
-.main-bottom {
-	padding: 45px 0 60px 0;
-}
-
-.main-bottom-container {
-	display: flex;
-	flex-direction: row;
-}
-
-/* 4.1. Design Life Kids
-    ========================================================================== */
-
-.dlk-aside-container {
-	background-color: #E1F0F7;
-	box-shadow: inset 0 26px #fff;
-	width: 543px;
-	height: 262px;
-	margin-right: 57px;
-}
-
-.dlk-aside-title {
-	margin: 0 0 10px 30px;
-}
-
-.dlk-aside-subtitle {
-	font-family: "Crimson Text", serif;
-    font-size: 26px;
-    font-style: italic;
-    font-weight: normal;
-    line-height: 32px;
-	margin: 0 0 10px 30px;
-}
-
-.dlk-aside-text {
-	margin: 0 30px 10px 30px;
-}
-
-.buy-now-btn {
-	color: #fff;
-	font-weight: bold;
-	background-color: #000;
-	text-transform: uppercase;
-	border: none;
-	border-radius: 0;
-	width: 123px;
-	height: 40px;
-	margin: 10px 0 10px 30px;
-}
-
-/* 4.2. Contacts
-    ========================================================================== */
-
-.contacts-aside-container {
-	background-color: #E1F0F7;
-	box-shadow: inset 0 26px #fff, inset 0 -114px #fff;
-	width: 543px;
-	height: 349px;
-}
-
-/*Первый вариант*/
-.contacts-aside-title,
-.contacts-aside-text {
-	margin: 0 30px 20px 30px;
-}
-
-/*Второй вариант
-
-.contacts-aside-title { 
-	margin: 0 30px 20px 30px;
-}
-.contacts-aside-text {
-	margin: 0 30px 20px 30px;
-}
-*/
-
-.contacts-aside-container img {
-	margin: 0 30px 0 30px;
 }
 
 /* FOOTER
