@@ -7,15 +7,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,400;1,700&family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/catalog.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Catalog</title>
 </head>
 <body>
     <header class="header">
         <div class="container header-container">
-            <div class="header-logo">
+            <a href="index.html" class="header-logo">
                 <img src="img/icons/union.svg" alt="DLK company logo">
-            </div>
+            </a>
             <nav class="header-nav">
                 <ul class="header-nav-list">
                     <li>
@@ -42,9 +42,9 @@
             </div>
         </div>
     </header>
-    <main>
-        <h1 class="container catalog-title">Category Products</h1>
-        <div class="container breadcrumbs">
+    <main class="content">
+        <div class="container content-header">
+            <h1 class="title-h1">Category Products</h1>
             <ul class="breadcrumbs-list">
                 <li class="breadcrumbs-list-item">
                     <a href="index.html">Home</a>
@@ -57,7 +57,7 @@
 
         <section class="catalog">
             <div class="container catalog-container">
-                <ul class="products-list">
+                <ul class="products-list catalog-list">
                     <li class="products-list-item">
                         <a href="#" class="products-list-item-wrapper bg-green">
                             <img src="img/apparel.png" alt="Apparel Kids">
@@ -71,13 +71,11 @@
                         </a>
                     </li>
                     <li class="products-list-item">
-                        <a href="#" class="products-list-item-wrapper bg-yellow">
+                        <a href="toys.html" class="products-list-item-wrapper bg-yellow">
                             <img src="img/toys.png" alt="Toys">
                             <h3 class="title-h3">Toys</h3>
                         </a>
-                    </li>
-                </ul>
-                <ul class="products-list"> 
+                    </li> 
                     <li class="products-list-item">
                         <a href="#" class="products-list-item-wrapper bg-violet">
                             <img src="img/access.png" alt="Accessories">
@@ -100,26 +98,24 @@
             </div>
         </section>
 
-        <section class="description">
-            <div class="container description-container">
-                <div class="description-container-wrapper">
+        <section class="text-content">
+                <div class="container text-content-container">
                     <h2 class="title-h2">Product Description</h2>
-                    <p class="description-container-text">
+                    <p>
                     Interactive doll Zapf Creation Baby Born Sister can drink from a bottle and 
                     almost really cry. You can even bathe her, just like a little sister.
                     </p>
-                    <p class="description-container-text">
+                    <p>
                     A toy with a height of 43 cm bends its knees, the head rotates, it can stand 
                     upright. Such a doll will be an excellent choice for a gift for a girl from 4 
                     years old.
                     </p>
-                    <p class="description-container-text">
+                    <p>
                     The set includes a miniature set of fashionable clothes, a hairbrush, a bottle 
                     for water, a pair of hairpins and elastic bands for hair, as well as two bracelets: 
                     one for the doll, the other for her young mistress.
                     </p>
                 </div>
-            </div>
         </section>
     </main>
     <footer class="footer">

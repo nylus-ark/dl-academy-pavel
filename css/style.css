@@ -1,3 +1,17 @@
+/* STYLE.CSS STRUCTURE
+		=========================================================================== */
+
+/**
+ * - COMMON STYLES
+ * I. HEADER
+ * II. MAIN
+ * III. CATALOG
+ * IV. TOYS
+ * V. BLOG
+ * VI. CONTACT US
+ * VII. FOOTER
+*/
+
 html {
 	box-sizing: border-box;
 }
@@ -34,6 +48,15 @@ body {
 	white-space: nowrap;
 }
 
+.title-h1 {
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+	font-size: 40px;
+	line-height: 49px;
+	text-transform: uppercase;
+	margin: 0;
+}
+
 .title-h2,
 .title-h2 a {
 	color: inherit;
@@ -63,7 +86,7 @@ body {
 	max-width: 1220px;
 }
 
-/* HEADER
+/* I. HEADER
     ========================================================================== */
 
 .header {
@@ -78,8 +101,9 @@ body {
 }
 
 .header-logo {
-	margin-right: 50px;
 	text-decoration: none;
+	height: 52px;
+	margin-right: 50px;
 }
 
 .header-nav-list {
@@ -150,7 +174,7 @@ a.header-logo:active,
 	opacity: 0.2;
 }
 
-/* MAIN
+/* II. MAIN
 		========================================================================== */
 
 /**
@@ -321,7 +345,7 @@ a.header-logo:active,
 			font-weight: bold;
 		}
 
-	.delivery-text {
+	.delivery-aside p {
 		padding-left: 60px;
 		margin: 0 0 15px 0;
 	}
@@ -464,7 +488,179 @@ a.header-logo:active,
 	margin: 0 30px 0 30px;
 }
 
-/* FOOTER
+/* III. CATALOG
+		========================================================================== */
+
+/**
+ * 1. Content-header
+ * 2. Breadcrumbs
+ * 3. Catalog
+ * 4. Text-content
+*/
+
+/* 1. Content-header
+	========================================================================== */
+
+.content-header {
+	padding-top: 10px;
+}
+
+/* 2. Breadcrumbs
+	========================================================================== */
+
+.breadcrumbs-list {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	padding: 0;
+	margin: 15px 0 0 0;
+}
+
+	.breadcrumbs-list-item:not(:last-child):after {
+		content: url(/img/icons/stroke-next.svg);
+		margin: 0 20px;
+	}
+
+		.breadcrumbs-list-item a {
+			color: inherit;
+			font-family: "Crimson Text", serif;
+			font-size: 20px;
+			font-style: italic;
+			line-height: 25px;
+			text-decoration: none;
+		}
+
+	.breadcrumbs-list-item:last-child {
+		opacity: 50%;
+	}
+
+/* 3. Catalog
+	========================================================================== */
+
+.catalog {
+	padding: 50px 0;
+}
+
+.catalog-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	height: 563px;
+	padding-right: 120px;
+}
+
+.catalog-list {
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+	.catalog-list li {
+		padding-right: 20px;
+	}
+
+	.catalog-list li:nth-child(n+4) {
+		padding: 23px 0 0 20px;
+	}
+
+	.catalog-list li:nth-child(4) {
+		margin-left: auto;
+	}
+
+		.products-list-item-wrapper {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			width: 280px;
+			height: 270px;
+		}
+
+			.products-list-item-wrapper img {
+				position: relative;
+			}
+
+			.products-list-item-wrapper h3 {
+				max-width: 200px; 
+				position: absolute;
+			}
+
+		.bg-pink {
+			background-color: #F3D0DB;
+		}
+
+		.bg-blue {
+			background-color: #E5EAF8;
+		}
+
+/* 4. Text-content
+	========================================================================== */
+
+.text-content {
+	padding: 5px 0 55px 0;
+}
+
+.text-content-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 256px;
+	padding-left: 220px;
+}
+
+	.text-content-container h2 {
+		margin-bottom: 25px;
+	}
+
+	.text-content-container p {
+		text-align: left;
+		max-width: 670px;
+		margin: 0 0 15px 0;
+	}
+
+	.text-content-container p:last-child {
+		margin: 0;
+	}
+
+/* IV. TOYS
+		========================================================================== */
+
+/**
+ * 1. Filters
+ * 2. Product-cards
+*/
+
+/* 1. Filters
+	========================================================================== */
+
+.filters {
+	padding-top: 50px;
+}
+
+.filters-container {
+	background-color: rgba(125, 151, 218, 0.2);
+	height: 254px;
+}
+
+/* 4. Product-cards
+	========================================================================== */
+
+/*.product-cards {
+	padding: 60px 0;
+}
+
+.product-cards-container {
+	width: 100%;
+	height: 1090px;
+}
+*/
+/* V. BLOG
+    ========================================================================== */
+
+/* VI. CONTACT US
+	========================================================================== */
+
+/* VII. FOOTER
     ========================================================================== */
 
 .footer {
