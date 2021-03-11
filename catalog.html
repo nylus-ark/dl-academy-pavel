@@ -8,21 +8,21 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>DLK - Design Life Kids</title>
+    <title>Catalog</title>
 </head>
 <body>
     <header class="header">
         <div class="container header-container">
-            <div class="header-logo">
+            <a href="index.html" class="header-logo">
                 <img src="img/icons/union.svg" alt="DLK company logo">
-            </div>
+            </a>
             <nav class="header-nav">
                 <ul class="header-nav-list">
                     <li>
                         <a href="#">Blog</a>
                     </li>
                     <li>
-                        <a href="catalog.html">Catalog</a>
+                        <a href="#">Catalog</a>
                     </li>
                     <li>
                         <a href="#">About Us</a>
@@ -42,14 +42,22 @@
             </div>
         </div>
     </header>
-    <main>
-        <!--<div class="main-slider"></div>-->
-        <section class="categories">
-            <div class="container categories-container">
-                <h2 class="title-h2 categories-title">
-                    <a href="catalog.html">Category Products</a>
-                </h2>
-                <ul class="products-list">
+    <main class="content">
+        <div class="container content-header">
+            <h1 class="title-h1">Category Products</h1>
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-list-item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="breadcrumbs-list-item">
+                    <a href="catalog.html">Catalog</a>
+                </li>
+            </ul>
+        </div>
+
+        <section class="catalog">
+            <div class="container catalog-container">
+                <ul class="products-list catalog-list">
                     <li class="products-list-item">
                         <a href="#" class="products-list-item-wrapper bg-green">
                             <img src="img/apparel.png" alt="Apparel Kids">
@@ -63,119 +71,51 @@
                         </a>
                     </li>
                     <li class="products-list-item">
-                        <a href="#" class="products-list-item-wrapper bg-yellow">
+                        <a href="toys.html" class="products-list-item-wrapper bg-yellow">
                             <img src="img/toys.png" alt="Toys">
                             <h3 class="title-h3">Toys</h3>
                         </a>
-                    </li>
+                    </li> 
                     <li class="products-list-item">
                         <a href="#" class="products-list-item-wrapper bg-violet">
                             <img src="img/access.png" alt="Accessories">
                             <h3 class="title-h3">Accessories</h3>
                         </a>
                     </li>
-                </ul>
-                <div class="products-nav">
-                    <div class="products-nav-btns">
-                        <button type="button" class="products-nav-btn products-nav-btn-prev">
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button type="button" class="products-nav-btn products-nav-btn-next">
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-
-                    <p class="products-nav-text">
-                        Modern finds for the modern home. Curated goods by unique designers around the world 
-                        from fashion to furniture for kids and adults.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="delivery">
-            <div class="container delivery-container">
-                <div class="delivery-img">
-                    <img src="img/imagewoman.jpg" alt="Picture with woman">
-                </div>
-                <div class="delivery-aside">
-                    <h2 class="title-h2 delivery-title">Delivery</h2>
-                    <ul class="delivery-list">
-                        <li>
-                            <a href="#">Delivery</a>
-                        </li>
-                        <li>
-                            <a href="#">Guarantee</a>
-                        </li>
-                        <li>
-                            <a href="#">Credit</a>
-                        </li>
-                    </ul>
-                    <p>
-                        Some days i feel like i've been working on dlk my entire life and there are other days 
-                        that i am completely shocked that four years have flown by. It's simply magical.
-                    </p>
-                    <p>
-                        What started as an outlet to deal  with the traumatic loss of my husband, 
-                        dlk has now become a truly happy place for me and i have you and 
-                        all of the beautiful designers that we work with to thank!
-                    </p>
-                    <a class="learn-more-link" href="#">Learn More</a>
-                </div>  
-            </div>
-        </section>
-
-        <section class="partners">
-            <div class="container partners-container">
-                <h2>
-                    <span class="visually-hidden">Partners</span>
-                </h2>
-                <ul class="partners-list">
-                    <li>
-                        <a href="https://corp.mail.ru">
-                            <img src="img/mail.png" alt="Mail Group Company">
+                    <li class="products-list-item">
+                        <a href="#" class="products-list-item-wrapper bg-pink">
+                            <img src="img/sale.png" alt="Sale">
+                            <h3 class="title-h3">Sale</h3>
                         </a>
                     </li>
-                    <li>
-                        <a href="https://www.apple.com">
-                            <img src="img/apple.png" alt="Apple Company">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://eltex-co.ru">
-                            <img src="img/eltex.png" alt="Eltex Company">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.owox.ru">
-                            <img src="img/owox.png" alt="Owox Company">
+                    <li class="products-list-item">
+                        <a href="#" class="products-list-item-wrapper bg-blue">
+                            <img src="img/apparel-adults.png" alt="Apparel Adults">
+                            <h3 class="title-h3">Apparel Adults</h3>
                         </a>
                     </li>
                 </ul>
             </div>
         </section>
 
-        <section class="main-bottom">
-            <div class="container main-bottom-container">
-                <div class="dlk-aside-container">
-                    <h2 class="title-h2 dlk-aside-title">Design Life Kids</h2>
-                    <h3 class="dlk-aside-subtitle">About Us</h3>
-                    <p class="dlk-aside-text">
-                        Some days i feel like i've been working on dlk my entire life and there are other days that 
-                        i am completely shocked that four years have flown by. It's simply magical.
+        <section class="text-content">
+                <div class="container text-content-container">
+                    <h2 class="title-h2">Product Description</h2>
+                    <p>
+                    Interactive doll Zapf Creation Baby Born Sister can drink from a bottle and 
+                    almost really cry. You can even bathe her, just like a little sister.
                     </p>
-                    <button class="buy-now-btn">Buy Now</button>
+                    <p>
+                    A toy with a height of 43 cm bends its knees, the head rotates, it can stand 
+                    upright. Such a doll will be an excellent choice for a gift for a girl from 4 
+                    years old.
+                    </p>
+                    <p>
+                    The set includes a miniature set of fashionable clothes, a hairbrush, a bottle 
+                    for water, a pair of hairpins and elastic bands for hair, as well as two bracelets: 
+                    one for the doll, the other for her young mistress.
+                    </p>
                 </div>
-                
-                <div class="contacts-aside-container">
-                    <h2 class="title-h2 contacts-aside-title">Contacts</h2>
-                    <p class="contacts-aside-text">
-                        Some days i feel like i've been working on dlk my entire life and there are other days that 
-                        i am completely shocked that four years have flown by. It's simply magical.
-                    </p>
-                    <img src="img/contacts-map.png" alt="Map">
-                </div>       
-            </div>
         </section>
     </main>
     <footer class="footer">
