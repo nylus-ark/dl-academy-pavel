@@ -8,14 +8,14 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>DLK - Design Life Kids</title>
+    <title>Toy For Kids</title>
 </head>
 <body>
     <header class="header">
         <div class="container header-container">
-            <div class="header-logo">
+            <a href="index.html" class="header-logo">
                 <img src="img/icons/union.svg" alt="DLK company logo">
-            </div>
+            </a>
             <nav class="header-nav">
                 <ul class="header-nav-list">
                     <li>
@@ -42,139 +42,109 @@
             </div>
         </div>
     </header>
-    <main>
-        <!--<div class="main-slider"></div>-->
-        <section class="categories">
-            <div class="container categories-container">
-                <h2 class="title-h2 categories-title">
-                    <a href="catalog.html">Category Products</a>
-                </h2>
-                <ul class="products-list">
-                    <li class="products-list-item">
-                        <a href="#" class="products-list-item-wrapper bg-green">
-                            <img src="img/apparel.png" alt="Apparel Kids">
-                            <h3 class="title-h3">Apparel Kids</h3>
+    <main class="content">
+        <div class="container content-header">
+            <h1 class="title-h1">Toy for kids</h1>
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-list-item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="breadcrumbs-list-item">
+                    <a href="catalog.html">Catalog</a>
+                </li>
+                <li class="breadcrumbs-list-item">
+                    <a href="toys.html">Toys</a>
+                </li>
+            </ul>
+        </div>
+
+        <section class="filters">
+            <div class="filters-container"></div>
+        </section>
+
+        <section class="product-cards">
+            <div class="container product-cards-container">
+                <ul class="product-cards-list">
+                    <li class="product-cards-item">
+                        <a href="#" class="product-cards-item-img">
+                            <img src="/img/shark.png" alt="Sharky bean bag chair cover">
+                        </a>
+                        <div class="product-cards-item-info"> <!--Стоит ли здесь задавать отдельные классы элементам?-->
+                            <h3 class="product-cards-title">Sharky bean bag chair cover</h3>
+                            <span class="product-cards-price">&#36;60.00 usd</span>
+                        </div>
+                    </li>
+                    <li class="product-cards-item">
+                        <a href="#" class="product-cards-item-img">
+                            <img src="/img/brass.png" alt="Brass deco frames">
+                        </a>
+                        <div class="product-cards-item-info">
+                            <h3 class="product-cards-title">Brass deco frames</h3>
+                            <span class="product-cards-price">&#36;66.00 usd</span>
+                        </div>
+                    </li>
+                    <li class="product-cards-item">
+                        <a href="#" class="product-cards-item-img">
+                            <img src="/img/cibo.png" alt="Cibo full apron">
+                        </a>
+                        <div class="product-cards-item-info">
+                            <h3 class="product-cards-title">Cibo full apron</h3>
+                            <span class="product-cards-price">&#36;60.00 usd</span>
+                        </div>
+                    </li>
+                    <li class="product-cards-item">
+                        <a href="#" class="product-cards-item-img">
+                            <img src="/img/gatcha.png" alt="Gatcha gatcha gumball machine">
+                        </a>
+                        <div class="product-cards-item-info">
+                            <h3 class="product-cards-title">Gatcha gatcha gumball machine</h3>
+                            <span class="product-cards-price">&#36;56.00 usd</span>
+                        </div>
+                    </li>
+                    <li class="product-cards-item">
+                        <a href="#" class="product-cards-item-img">
+                            <img src="/img/christmas.png" alt="Christmas advent scented candle">
+                        </a>
+                        <div class="product-cards-item-info">
+                            <h3 class="product-cards-title">Christmas advent scented candle</h3>
+                            <span class="product-cards-price">&#36;29.00 usd</span>
+                        </div>
+                    </li>
+                    <li class="product-cards-item">
+                        <a href="#" class="product-cards-item-img">
+                            <img src="/img/tangle.png" alt="Tangle spinning tea light">
+                        </a>
+                        <div class="product-cards-item-info">
+                            <h3 class="product-cards-title">Tangle spinning tea light</h3>
+                            <span class="product-cards-price">&#36;56.00 usd</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="product-cards-pagination">
+                    <li>
+                        <a href="#" title="previous page">
+                            <img src="img/icons/cards-btn-prev.svg" alt="previous page">
                         </a>
                     </li>
-                    <li class="products-list-item">
-                        <a href="#" class="products-list-item-wrapper bg-orange">
-                            <img src="img/shop.png" alt="Holiday shop">
-                            <h3 class="title-h3">Holiday shop</h3>
-                        </a>
+                    <li>
+                        <a href="#" title="" class="cards-pagination-active">1</a>
                     </li>
-                    <li class="products-list-item">
-                        <a href="toys.html" class="products-list-item-wrapper bg-yellow">
-                            <img src="img/toys.png" alt="Toys">
-                            <h3 class="title-h3">Toys</h3>
-                        </a>
+                    <li>
+                        <a href="#" title="To page 2">2</a>
                     </li>
-                    <li class="products-list-item">
-                        <a href="#" class="products-list-item-wrapper bg-violet">
-                            <img src="img/access.png" alt="Accessories">
-                            <h3 class="title-h3">Accessories</h3>
+                    <li>
+                        <a href="#" title="To page 3">3</a>
+                    </li>
+                    <li>
+                        <a href="#" title="To page 4">4</a>
+                    </li>
+                    <li>
+                        <a href="#" title="next page">
+                            <img src="img/icons/cards-btn-next.svg" alt="next page">
                         </a>
                     </li>
                 </ul>
-                <div class="products-nav">
-                    <div class="products-nav-btns">
-                        <button type="button" class="products-nav-btn products-nav-btn-prev">
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button type="button" class="products-nav-btn products-nav-btn-next">
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-
-                    <p class="products-nav-text">
-                        Modern finds for the modern home. Curated goods by unique designers around the world 
-                        from fashion to furniture for kids and adults.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="delivery">
-            <div class="container delivery-container">
-                <div class="delivery-img">
-                    <img src="img/imagewoman.jpg" alt="Picture with woman">
-                </div>
-                <div class="delivery-aside">
-                    <h2 class="title-h2 delivery-title">Delivery</h2>
-                    <ul class="delivery-list">
-                        <li>
-                            <a href="#">Delivery</a>
-                        </li>
-                        <li>
-                            <a href="#">Guarantee</a>
-                        </li>
-                        <li>
-                            <a href="#">Credit</a>
-                        </li>
-                    </ul>
-                    <p>
-                        Some days i feel like i've been working on dlk my entire life and there are other days 
-                        that i am completely shocked that four years have flown by. It's simply magical.
-                    </p>
-                    <p>
-                        What started as an outlet to deal  with the traumatic loss of my husband, 
-                        dlk has now become a truly happy place for me and i have you and 
-                        all of the beautiful designers that we work with to thank!
-                    </p>
-                    <a class="learn-more-link" href="#">Learn More</a>
-                </div>  
-            </div>
-        </section>
-
-        <section class="partners">
-            <div class="container partners-container">
-                <h2>
-                    <span class="visually-hidden">Partners</span>
-                </h2>
-                <ul class="partners-list">
-                    <li>
-                        <a href="https://corp.mail.ru">
-                            <img src="img/mail.png" alt="Mail Group Company">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.apple.com">
-                            <img src="img/apple.png" alt="Apple Company">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://eltex-co.ru">
-                            <img src="img/eltex.png" alt="Eltex Company">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.owox.ru">
-                            <img src="img/owox.png" alt="Owox Company">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="main-bottom">
-            <div class="container main-bottom-container">
-                <div class="dlk-aside-container">
-                    <h2 class="title-h2 dlk-aside-title">Design Life Kids</h2>
-                    <h3 class="dlk-aside-subtitle">About Us</h3>
-                    <p class="dlk-aside-text">
-                        Some days i feel like i've been working on dlk my entire life and there are other days that 
-                        i am completely shocked that four years have flown by. It's simply magical.
-                    </p>
-                    <button class="buy-now-btn">Buy Now</button>
-                </div>
-                
-                <div class="contacts-aside-container">
-                    <h2 class="title-h2 contacts-aside-title">Contacts</h2>
-                    <p class="contacts-aside-text">
-                        Some days i feel like i've been working on dlk my entire life and there are other days that 
-                        i am completely shocked that four years have flown by. It's simply magical.
-                    </p>
-                    <img src="img/contacts-map.png" alt="Map">
-                </div>       
             </div>
         </section>
     </main>
