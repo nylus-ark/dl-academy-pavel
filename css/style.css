@@ -59,7 +59,7 @@ body {
 
 .title-h2,
 .title-h2 a {
-	color: inherit;
+	color: #1e0606;
 	font-family: "Montserrat", sans-serif;
 	font-weight: bold;
 	font-size: 38px;
@@ -204,7 +204,6 @@ a.header-logo:active,
 	flex-direction: row;
 	justify-content: space-between;
 	list-style: none;
-	height: 270px;
 	padding: 0;
 	margin: 0;
 }
@@ -218,6 +217,10 @@ a.header-logo:active,
 		height: 270px;
 	}
 
+		/*
+		Нужно ли здесь делать max-width 
+		для img?
+		*/
 		.products-list-item-wrapper img {
 			position: relative;
 		}
@@ -226,7 +229,7 @@ a.header-logo:active,
 			max-width: 200px; 
 			position: absolute;
 		}
-	
+
 	.bg-green {
 		background-color: #DBE4DB;
 	}
@@ -329,7 +332,7 @@ a.header-logo:active,
 
 		.delivery-list a {
 			display: block;
-			color: inherit;
+			color: #1e0606;
 			font-family: "Crimson Text", serif;
 			font-size: 26px;
 			font-style: italic;
@@ -513,7 +516,6 @@ a.header-logo:active,
 	flex-direction: row;
 	align-items: center;
 	list-style: none;
-	height: 25px;
 	padding: 0;
 	margin: 15px 0 0 0;
 }
@@ -524,7 +526,7 @@ a.header-logo:active,
 	}
 
 		.breadcrumbs-list-item a {
-			color: inherit;
+			color: #1e0606;
 			font-family: "Crimson Text", serif;
 			font-size: 20px;
 			font-style: italic;
@@ -665,18 +667,13 @@ a.header-logo:active,
 		flex-wrap: wrap;
 		justify-content: space-between;
 		list-style: none;
-		height: 1014px;
 		padding: 0;
 		margin: 0;
 	}
 
 		.product-cards-item {
 			width: 380px;
-			height: 497px;
-		}
-
-		.product-cards-item:nth-child(n+4) {
-			margin-top: 20px;
+			margin-bottom: 20px;
 		}
 
 			.product-cards-item-img {
@@ -687,12 +684,15 @@ a.header-logo:active,
 				height: 385px;
 			}
 
+				.product-cards-item-img img {
+					max-width: 100%;
+				}
+
 			.product-cards-item-info {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: space-between;
-				height: 112px;
 			}
 
 				.product-cards-title {
@@ -705,10 +705,15 @@ a.header-logo:active,
 					margin: 0;
 				}
 
+					.product-cards-title a {
+						color: #1e0606;
+						text-decoration: none;
+					}
+
 				.product-cards-price {
 					font-weight: bold;
 					text-transform: uppercase;
-					padding-bottom: 25px;
+					padding: 15px 0 25px 0;
 				}
 
 	.product-cards-pagination {
@@ -716,41 +721,50 @@ a.header-logo:active,
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		list-style: none;
 		height: 26px;
-		padding: 0;
-		margin: 0;
 	}
 
-		.product-cards-pagination a {
-			color: inherit;
-			font-family: "Montserrat", sans-serif;
-			font-weight: bold;
-			line-height: 20px;
-			text-decoration: none;
+		/*
+		Почему то если не указать высоту ссылки, 
+		то она становиться больше контейнера и 
+		сбивает выравнивание элементов в нем.
+		*/
+		.product-cards-pagination-arrow, 
+		.product-cards-pagination-arrow img {
+			width: 18px;
+			height: 26px;
 		}
 
-		.product-cards-pagination li:first-child {
-			margin-right: auto;
+		.product-cards-pagination-list {
+			display: flex;
+			flex-direction: row;
+			list-style: none;
+			max-width: 1150px;
+			padding: 0;
+			margin: 0 auto;
 		}
 
-		.product-cards-pagination li:last-child {
-			margin-left: auto;
-		}
+			.product-cards-pagination-list li {
+				font-family: "Montserrat", sans-serif;
+				font-weight: bold;
+				line-height: 20px;
+				margin: 0 33px;
+			}
 
-		.product-cards-pagination li:nth-child(n+2):nth-child(-n+4) {
-			margin-right: 64px;
-		}
+				.product-cards-pagination-list a {
+					color: #1e0606;
+					text-decoration: none;
+				}
 
-		.product-cards-pagination .cards-pagination-active {
-			color: #C29974;
-		}
+			.product-cards-pagination-list span {
+				color: #C29974;
+			}
 
-		.product-cards-pagination a:hover:not(.cards-pagination-active) {
+		.product-cards-pagination-list a:hover {
 			opacity: 50%;
 		}
 
-		.product-cards-pagination a:active:not(.cards-pagination-active) {
+		.product-cards-pagination-list a:active {
 			opacity: 25%;
 		}
 
