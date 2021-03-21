@@ -167,13 +167,13 @@ body {
 
 a.header-logo:hover,
 .header-nav-list a:hover,
-.header-contacts:hover {
+.header-contacts:hover:not(.header-contacts-not-active) {
 	opacity: 0.5;
 }
 
 a.header-logo:active,
 .header-nav-list a:active,
-.header-contacts:active {
+.header-contacts:active:not(.header-contacts-not-active) {
 	opacity: 0.2;
 }
 
@@ -838,6 +838,141 @@ a.header-logo:active,
 	
 /* VI. CONTACT US
 	========================================================================== */
+
+.contact-us {
+	padding: 50px 0 60px 0;
+}
+
+.contact-us-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	height: 542px;
+}
+
+	.contact-us-form-wrapper {
+		background-color: #E5EAF8;
+		width: 680px;
+		padding: 42px 40px;
+	}
+
+	.contact-us-form {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+		.contact-us-input-container {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 20px;
+		}
+
+			.contact-us-label {
+				font-size: 14px;
+				line-height: 19px;
+				width: 290px;
+				margin-bottom: 3px;
+			}
+
+			.contact-us-input {
+				border: 1px solid rgba(0, 0, 0, 0.2);
+				border-radius: 0;
+				height: 50px;
+			}
+
+				.contact-us-input::placeholder {
+					color: #1E0606;
+					font-size: 18px;
+					line-height: 24px;
+					padding-left: 18px;
+				}
+
+			.contact-us-input-name {
+				width: 600px;
+			}
+
+			.contact-us-input-tel,
+			.contact-us-input-email {
+				width: 290px;
+			}
+
+			.contact-us-textarea {
+				resize: none;
+				width: 600px;
+				height: 150px;
+			}
+
+		.contact-us-checkbox-container {
+			display: inline-block;
+			margin-bottom: 20px;
+		}
+
+			.contact-us-checkbox-container input {
+				display: none;
+			}
+
+			.contact-us-checkbox-container label::before {
+				content: "";
+				display: inline-block;
+				border: 2px solid #C29974;
+				border-radius: 3px;
+				width: 19px;
+				height: 19px;
+				margin-right: 10px;
+			}
+
+			.contact-us-checkbox-input:checked + label::before {
+				content: url(/img/icons/checkbox-checked.svg);
+
+				/*
+				При активации чекбокса он весь сдвигиется вниз на
+				несколько пикселей, не пойму что не так.
+				Так же нужно галочку позиционировать чуть выше и левее самого бокса,
+				но свойства которые ниже, позиционируют и галку и бокс вместе.
+				*/
+
+				/*position: relative;
+				width: 19px;
+				height: 19px;
+				top: -2px;
+				left: 2px;*/
+			}
+	
+		.contact-us-button-container input {
+			color: #fff;
+			font-weight: bold;
+			text-transform: uppercase;
+			background-color: #000;
+			border: none;
+			border-radius: 0;
+			width: 106px;
+			height: 40px;
+		}
+
+	.contact-us-aside {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 380px;
+		height: 218px;
+	}
+
+	.contact-us-aside p {
+		padding: 0;
+		margin: 0;
+	}
+
+	.contact-us-aside span {
+		color: #C29974;
+		font-family: "Montserrat", sans-serif;
+		font-weight: 600;
+		font-size: 26px;
+		line-height: 32px;
+		text-transform: uppercase;
+	}
 
 /* VII. FOOTER
     ========================================================================== */
