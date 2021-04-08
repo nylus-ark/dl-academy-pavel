@@ -10,6 +10,7 @@
  * V. BLOG
  * VI. CONTACT US
  * VII. FOOTER
+ * VIII. POPUP
 */
 
 html {
@@ -63,7 +64,7 @@ body {
 	font-family: "Montserrat", sans-serif;
 	font-weight: bold;
 	font-size: 38px;
-	line-height: 46px;
+	line-height: 47px;
 	text-decoration: none;
 	text-transform: uppercase;
 	margin: 0;
@@ -84,6 +85,36 @@ body {
 	padding: 0 20px;
 	margin: 0 auto;
 	max-width: 1220px;
+}
+
+.btn {
+	background: #000;
+	border: none;
+	border-radius: 0;
+	color: #fff;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	padding: 9px 22px;
+	min-height: 40px;
+
+	font-family: "Open Sans", sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 22px;
+	/*line-height: 40px;*/
+	/*height: 40px;*/
+	text-decoration: none;
+	text-transform: uppercase;
+	vertical-align: top;
+
+	max-width: 280px;
+
+	/*
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	*/
 }
 
 /* I. HEADER
@@ -195,21 +226,42 @@ a.header-logo:active,
 }
 
 .categories-container {
+	/*
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+
+	Оставить ли здесь эти свойства?
+	По-моему никак не влияют на содержимое
+	*/
+
 	width: 100%;
-	height: 421px;
+}
+
+.categories-title {
+	margin-bottom: 30px;
 }
 
 .products-list {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	flex-wrap: wrap;
 	list-style: none;
 	padding: 0;
-	margin: 0;
+	margin: 0 0 30px 0;
 }
+
+	.products-list-item {
+		margin-right: 20px;
+	}
+	
+	.products-list-item:nth-child(4n+4) {
+		margin-right: 0;
+	}
+
+	.products-list-item:nth-child(n+5) {
+		margin-top: 20px;
+	}
 
 	.products-list-item-wrapper {
 		display: flex;
@@ -220,12 +272,13 @@ a.header-logo:active,
 		height: 270px;
 	}
 
-		/*
-		Нужно ли здесь делать max-width 
-		для img?
-		*/
 		.products-list-item-wrapper img {
 			position: relative;
+
+			/*
+			Нужно ли здесь делать max-width 
+			для img?
+			*/
 		}
 
 		.products-list-item-wrapper h3 {
@@ -249,41 +302,57 @@ a.header-logo:active,
 		background-color: #D5D4E1;
 	}
 
+	.bg-pink {
+		background-color: #F3D0DB;
+	}
+
+	.bg-blue {
+		background-color: #E5EAF8;
+	}
+
 .products-nav {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
 	justify-content: flex-start;
-	width: 680px;
-	height: 44px;
 }
 
 	.products-nav-btns {
 		display: flex;
 		flex-direction: row;
+		padding-top: 3px;
 		margin-right: 20px;
 	}
 		
 		.products-nav-btn {
 			border: none;
-			box-sizing: border-box;
-			padding: 0;
+			cursor: pointer;
 			width: 37px;
 			height: 37px;
-		}
-
-		.products-nav-btn-prev {
-			background: url('../img/icons/btn-previous.svg') no-repeat 50% 50%;
-			background-color: rgba(112, 187, 220, 0.2);
+			/*
+			Нужно ли ограничивать размеры кнопки здесь?
+			Я правильно понимаю что при замене в кнопке иконки на другую,
+			большего размера то верстка поедет.
+			Тогда здесь нужно переписать полностью код кнопки
+			и использовать другой подход?
+			*/
+			padding: 0;
 			margin-right: 6px;
 		}
 
+		.products-nav-btn:last-child {
+			margin: 0;
+		}
+
+		.products-nav-btn-prev {
+			background: url('../img/icons/btn-previous.svg') no-repeat 50% 50% rgba(112, 187, 220, 0.2);
+		}
+
 		.products-nav-btn-next {
-			background: url('../img/icons/btn-next.svg') no-repeat 50% 50%;
-			background-color: rgba(112, 187, 220, 0.2);
+			background: url('../img/icons/btn-next.svg') no-repeat 50% 50% rgba(112, 187, 220, 0.2);
 		}
 
 	.products-nav-text {
+		max-width: 550px;
 		margin: 0;
 	}
 
@@ -299,7 +368,6 @@ a.header-logo:active,
 	flex-direction: row;
 	justify-content: flex-start;
 	width: 100%;
-	height: 559px;
 }
 
 .delivery-img {
@@ -308,42 +376,41 @@ a.header-logo:active,
 	flex-direction: row;
 	justify-content: center;
 	align-items: flex-start;
-	width: 480px;
+	max-width: 480px;
+	max-height: 559px;
 }
 
 .delivery-aside {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 540px;
-	height: 472px;
+	max-width: 540px;
+	padding-left: 60px;
 	margin: 30px auto auto 60px;
 }
 
 	.delivery-title {
-		padding: 0 0 6px 61px;
+		margin: 0 0 6px 0;
 	}
 
 	.delivery-list {
-		display: flex;
-		flex-direction: column;
 		list-style: none;
 		padding: 0;
-		margin: 0 0 20px 0;
-		width: 326px;
+		margin: 0 0 18px -60px;
 	}
 
 		.delivery-list a {
-			display: block;
+			display: inline-flex;
 			color: #1e0606;
 			font-family: "Crimson Text", serif;
 			font-size: 26px;
 			font-style: italic;
-			font-weight: normal;
 			line-height: 32px;
 			text-decoration: none;
-			height: 55px;
-			padding: 11px 0 11px 60px;
+			padding: 11px 60px;
+			min-height: 55px;
+			min-width: 326px; 
+			/*
+			Какое свойство здесь лучше width или min-width?
+			Переполнение по разному ведет себя визуально
+			*/
 		}
 
 		.delivery-list a:hover {
@@ -352,23 +419,11 @@ a.header-logo:active,
 		}
 
 	.delivery-aside p {
-		padding-left: 60px;
 		margin: 0 0 15px 0;
 	}
 
-	.learn-more-link {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		color: #fff;
-		font-weight: bold;
-		background-color: #000;
-		text-transform: uppercase;
-		text-decoration: none;
-		width: 149px;
-		height: 40px;
-		padding: 9px 22px;
-		margin: 11px 0 0 60px;
+	.learn-more-btn {
+		margin: 11px auto 0 0;
 	}
 
 /* 3. Partners
@@ -388,7 +443,6 @@ a.header-logo:active,
 .partners-list {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 	flex-wrap: wrap;
 	list-style: none;
 	width: 100%;
@@ -401,6 +455,32 @@ a.header-logo:active,
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		/*min-width: 220px;*/
+		margin-right: 127px;
+
+		/*
+		Переписал код под переполнение,
+		но элементы в следующем ряду получаются
+		сдвинутыми и идут не в одну колонку с верхним рядом (из за отступов).
+		Стоит ли их вырвнивать?
+
+		Если задать каждому контейнеру min-width то они выравниваются (с justify-content),
+		но тогда из за разных размеров логотипов отступы по краям головного контейнера не совпадут.
+		Я могу каждый логотип который находится по краям контейнера отцентровать,
+		но так и кода больше будет, а нужно ли это все?
+		*/
+	}
+
+	.partners-list li:last-child {
+		margin-right: auto;
+	}
+
+	.partners-list li:nth-child(4n+4) {
+		margin-right: 0;
+	}
+
+	.partners-list li:nth-child(n+5) {
+		margin-top: 20px;
 	}
 
 		.partners-list img {
@@ -416,7 +496,7 @@ a.header-logo:active,
 */
 
 .main-bottom {
-	padding: 45px 0 60px 0;
+	padding: 40px 0 60px 0;
 }
 
 .main-bottom-container {
@@ -429,14 +509,20 @@ a.header-logo:active,
 
 .dlk-aside-container {
 	background-color: #E1F0F7;
-	box-shadow: inset 0 26px #fff;
-	width: 543px;
-	height: 262px;
-	margin-right: 57px;
+	box-shadow: inset 0 26px #fff; /*inset 0 -87px #fff;*/
+	max-width: 543px;
+	/*max-height: 262px;*/
+	padding: 0 30px;
+	margin: 0 57px auto 0; /*margin-bottom: auto?
+	/*
+	Не нашел другого способа как без высоты контейнера закрасить его.
+	Поставил внешний отступ для обрезки снизу, при переполнении
+	вроде все ок, только у блока всего увеличивается отсуп снизу.
+	*/
 }
 
 .dlk-aside-title {
-	margin: 0 0 10px 30px;
+	margin: 0 0 10px 0;
 }
 
 .dlk-aside-subtitle {
@@ -445,23 +531,15 @@ a.header-logo:active,
     font-style: italic;
     font-weight: normal;
     line-height: 32px;
-	margin: 0 0 10px 30px;
+	margin: 0 0 10px 0;
 }
 
 .dlk-aside-text {
-	margin: 0 30px 10px 30px;
+	margin: 0 0 20px 0;
 }
 
 .buy-now-btn {
-	color: #fff;
-	font-weight: bold;
-	background-color: #000;
-	text-transform: uppercase;
-	border: none;
-	border-radius: 0;
-	width: 123px;
-	height: 40px;
-	margin: 10px 0 10px 30px;
+	margin: 0 0 35px 0;
 }
 
 /* 4.2. Contacts
@@ -470,29 +548,40 @@ a.header-logo:active,
 .contacts-aside-container {
 	background-color: #E1F0F7;
 	box-shadow: inset 0 26px #fff, inset 0 -114px #fff;
-	width: 543px;
-	height: 349px;
+	max-width: 543px;
+	/*min-height: 349px;*/
+	padding: 0 30px;
+	margin: 0 0 auto 0;
+	/*
+	В этом блоке при переполнении все ок и если убрать текст тоже нормально.
+	Но если убрать img, то при добавлении текста фон остается на месте а содержимое 
+	параграфов уходит вних без background
+	Как исправить это?
+	*/
 }
 
-/*Первый вариант*/
 .contacts-aside-title,
 .contacts-aside-text {
-	margin: 0 30px 20px 30px;
+	margin: 0 0 20px 0;
 }
 
-/*Второй вариант
 
-.contacts-aside-title { 
-	margin: 0 30px 20px 30px;
+.contacts-aside-img {
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	max-height: 196px;
+	/*
+	Я сделал отдельный div для img,
+	на случай замены изображения
+	*/
 }
-.contacts-aside-text {
-	margin: 0 30px 20px 30px;
-}
-*/
 
-.contacts-aside-container img {
-	margin: 0 30px 0 30px;
-}
+	.contacts-aside-img img {
+		max-width: 100%;
+	}
 
 /* III. CATALOG
 		========================================================================== */
@@ -550,56 +639,27 @@ a.header-logo:active,
 }
 
 .catalog-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
 	width: 100%;
-	height: 563px;
 	padding-right: 120px;
 }
 
 .catalog-list {
 	flex-wrap: wrap;
 	justify-content: flex-start;
+	margin: 0;
 }
 
 	.catalog-list li {
-		padding-right: 20px;
+		margin-right: 20px;
 	}
 
 	.catalog-list li:nth-child(n+4) {
-		padding: 23px 0 0 20px;
+		margin: 23px 0 0 20px;
 	}
 
 	.catalog-list li:nth-child(4) {
 		margin-left: auto;
 	}
-
-		.products-list-item-wrapper {
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
-			width: 280px;
-			height: 270px;
-		}
-
-			.products-list-item-wrapper img {
-				position: relative;
-			}
-
-			.products-list-item-wrapper h3 {
-				max-width: 200px; 
-				position: absolute;
-			}
-
-		.bg-pink {
-			background-color: #F3D0DB;
-		}
-
-		.bg-blue {
-			background-color: #E5EAF8;
-		}
 
 /* 4. Text-content
 	========================================================================== */
@@ -609,10 +669,6 @@ a.header-logo:active,
 }
 
 .text-content-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	min-height: 256px;
 	padding-left: 220px;
 }
 
@@ -642,13 +698,121 @@ a.header-logo:active,
 	========================================================================== */
 
 .filters {
-	padding-top: 50px;
+	background: rgba(125, 151, 218, 0.2);
+	margin-top: 50px;
+	padding: 42px 0;
 }
 
-.filters-container {
-	background-color: rgba(125, 151, 218, 0.2);
-	height: 254px;
+.filters-form {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
 }
+
+.filters-col {
+	color: #1e0606;
+	flex-shrink: 0;
+	font-size: 16px;
+	line-height: 22px;
+	min-width: 200px;
+}
+
+	.filters-col-title {
+		font-size: 16px;
+		font-weight: bold;
+		line-height: 22px;
+		margin: 0 0 15px;
+	}
+
+	.filters-list,
+	.filters-amount {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+		.filters-list li {
+			margin-bottom: 15px;
+		}
+
+		.filters-list li:last-child {
+			margin-bottom: 0;
+		}
+
+		.filters-list input[type="checkbox"],
+		.filters-list input[type="radio"],
+		.filters-amount input[type="radio"] {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip: rect(0 0 0 0);
+		}
+
+		.filters-list input[type="checkbox"] + label,
+		.filters-list input[type="radio"] + label {
+			position: relative;
+			padding: 0 0 0 29px;
+		}
+
+		.filters-list input[type="checkbox"] + label::before,
+		.filters-list input[type="radio"] + label::before {
+			border: 2px solid #c29974;
+			border-radius: 3px;
+			content: "";
+			position: absolute;
+			top: 1px;
+			left: 0;
+			height: 20px;
+			width: 20px;
+		}
+
+		.filters-list input[type="radio"] + label::before {
+			border-radius: 100%;
+		}
+
+		.filters-list input[type="checkbox"]:checked + label::before {
+			background: #fff url("../img/icons/checkbox-checked.svg") no-repeat 100% 0;
+			/*background-size: 12px 12px;*/
+		}
+
+		.filters-list input[type="radio"] + label::after {
+			content: "";
+			border-radius: 100%;
+			position: absolute;
+			top: 5px;
+			left: 4px;
+			height: 12px;
+			width: 12px;
+		}
+
+		.filters-list input[type="radio"]:checked + label::after {
+			background: #c29974;
+		}
+
+
+	.filters-amount {
+		display: flex;
+		flex-direction: row;
+	}
+
+		.filters-amount label {
+			background: #fff;
+			display: block;
+			flex-shrink: 0;
+			text-align: center;
+			line-height: 35px;
+			min-width: 80px;
+		}
+
+		.filters-amount input[type="radio"]:checked + label {
+			background: #F3D0DB;
+		}
+
+	.filters-col .btn {
+		margin: 37px 0 0 0;
+	}
 
 /* 4. Product-cards
 	========================================================================== */
@@ -660,24 +824,29 @@ a.header-logo:active,
 .product-cards-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	width: 100%;
-	height: 1090px;
 }
 
 	.product-cards-list {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		justify-content: space-between;
 		list-style: none;
 		padding: 0;
 		margin: 0;
 	}
 
 		.product-cards-item {
-			width: 380px;
-			margin-bottom: 20px;
+			max-width: 380px;
+			margin: 0 20px 0 0;
+		}
+
+		.product-cards-item:nth-child(3n+3) {
+			margin-right: 0;
+		}
+
+		.product-cards-item:nth-child(n+4) {
+			margin-top: 20px;
 		}
 
 			.product-cards-item-img {
@@ -686,6 +855,7 @@ a.header-logo:active,
 				justify-content: center;
 				align-items: center;
 				height: 385px;
+				margin: 0 0 30px 0;
 			}
 
 				.product-cards-item-img img {
@@ -696,17 +866,15 @@ a.header-logo:active,
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				justify-content: space-between;
 			}
 
 				.product-cards-title {
 					font-family: "Open Sans", sans-serif;
 					font-weight: normal;
 					font-size: 14px;
-					line-height: 19px;
+					line-height: 20px;
 					text-transform: uppercase;
-					padding-top: 30px;
-					margin: 0;
+					margin: 0 0 15px 0;
 				}
 
 					.product-cards-title a {
@@ -717,7 +885,7 @@ a.header-logo:active,
 				.product-cards-price {
 					font-weight: bold;
 					text-transform: uppercase;
-					padding: 15px 0 25px 0;
+					margin: 0 0 25px 0;
 				}
 
 	.content-pagination {
@@ -725,7 +893,7 @@ a.header-logo:active,
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		height: 26px;
+		margin: 50px 0 0 0;
 	}
 
 		.content-pagination-arrow, 
@@ -735,8 +903,8 @@ a.header-logo:active,
 			то она становиться больше контейнера и 
 			сбивает выравнивание элементов в нем.
 			*/
-			width: 18px;
-			height: 26px;
+			max-width: 18px;
+			max-height: 26px;
 		}
 
 		.content-pagination-list {
@@ -782,9 +950,7 @@ a.header-logo:active,
 .blog-articles-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	width: 100%;
-	height: 1064px;
 }
 
 	.blog-articles-list {
@@ -798,7 +964,7 @@ a.header-logo:active,
 	}
 
 		.blog-articles-item {
-			width: 380px;
+			max-width: 380px;
 			padding-bottom: 20px;
 			margin-bottom: 14px;
 		}
@@ -835,6 +1001,10 @@ a.header-logo:active,
 				line-height: 25px;
 				margin: 0;
 			}
+
+.blog-articles-container .content-pagination {
+	margin-top: 16px;
+}
 	
 /* VI. CONTACT US
 	========================================================================== */
@@ -848,12 +1018,11 @@ a.header-logo:active,
 	flex-direction: row;
 	justify-content: space-between;
 	width: 100%;
-	height: 542px;
 }
 
 	.contact-us-form-wrapper {
 		background-color: #E5EAF8;
-		width: 680px;
+		max-width: 680px;
 		padding: 42px 40px;
 	}
 
@@ -873,14 +1042,13 @@ a.header-logo:active,
 			.contact-us-label {
 				font-size: 14px;
 				line-height: 19px;
-				width: 290px;
-				margin-bottom: 3px;
+				margin-bottom: 4px;
 			}
 
 			.contact-us-input {
 				border: 1px solid rgba(0, 0, 0, 0.2);
 				border-radius: 0;
-				height: 50px;
+				min-height: 50px;
 			}
 
 				.contact-us-input::placeholder {
@@ -902,67 +1070,55 @@ a.header-logo:active,
 			.contact-us-textarea {
 				resize: none;
 				width: 600px;
-				height: 150px;
+				min-height: 150px;
+				margin-bottom: 1px;
 			}
 
 		.contact-us-checkbox-container {
 			display: inline-block;
-			margin-bottom: 20px;
+			margin-bottom: 16px;
 		}
 
-			.contact-us-checkbox-container input {
-				display: none;
+			.contact-us-form input[type="checkbox"] {
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				overflow: hidden;
+				clip: rect(0 0 0 0);
 			}
 
-			.contact-us-checkbox-container label::before {
-				content: "";
-				display: inline-block;
-				border: 2px solid #C29974;
+			.contact-us-form input[type="checkbox"] + label {
+				position: relative;
+				padding: 0 0 0 34px;
+			}
+
+			.contact-us-form input[type="checkbox"] + label::before {
+				border: 2px solid #c29974;
 				border-radius: 3px;
-				width: 19px;
-				height: 19px;
-				margin-right: 10px;
+				content: "";
+				position: absolute;
+				bottom: 2px;
+				left: 0;
+				height: 20px;
+				width: 20px;
 			}
 
-			.contact-us-checkbox-input:checked + label::before {
-				content: url(/img/icons/checkbox-checked.svg);
-
-				/*
-				При активации чекбокса он весь сдвигиется вниз на
-				несколько пикселей, не пойму что не так.
-				Так же нужно галочку позиционировать чуть выше и левее самого бокса,
-				но свойства которые ниже, позиционируют и галку и бокс вместе.
-				*/
-
-				/*position: relative;
-				width: 19px;
-				height: 19px;
-				top: -2px;
-				left: 2px;*/
+			.contact-us-form input[type="checkbox"]:checked + label::before {
+				background: #fff url("../img/icons/checkbox-checked.svg") no-repeat 100% 0;
+				/*background-size: 12px 12px;*/
 			}
-	
-		.contact-us-button-container input {
-			color: #fff;
-			font-weight: bold;
-			text-transform: uppercase;
-			background-color: #000;
-			border: none;
-			border-radius: 0;
-			width: 106px;
-			height: 40px;
-		}
 
+			.contact-us-checkbox-container label {
+				padding: 10px 0 0 0;
+			}
+		
 	.contact-us-aside {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		width: 380px;
-		height: 218px;
+		max-width: 380px;
 	}
 
 	.contact-us-aside p {
 		padding: 0;
-		margin: 0;
+		margin: 0 0 20px 0;
 	}
 
 	.contact-us-aside span {
@@ -989,7 +1145,7 @@ a.header-logo:active,
 }
 
 .footer-col {
-	width: 380px;
+	min-width: 380px;
 	margin: 100px 20px 0 0;
 }
 
@@ -1048,29 +1204,22 @@ a.header-logo:active,
 				padding-left: 15px;
 			}
 
+			/*
 			.footer-mail-btn {
-				color: #fff;
-				font-weight: 700;
-				line-height: 21px;
-				background-color: #000;
-				text-transform: uppercase;
-				border: none;
-				border-radius: 0;
-				width: 81px;
-				height: 40px;
-				padding: 9px 22px;
+
 			}
+			*/
 
 		.footer-socials-list {
 			display: flex;
 			flex-direction: row;
 			list-style: none;
 			padding: 0;
-			margin: 0;
+			margin: 25px 0 0 0;
 		}
 
 			.footer-socials-list li {
-				margin: 25px 10px 0 0;
+				margin: 0 10px 0 0;
 			}
 
 				.footer-col-list a {
@@ -1084,7 +1233,7 @@ a.header-logo:active,
 }
 
 	.footer-bottom-col {
-		width: 380px;
+		min-width: 380px;
 		margin: 23px 0 100px 20px;
 	}
 
@@ -1096,3 +1245,37 @@ a.header-logo:active,
 			color: #a2a2a2;
 			text-decoration: none;
 		}
+
+/* VIII. POPUP
+    ========================================================================== */
+
+.popup {
+	background-color: rgba(125, 151, 218, 0.8);
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.popup:target {
+	display: block;
+}
+
+	.popup-body {
+		min-height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+		.popup-content {
+			position: relative;
+		}
+
+			.popup-close {
+				position: absolute;
+				right: -25px;
+				top: 0;
+			}

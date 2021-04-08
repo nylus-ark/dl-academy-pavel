@@ -14,7 +14,7 @@
     <header class="header">
         <div class="container header-container">
             <a href="index.html" class="header-logo">
-                <img src="img/icons/union.svg" alt="logo">
+                <img src="img/icons/logo.svg" alt="DLK company logo">
             </a>
             <nav class="header-nav">
                 <ul class="header-nav-list">
@@ -57,7 +57,69 @@
         </div>
 
         <section class="filters">
-            <div class="filters-container"></div>
+            <form class="filters-form container" action="https://echo.htmlacademy.ru/" method="get">
+                <div class="filters-col">
+                    <div class="filters-col-title">Cost</div>
+                    <input type="range" name="cost" value="200" min="0" max="500">
+                </div>
+                <div class="filters-col">
+                    <div class="filters-col-title">Color</div>
+
+                    <ul class="filters-list">
+                        <li>
+                            <input type="checkbox" id="color-black" name="color" value="black">
+                            <label for="color-black">Black</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="color-blue" name="color" value="blue">
+                            <label for="color-blue">Blue</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="color-green" name="color" value="green">
+                            <label for="color-green">Green</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="color-white" name="color" value="white">
+                            <label for="color-white">White</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filters-col">
+                    <div class="filters-col-title">Delivery</div>
+
+                    <ul class="filters-list">
+                        <li>
+                            <input type="radio" id="delivery-free" name="delivery" value="free" checked>
+                            <label for="delivery-free">Free shipping</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="delivery-fast" name="delivery" value="fast">
+                            <label for="delivery-fast">Fast shipping</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filters-col">
+                    <div class="filters-col-title">Amount</div>
+
+                    <ul class="filters-amount">
+                        <li>
+                            <input type="radio" id="amount-0" name="amount" value="0-5" checked>
+                            <label for="amount-0">0-5</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="amount-10" name="amount" value="10-20">
+                            <label for="amount-10">10-20</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="amount-20" name="amount" value="20-50">
+                            <label for="amount-20">20-50</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filters-col">
+                    <button type="submit" class="btn">Apply</button>
+                </div>
+            </form>
         </section>
 
         <section class="product-cards">
@@ -211,7 +273,7 @@
                 <div class="footer-col-container">
                     <form class="footer-mail-form">
                         <input class="footer-mail-input" type="email" placeholder="Email">
-                        <button class="footer-mail-btn" type="submit">Join</button>
+                        <button class="footer-mail-btn btn" type="submit">Join</button>
                     </form>
                     <div class="footer-socials-container">
                         <ul class="footer-socials-list">

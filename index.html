@@ -14,7 +14,7 @@
     <header class="header">
         <div class="container header-container">
             <div class="header-logo">
-                <img src="img/icons/union.svg" alt="logo">
+                <img src="img/icons/logo.svg" alt="DLK company logo">
             </div>
             <nav class="header-nav">
                 <ul class="header-nav-list">
@@ -25,7 +25,7 @@
                         <a href="catalog.html">Catalog</a>
                     </li>
                     <li>
-                        <a href="#">About Us</a>
+                        <a href="#popup">About Us</a>
                     </li>
                 </ul> 
             </nav>
@@ -120,7 +120,7 @@
                         dlk has now become a truly happy place for me and i have you and 
                         all of the beautiful designers that we work with to thank!
                     </p>
-                    <a class="learn-more-link" href="#">Learn More</a>
+                    <a class="learn-more-btn btn" href="#">Learn More</a>
                 </div>  
             </div>
         </section>
@@ -164,7 +164,7 @@
                         Some days i feel like i've been working on dlk my entire life and there are other days that 
                         i am completely shocked that four years have flown by. It's simply magical.
                     </p>
-                    <button class="buy-now-btn">Buy Now</button>
+                    <a class="buy-now-btn btn">Buy Now</a>
                 </div>
                 
                 <div class="contacts-aside-container">
@@ -173,8 +173,11 @@
                         Some days i feel like i've been working on dlk my entire life and there are other days that 
                         i am completely shocked that four years have flown by. It's simply magical.
                     </p>
-                    <img src="img/contacts-map.png" alt="Map">
-                </div>       
+
+                    <div class="contacts-aside-img">
+                        <img src="img/contacts-map.png" alt="Map">
+                    </div>
+                </div>      
             </div>
         </section>
     </main>
@@ -233,7 +236,7 @@
                 <div class="footer-col-container">
                     <form class="footer-mail-form">
                         <input class="footer-mail-input" type="email" placeholder="Email">
-                        <button class="footer-mail-btn" type="submit">Join</button>
+                        <button class="footer-mail-btn btn" type="submit">Join</button>
                     </form>
                     <div class="footer-socials-container">
                         <ul class="footer-socials-list">
@@ -280,5 +283,50 @@
             </div>
         </div>
     </footer>
+    <div class="popup" id="popup">
+        <div class="popup-body container">
+            <div class="popup-content">
+                <div class="contact-us-form-wrapper">
+                    <form class="contact-us-form">
+                        <div class="contact-us-input-container">
+                            <label class="contact-us-label" for="name">Name</label>
+                            <input class="contact-us-input contact-us-input-name" type="text" id="name" placeholder="Ivan Ivanov">
+                        </div>
+    
+                        <div class="contact-us-input-container">
+                            <label class="contact-us-label" for="phone">Phone</label>
+                            <input class="contact-us-input contact-us-input-tel" type="tel" id="phone">
+                        </div>
+    
+                        <div class="contact-us-input-container">
+                            <label class="contact-us-label" for="email">Email</label>
+                            <input class="contact-us-input contact-us-input-email" type="email" id="email">
+                        </div>
+                        
+                        <div class="contact-us-input-container">
+                            <label class="contact-us-label" for="message">Message</label>
+                            <textarea class="contact-us-input contact-us-textarea" id="message"></textarea>
+                        </div>
+                        
+                        <div class="contact-us-checkbox-container">
+                            <input class="contact-us-checkbox-input" type="checkbox" id="consent">
+                            <label class="contact-us-label" for="consent">
+                                By clicking on the button, you consent to the processing 
+                                of your personal data
+                            </label>
+                        </div>
+    
+                        <div class="contact-us-button-container">
+                            <input class="submit-button btn" type="submit" value="Submit">
+                        </div>
+                    </form> 
+                </div>
+
+                <a href="#№" class="popup-close">
+                    <img src="img/icons/popup-close.svg" alt="Close window">
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
