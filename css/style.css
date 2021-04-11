@@ -1238,6 +1238,7 @@ a.header-logo:active,
 	}
 
 	.footer-bottom-col:first-child {
+		align-items: center;
 		margin: 23px 0 100px 0;
 	}
 
@@ -1245,6 +1246,92 @@ a.header-logo:active,
 			color: #a2a2a2;
 			text-decoration: none;
 		}
+
+		/*.star-rating {
+			
+		}*/
+
+		.star-rating-fieldset {
+			margin: 0;
+			padding: 0 0 0 147px;
+			border: none;
+			position: relative;
+		}
+
+		.star-rating-title {
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.star-rating-container {
+			position: relative;
+			width: 80px;
+			height: 16px;
+			background-image: url("../img/icons/rating-star-disabled.svg");
+			background-size: 16px;
+			background-repeat: repeat-x;
+		}
+		
+		.star-rating-container:focus-within {
+			outline: solid 1px #fff;
+			outline-offset: 5px;
+		}
+		
+			.star-rating-input {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 16px;
+				height: 16px;
+				/*margin: 0 3px 0 0;*/
+				/*padding: 0 2px 0 0;*/
+				font-size: inherit;
+				background-size: 16px;
+				background-repeat: repeat-x;
+				appearance: none;
+			}
+
+			.star-rating-input:focus {
+				outline: none;
+			}
+
+			.star-rating-input:checked,
+			.star-rating-input:hover {
+				background-image: url("../img/icons/rating-star-enabled.svg");
+				
+			}
+
+			.star-rating-input:hover ~ .star-rating-input {
+				background-image: url("../img/icons/rating-star-disabled.svg");
+			}
+
+				.star-rating-input:nth-of-type(1) {
+					z-index: 5;
+					width: 16px;
+				}
+
+				.star-rating-input:nth-of-type(2) {
+					z-index: 4;
+					width: 32px;
+				}
+
+				.star-rating-input:nth-of-type(3) {
+					z-index: 3;
+					width: 48px;
+				}
+
+				.star-rating-input:nth-of-type(4) {
+					z-index: 2;
+					width: 64px;
+				}
+
+				.star-rating-input:nth-of-type(5) {
+					z-index: 1;
+					width: 80px;
+				}
 
 /* VIII. POPUP
     ========================================================================== */
