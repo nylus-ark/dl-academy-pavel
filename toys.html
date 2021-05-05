@@ -57,6 +57,7 @@
         </div>
 
         <section class="filters">
+            <h2 class="visually-hidden">Filters</h2>
             <form class="filters-form container" action="https://echo.htmlacademy.ru/" method="get">
                 <div class="filters-col">
                     <div class="filters-col-title">Cost</div>
@@ -124,6 +125,7 @@
 
         <section class="product-cards">
             <div class="container product-cards-container">
+                <h2 class="visually-hidden">Product Cards</h2>
                 <ul class="product-cards-list">
                     <li class="product-cards-item">
                         <a href="#" class="product-cards-item-img">
@@ -194,8 +196,8 @@
                 </ul>
 
                 <div class="content-pagination">
-                    <a class="content-pagination-arrow" href="#" title="icon-arrow-prev">
-                        <img src="img/icons/cards-btn-prev.svg" alt="icon-arrow-prev">
+                    <a class="content-pagination-arrow" href="#">
+                        <img src="img/icons/cards-btn-prev.svg" alt="Previous page">
                     </a>
                     <ul class="content-pagination-list">
                         <li>
@@ -211,8 +213,8 @@
                             <a href="#" title="To page 4">4</a>
                         </li>
                     </ul>
-                    <a class="content-pagination-arrow" href="#" title="icon-arrow-next">
-                        <img src="img/icons/cards-btn-next.svg" alt="icon-arrow-next">
+                    <a class="content-pagination-arrow" href="#">
+                        <img src="img/icons/cards-btn-next.svg" alt="Next page">
                     </a>
                 </div>
             </div>
@@ -306,8 +308,18 @@
         <div class="container footer-bottom">
             <div class="footer-bottom-wrapper">
                 <div class="footer-bottom-col">
-                    Company Rating
-                    <!--<div class="raiting-container"></div>-->
+                    <form class="star-rating">
+                        <fieldset class="star-rating-fieldset">
+                            <legend class="star-rating-title">Company Rating</legend>
+                            <div class="star-rating-container">
+                                <input class="star-rating-input" type="radio" name="stars" area-label="very bad" value="1" checked>
+                                <input class="star-rating-input" type="radio" name="stars" area-label="bad" value="2">
+                                <input class="star-rating-input" type="radio" name="stars" area-label="normal" value="3">
+                                <input class="star-rating-input" type="radio" name="stars" area-label="good" value="4">
+                                <input class="star-rating-input" type="radio" name="stars" area-label="excellent" value="5">
+                            </div>
+                        </fieldset>
+                    </form>
                 </div>
     
                 <div class="footer-bottom-col">

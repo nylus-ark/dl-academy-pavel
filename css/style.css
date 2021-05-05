@@ -226,15 +226,6 @@ a.header-logo:active,
 }
 
 .categories-container {
-	/*
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-
-	Оставить ли здесь эти свойства?
-	По-моему никак не влияют на содержимое
-	*/
-
 	width: 100%;
 }
 
@@ -248,19 +239,15 @@ a.header-logo:active,
 	flex-wrap: wrap;
 	list-style: none;
 	padding: 0;
-	margin: 0 0 30px 0;
+	margin: 0 0 7px;
 }
 
 	.products-list-item {
-		margin-right: 20px;
+		margin: 0 20px 23px 0;
 	}
 	
 	.products-list-item:nth-child(4n+4) {
 		margin-right: 0;
-	}
-
-	.products-list-item:nth-child(n+5) {
-		margin-top: 20px;
 	}
 
 	.products-list-item-wrapper {
@@ -273,12 +260,7 @@ a.header-logo:active,
 	}
 
 		.products-list-item-wrapper img {
-			position: relative;
-
-			/*
-			Нужно ли здесь делать max-width 
-			для img?
-			*/
+			max-width: 100%;
 		}
 
 		.products-list-item-wrapper h3 {
@@ -324,17 +306,13 @@ a.header-logo:active,
 	}
 		
 		.products-nav-btn {
+			background-color: rgba(112, 187, 220, 0.2);
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
 			border: none;
 			cursor: pointer;
 			width: 37px;
 			height: 37px;
-			/*
-			Нужно ли ограничивать размеры кнопки здесь?
-			Я правильно понимаю что при замене в кнопке иконки на другую,
-			большего размера то верстка поедет.
-			Тогда здесь нужно переписать полностью код кнопки
-			и использовать другой подход?
-			*/
 			padding: 0;
 			margin-right: 6px;
 		}
@@ -344,11 +322,11 @@ a.header-logo:active,
 		}
 
 		.products-nav-btn-prev {
-			background: url('../img/icons/btn-previous.svg') no-repeat 50% 50% rgba(112, 187, 220, 0.2);
+			background-image: url('../img/icons/btn-previous.svg');
 		}
 
 		.products-nav-btn-next {
-			background: url('../img/icons/btn-next.svg') no-repeat 50% 50% rgba(112, 187, 220, 0.2);
+			background-image: url('../img/icons/btn-next.svg');
 		}
 
 	.products-nav-text {
@@ -387,7 +365,7 @@ a.header-logo:active,
 }
 
 	.delivery-title {
-		margin: 0 0 6px 0;
+		margin: 0 0 6px;
 	}
 
 	.delivery-list {
@@ -404,13 +382,9 @@ a.header-logo:active,
 			font-style: italic;
 			line-height: 32px;
 			text-decoration: none;
-			padding: 11px 60px;
 			min-height: 55px;
-			min-width: 326px; 
-			/*
-			Какое свойство здесь лучше width или min-width?
-			Переполнение по разному ведет себя визуально
-			*/
+			min-width: 326px;
+			padding: 11px 60px;
 		}
 
 		.delivery-list a:hover {
@@ -418,8 +392,13 @@ a.header-logo:active,
 			font-weight: bold;
 		}
 
+		.delivery-list-item-active {
+			background-color: rgba(112, 187, 220, 0.2);
+			font-weight: bold;
+		}
+
 	.delivery-aside p {
-		margin: 0 0 15px 0;
+		margin: 0 0 15px;
 	}
 
 	.learn-more-btn {
@@ -430,7 +409,7 @@ a.header-logo:active,
 	========================================================================== */
 
 .partners {
-	padding: 45px 0;
+	padding: 45px 0 25px;
 }
 
 .partners-container {
@@ -440,52 +419,63 @@ a.header-logo:active,
 	width: 100%;
 }
 
+.partners-list-wrapper {
+	overflow: hidden;
+}
+
 .partners-list {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: flex-start;
+	/*justify-content: space-between;*/
+	align-items: center;
 	list-style: none;
-	width: 100%;
+	/*width: 100%;*/
 	min-height: 61px;
 	padding: 0;
 	margin: 0;
+	/*margin: 0 -63px;*/
 }
 
 	.partners-list li {
 		display: flex;
 		flex-direction: row;
-		align-items: center;
-		/*min-width: 220px;*/
-		margin-right: 127px;
+		/*min-width: 216px;*/
 
 		/*
-		Переписал код под переполнение,
-		но элементы в следующем ряду получаются
-		сдвинутыми и идут не в одну колонку с верхним рядом (из за отступов).
-		Стоит ли их вырвнивать?
-
-		Если задать каждому контейнеру min-width то они выравниваются (с justify-content),
-		но тогда из за разных размеров логотипов отступы по краям головного контейнера не совпадут.
-		Я могу каждый логотип который находится по краям контейнера отцентровать,
-		но так и кода больше будет, а нужно ли это все?
+		Если ставлю минимальную ширину по самому
+		большему элементу, то в строчку влезает только 3 из 4
 		*/
+
+		margin: 0 127px 20px 0;
+		/*margin: 0 63px 20px;*/
 	}
 
-	.partners-list li:last-child {
+	/*.partners-list li:last-child {
 		margin-right: auto;
-	}
+		/*margin: 0;
+	}*/
 
-	.partners-list li:nth-child(4n+4) {
-		margin-right: 0;
-	}
-
-	.partners-list li:nth-child(n+5) {
-		margin-top: 20px;
+	.partners-list li:nth-child(4n) {
+		margin-right: auto;
+		/*margin: 0;*/
 	}
 
 		.partners-list img {
 			opacity: 0.8;
 		}
+
+	/*
+	В общем я оставил подход с flex-start и отступами српава,
+	но пока без учета других разрешений
+
+	Подход с отрицательными отступами мне больше понравился,
+	но из за space-between проблему не удалось решить с помощью
+	:last-child {margin: 0} или {margin: auto}, так как без переполнения 4-й (последний логотип)
+	обрезается визуально.
+	Если элементов больше 4-х то подход работает.
+	*/
 
 /* 4. Main-bottom
 		========================================================================== */
@@ -496,33 +486,42 @@ a.header-logo:active,
 */
 
 .main-bottom {
-	padding: 40px 0 60px 0;
+	padding: 60px 0 147px;
+	/*
+	Пришлось увеличить паддинги пропорцианально
+	отрицательным марджинам
+	*/
 }
 
 .main-bottom-container {
 	display: flex;
 	flex-direction: row;
+	align-items: flex-start;
 }
+
+	.main-bottom-col {
+		background-color: #e1f0f7;
+		max-width: 543px;
+		padding: 0 30px;
+	}
+
+		.main-bottom-title {
+			margin: -20px 0 20px;
+		}
+
+		.main-bottom-text {
+			margin: 0 0 20px;
+		}
 
 /* 4.1. Design Life Kids
     ========================================================================== */
 
 .dlk-aside-container {
-	background-color: #E1F0F7;
-	box-shadow: inset 0 26px #fff; /*inset 0 -87px #fff;*/
-	max-width: 543px;
-	/*max-height: 262px;*/
-	padding: 0 30px;
-	margin: 0 57px auto 0; /*margin-bottom: auto?
-	/*
-	Не нашел другого способа как без высоты контейнера закрасить его.
-	Поставил внешний отступ для обрезки снизу, при переполнении
-	вроде все ок, только у блока всего увеличивается отсуп снизу.
-	*/
+	margin: 0 57px 0 0;
 }
 
 .dlk-aside-title {
-	margin: 0 0 10px 0;
+	margin-bottom: 10px;
 }
 
 .dlk-aside-subtitle {
@@ -531,56 +530,28 @@ a.header-logo:active,
     font-style: italic;
     font-weight: normal;
     line-height: 32px;
-	margin: 0 0 10px 0;
+	margin: 0 0 10px;
 }
 
-.dlk-aside-text {
-	margin: 0 0 20px 0;
-}
-
-.buy-now-btn {
-	margin: 0 0 35px 0;
+.dlk-aside-btn {
+	margin: 0 0 35px;
 }
 
 /* 4.2. Contacts
     ========================================================================== */
 
-.contacts-aside-container {
-	background-color: #E1F0F7;
-	box-shadow: inset 0 26px #fff, inset 0 -114px #fff;
-	max-width: 543px;
-	/*min-height: 349px;*/
-	padding: 0 30px;
-	margin: 0 0 auto 0;
-	/*
-	В этом блоке при переполнении все ок и если убрать текст тоже нормально.
-	Но если убрать img, то при добавлении текста фон остается на месте а содержимое 
-	параграфов уходит вних без background
-	Как исправить это?
-	*/
-}
+/*.contacts-aside-container {
+	margin: 0 0 auto;
+}*/
 
-.contacts-aside-title,
-.contacts-aside-text {
-	margin: 0 0 20px 0;
-}
-
-
-.contacts-aside-img {
+.contacts-aside-map {
 	overflow: hidden;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: flex-start;
 	max-height: 196px;
-	/*
-	Я сделал отдельный div для img,
-	на случай замены изображения
-	*/
+	margin: 0 0 -114px;
 }
 
-	.contacts-aside-img img {
-		max-width: 100%;
+	.contacts-aside-map img {
+		max-width: 100%;	
 	}
 
 /* III. CATALOG
@@ -609,11 +580,11 @@ a.header-logo:active,
 	align-items: center;
 	list-style: none;
 	padding: 0;
-	margin: 15px 0 0 0;
+	margin: 15px 0 0;
 }
 
 	.breadcrumbs-list-item:not(:last-child):after {
-		content: url(/img/icons/stroke-next.svg);
+		content: url(../img/icons/stroke-next.svg);
 		margin: 0 20px;
 	}
 
@@ -628,14 +599,14 @@ a.header-logo:active,
 		}
 
 	.breadcrumbs-list-item:last-child {
-		opacity: 50%;
+		opacity: 0.5;
 	}
 
 /* 3. Catalog
 	========================================================================== */
 
 .catalog {
-	padding: 50px 0;
+	padding: 50px 0 27px;
 }
 
 .catalog-container {
@@ -649,12 +620,12 @@ a.header-logo:active,
 	margin: 0;
 }
 
-	.catalog-list li {
+	/*.catalog-list li {
 		margin-right: 20px;
 	}
-
+*/
 	.catalog-list li:nth-child(n+4) {
-		margin: 23px 0 0 20px;
+		margin: 0 0 23px 20px;
 	}
 
 	.catalog-list li:nth-child(4) {
@@ -665,7 +636,7 @@ a.header-logo:active,
 	========================================================================== */
 
 .text-content {
-	padding: 5px 0 55px 0;
+	padding: 5px 0 55px;
 }
 
 .text-content-container {
@@ -679,7 +650,7 @@ a.header-logo:active,
 	.text-content-container p {
 		text-align: left;
 		max-width: 670px;
-		margin: 0 0 15px 0;
+		margin: 0 0 15px;
 	}
 
 	.text-content-container p:last-child {
@@ -811,7 +782,7 @@ a.header-logo:active,
 		}
 
 	.filters-col .btn {
-		margin: 37px 0 0 0;
+		margin: 37px 0 0;
 	}
 
 /* 4. Product-cards
@@ -855,7 +826,7 @@ a.header-logo:active,
 				justify-content: center;
 				align-items: center;
 				height: 385px;
-				margin: 0 0 30px 0;
+				margin: 0 0 30px;
 			}
 
 				.product-cards-item-img img {
@@ -874,7 +845,7 @@ a.header-logo:active,
 					font-size: 14px;
 					line-height: 20px;
 					text-transform: uppercase;
-					margin: 0 0 15px 0;
+					margin: 0 0 15px;
 				}
 
 					.product-cards-title a {
@@ -885,7 +856,7 @@ a.header-logo:active,
 				.product-cards-price {
 					font-weight: bold;
 					text-transform: uppercase;
-					margin: 0 0 25px 0;
+					margin: 0 0 25px;
 				}
 
 	.content-pagination {
@@ -893,18 +864,11 @@ a.header-logo:active,
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		margin: 50px 0 0 0;
+		margin: 50px 0 0;
 	}
-
-		.content-pagination-arrow, 
+		
 		.content-pagination-arrow img {
-			/*
-			Почему то если не указать высоту ссылки, 
-			то она становиться больше контейнера и 
-			сбивает выравнивание элементов в нем.
-			*/
-			max-width: 18px;
-			max-height: 26px;
+			display: block;
 		}
 
 		.content-pagination-list {
@@ -933,18 +897,18 @@ a.header-logo:active,
 			}
 
 		.content-pagination-list a:hover {
-			opacity: 50%;
+			opacity: 0.5;
 		}
 
 		.content-pagination-list a:active {
-			opacity: 25%;
+			opacity: 0.25;
 		}
 
 /* V. BLOG
     ========================================================================== */
 
 .blog-articles {
-	padding: 50px 0 60px 0;
+	padding: 50px 0 60px;
 }
 
 .blog-articles-container {
@@ -953,50 +917,47 @@ a.header-logo:active,
 	width: 100%;
 }
 
-	.blog-articles-list {
+	.blog-articles-wrapper {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		list-style: none;
-		padding: 0;
-		margin: 0;
 	}
 
-		.blog-articles-item {
+		.blog-article {
 			max-width: 380px;
 			padding-bottom: 20px;
 			margin-bottom: 14px;
 		}
 
-			.blog-articles-item-img {
+			.blog-article-img {
 				display: block;
 				height: 220px;
 				margin-bottom: 20px;
 			}
 
-				.blog-articles-item-img img {
-					width: 100%;
+				.blog-article-img img {
+					max-width: 100%;
 				}
 
-			.blog-articles-item span {
+			.blog-article time {
 				color: #818181;
 			}
 
-			.blog-articles-item h2 {
+			.blog-article h3 {
 				font-family: "Montserrat", sans-serif;
 				font-weight: bold;
 				font-size: 24px;
 				line-height: 31px;
-				margin: 7px 0 15px 0;
+				margin: 7px 0 15px;
 			}
 
-				.blog-title a {
+				.blog-article-title a {
 					color: #1e0606;
 					text-decoration: none;
 				}
 
-			.blog-articles-item p {
+			.blog-article p {
 				font-size: 18px;
 				line-height: 25px;
 				margin: 0;
@@ -1010,7 +971,7 @@ a.header-logo:active,
 	========================================================================== */
 
 .contact-us {
-	padding: 50px 0 60px 0;
+	padding: 50px 0 60px;
 }
 
 .contact-us-container {
@@ -1022,61 +983,88 @@ a.header-logo:active,
 
 	.contact-us-form-wrapper {
 		background-color: #E5EAF8;
-		max-width: 680px;
+		width: 680px;
 		padding: 42px 40px;
 	}
 
 	.contact-us-form {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		flex-wrap: wrap;
+		display: block;
 	}
 
-		.contact-us-input-container {
-			display: flex;
-			flex-direction: column;
+		.contact-us-group {
+			display: block;
+			width: 100%;
 			margin-bottom: 20px;
 		}
 
+		.contact-us-row {
+			display: flex;
+			flex-direction: row;
+		}
+
+		.contact-us-row .contact-us-group {
+			width: 50%;
+		}
+
+		.contact-us-row .contact-us-group:nth-child(odd) {
+			margin-right: 20px;
+		}
+
+		/*
+		.contact-us-input-tel {
+			margin-right: 20px;
+			
+			Это один из вариантов, как я сделал отступ первому блоку
+			внутри row, с помощью отдельного класса.
+
+			Оставил пока вариант с нечетными блоками, думаю удобно будет
+			при добавлении новых инпутов у всех выбранных в этой группе 
+			будет отступ справа.
+
+			Если такой подход удачный, то впоследствии уберу отдельный класс
+			для блока с id="phone".
+		}
+		*/
+
 			.contact-us-label {
+				display: block;
 				font-size: 14px;
 				line-height: 19px;
 				margin-bottom: 4px;
 			}
 
-			.contact-us-input {
+			.contact-us-field {
 				border: 1px solid rgba(0, 0, 0, 0.2);
 				border-radius: 0;
-				min-height: 50px;
+				width: 100%;
+				height: 50px;
+				padding: 0 18px 0;
 			}
 
-				.contact-us-input::placeholder {
+				.contact-us-field::placeholder {
 					color: #1E0606;
-					font-size: 18px;
-					line-height: 24px;
-					padding-left: 18px;
-				}
-
-			.contact-us-input-name {
-				width: 600px;
-			}
-
-			.contact-us-input-tel,
-			.contact-us-input-email {
-				width: 290px;
-			}
+					/*font-size: 18px;*/
+					
+					/*
+					В макете шрифт у placeholder
+					задан отличный от стандартного,
+					для соотвествия пока оставил его в коментарии
+					*/
+					}
 
 			.contact-us-textarea {
 				resize: none;
-				width: 600px;
-				min-height: 150px;
-				margin-bottom: 1px;
+				height: 150px;
+				padding: 15px 18px;
 			}
 
-		.contact-us-checkbox-container {
-			display: inline-block;
-			margin-bottom: 16px;
+		.contact-us-checkbox {
+			margin-bottom: 17px;
+			/*
+			По макету отступ у контейнера такой же как и у остальных, 
+			но из-за чуть сдвинутого вниз переоформленного чекбокса,
+			я сделал отступ по лейблу, а не по инпуту
+			*/
 		}
 
 			.contact-us-form input[type="checkbox"] {
@@ -1107,28 +1095,26 @@ a.header-logo:active,
 				background: #fff url("../img/icons/checkbox-checked.svg") no-repeat 100% 0;
 				/*background-size: 12px 12px;*/
 			}
-
-			.contact-us-checkbox-container label {
-				padding: 10px 0 0 0;
-			}
 		
 	.contact-us-aside {
 		max-width: 380px;
 	}
 
-	.contact-us-aside p {
-		padding: 0;
-		margin: 0 0 20px 0;
-	}
+		.contact-us-aside p {
+			padding: 0;
+			margin: 0 0 20px;
+		}
 
-	.contact-us-aside span {
-		color: #C29974;
-		font-family: "Montserrat", sans-serif;
-		font-weight: 600;
-		font-size: 26px;
-		line-height: 32px;
-		text-transform: uppercase;
-	}
+		.contact-us-aside h4 {
+			color: #C29974;
+			font-family: "Montserrat", sans-serif;
+			font-weight: 600;
+			font-size: 26px;
+			line-height: 32px;
+			text-transform: uppercase;
+			padding: 0;
+			margin: 0 0 20px;
+		}
 
 /* VII. FOOTER
     ========================================================================== */
@@ -1215,7 +1201,7 @@ a.header-logo:active,
 			flex-direction: row;
 			list-style: none;
 			padding: 0;
-			margin: 25px 0 0 0;
+			margin: 25px 0 0;
 		}
 
 			.footer-socials-list li {
@@ -1239,7 +1225,7 @@ a.header-logo:active,
 
 	.footer-bottom-col:first-child {
 		align-items: center;
-		margin: 23px 0 100px 0;
+		margin: 23px 0 100px;
 	}
 
 		.footer-bottom-col a {
@@ -1247,13 +1233,15 @@ a.header-logo:active,
 			text-decoration: none;
 		}
 
-		/*.star-rating {
+		/*
+		.star-rating {
 			
-		}*/
+		}
+		*/
 
 		.star-rating-fieldset {
 			margin: 0;
-			padding: 0 0 0 147px;
+			padding: 3px 0 0 147px;
 			border: none;
 			position: relative;
 		}
@@ -1286,8 +1274,8 @@ a.header-logo:active,
 				left: 0;
 				width: 16px;
 				height: 16px;
-				/*margin: 0 3px 0 0;*/
-				/*padding: 0 2px 0 0;*/
+				/*margin: 0 3px 0;*/
+				/*padding: 0 2px 0;*/
 				font-size: inherit;
 				background-size: 16px;
 				background-repeat: repeat-x;

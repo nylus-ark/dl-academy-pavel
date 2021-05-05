@@ -55,53 +55,54 @@
 
         <section class="contact-us">
             <div class="container contact-us-container">
+                <h2 class="visually-hidden">Contact Form</h2>
                 <div class="contact-us-form-wrapper">
                     <form class="contact-us-form">
-                        <div class="contact-us-input-container">
+                        <div class="contact-us-group">
                             <label class="contact-us-label" for="name">Name</label>
-                            <input class="contact-us-input contact-us-input-name" type="text" id="name" placeholder="Ivan Ivanov">
+                            <input class="contact-us-field" type="text" id="name" placeholder="Ivan Ivanov">
                         </div>
     
-                        <div class="contact-us-input-container">
-                            <label class="contact-us-label" for="phone">Phone</label>
-                            <input class="contact-us-input contact-us-input-tel" type="tel" id="phone">
-                        </div>
-    
-                        <div class="contact-us-input-container">
-                            <label class="contact-us-label" for="email">Email</label>
-                            <input class="contact-us-input contact-us-input-email" type="email" id="email">
+                        <div class="contact-us-row">
+                            <div class="contact-us-group contact-us-input-tel">
+                                <label class="contact-us-label" for="phone">Phone</label>
+                                <input class="contact-us-field" type="tel" id="phone">
+                            </div>
+        
+                            <div class="contact-us-group">
+                                <label class="contact-us-label" for="email">Email</label>
+                                <input class="contact-us-field" type="email" id="email">
+                            </div>
                         </div>
                         
-                        <div class="contact-us-input-container">
+                        <div class="contact-us-group">
                             <label class="contact-us-label" for="message">Message</label>
-                            <textarea class="contact-us-input contact-us-textarea" id="message"></textarea>
+                            <textarea class="contact-us-field contact-us-textarea" id="message"></textarea>
                         </div>
                         
-                        <div class="contact-us-checkbox-container">
-                            <input class="contact-us-checkbox-input" type="checkbox" id="consent">
+                        <div class="contact-us-group contact-us-checkbox">
+                            <input class="contact-us-field" type="checkbox" id="consent" checked>
                             <label class="contact-us-label" for="consent">
                                 By clicking on the button, you consent to the processing 
                                 of your personal data
                             </label>
                         </div>
-    
-                        <div class="contact-us-button-container">
-                            <input class="submit-button btn" type="submit" value="Submit">
-                        </div>
+
+                        <input class="submit-button btn" type="submit" value="Submit">
                     </form> 
                 </div>
 
                 <div class="contact-us-aside">
-                    <p>
+                    <p class="contact-us-aside-text">
                         Our support team are on-hand to assist with any issues you are experiencing.
                     </p>
-                    <p>
+                    <p class="contact-us-aside-text">
                         Please use the form to contact us with your needs. 
                         Send us a message and we'll respond as soon as possible.
                     </p>
-                    <span>
+                    <h4 class="contact-us-aside-title">
                         An expert is waiting to help you!
-                    </span>
+                    </h4>
                 </div>
             </div>
         </section>
@@ -194,8 +195,18 @@
         <div class="container footer-bottom">
             <div class="footer-bottom-wrapper">
                 <div class="footer-bottom-col">
-                    Company Rating
-                    <!--<div class="raiting-container"></div>-->
+                    <form class="star-rating">
+                        <fieldset class="star-rating-fieldset">
+                            <legend class="star-rating-title">Company Rating</legend>
+                            <div class="star-rating-container">
+                                <input class="star-rating-input" type="radio" name="stars" area-label="very bad" value="1" checked>
+                                <input class="star-rating-input" type="radio" name="stars" area-label="bad" value="2">
+                                <input class="star-rating-input" type="radio" name="stars" area-label="normal" value="3">
+                                <input class="star-rating-input" type="radio" name="stars" area-label="good" value="4">
+                                <input class="star-rating-input" type="radio" name="stars" area-label="excellent" value="5">
+                            </div>
+                        </fieldset>
+                    </form>
                 </div>
     
                 <div class="footer-bottom-col">
