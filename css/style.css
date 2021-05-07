@@ -10,6 +10,7 @@
  * V. BLOG
  * VI. CONTACT US
  * VII. FOOTER
+ * VIII. POPUP
 */
 
 html {
@@ -59,11 +60,11 @@ body {
 
 .title-h2,
 .title-h2 a {
-	color: inherit;
+	color: #1e0606;
 	font-family: "Montserrat", sans-serif;
 	font-weight: bold;
 	font-size: 38px;
-	line-height: 46px;
+	line-height: 47px;
 	text-decoration: none;
 	text-transform: uppercase;
 	margin: 0;
@@ -84,6 +85,36 @@ body {
 	padding: 0 20px;
 	margin: 0 auto;
 	max-width: 1220px;
+}
+
+.btn {
+	background: #000;
+	border: none;
+	border-radius: 0;
+	color: #fff;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	padding: 9px 22px;
+	min-height: 40px;
+
+	font-family: "Open Sans", sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 22px;
+	/*line-height: 40px;*/
+	/*height: 40px;*/
+	text-decoration: none;
+	text-transform: uppercase;
+	vertical-align: top;
+
+	max-width: 280px;
+
+	/*
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	*/
 }
 
 /* I. HEADER
@@ -115,6 +146,9 @@ body {
 }
 
 	.header-nav-list li {
+		font-size: 14px;
+		line-height: 19px;
+		text-transform: uppercase;
 		margin: 0 10px;
 	}
 
@@ -164,13 +198,13 @@ body {
 
 a.header-logo:hover,
 .header-nav-list a:hover,
-.header-contacts:hover {
+.header-contacts:hover:not(.header-contacts-not-active) {
 	opacity: 0.5;
 }
 
 a.header-logo:active,
 .header-nav-list a:active,
-.header-contacts:active {
+.header-contacts:active:not(.header-contacts-not-active) {
 	opacity: 0.2;
 }
 
@@ -192,22 +226,29 @@ a.header-logo:active,
 }
 
 .categories-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
 	width: 100%;
-	height: 421px;
+}
+
+.categories-title {
+	margin-bottom: 30px;
 }
 
 .products-list {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	flex-wrap: wrap;
 	list-style: none;
-	height: 270px;
 	padding: 0;
-	margin: 0;
+	margin: 0 0 7px;
 }
+
+	.products-list-item {
+		margin: 0 20px 23px 0;
+	}
+	
+	.products-list-item:nth-child(4n+4) {
+		margin-right: 0;
+	}
 
 	.products-list-item-wrapper {
 		display: flex;
@@ -219,14 +260,14 @@ a.header-logo:active,
 	}
 
 		.products-list-item-wrapper img {
-			position: relative;
+			max-width: 100%;
 		}
 
 		.products-list-item-wrapper h3 {
 			max-width: 200px; 
 			position: absolute;
 		}
-	
+
 	.bg-green {
 		background-color: #DBE4DB;
 	}
@@ -243,41 +284,53 @@ a.header-logo:active,
 		background-color: #D5D4E1;
 	}
 
+	.bg-pink {
+		background-color: #F3D0DB;
+	}
+
+	.bg-blue {
+		background-color: #E5EAF8;
+	}
+
 .products-nav {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
 	justify-content: flex-start;
-	width: 680px;
-	height: 44px;
 }
 
 	.products-nav-btns {
 		display: flex;
 		flex-direction: row;
+		padding-top: 3px;
 		margin-right: 20px;
 	}
 		
 		.products-nav-btn {
+			background-color: rgba(112, 187, 220, 0.2);
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
 			border: none;
-			box-sizing: border-box;
-			padding: 0;
+			cursor: pointer;
 			width: 37px;
 			height: 37px;
-		}
-
-		.products-nav-btn-prev {
-			background: url('../img/icons/btn-previous.svg') no-repeat 50% 50%;
-			background-color: rgba(112, 187, 220, 0.2);
+			padding: 0;
 			margin-right: 6px;
 		}
 
+		.products-nav-btn:last-child {
+			margin: 0;
+		}
+
+		.products-nav-btn-prev {
+			background-image: url('../img/icons/btn-previous.svg');
+		}
+
 		.products-nav-btn-next {
-			background: url('../img/icons/btn-next.svg') no-repeat 50% 50%;
-			background-color: rgba(112, 187, 220, 0.2);
+			background-image: url('../img/icons/btn-next.svg');
 		}
 
 	.products-nav-text {
+		max-width: 550px;
 		margin: 0;
 	}
 
@@ -293,7 +346,6 @@ a.header-logo:active,
 	flex-direction: row;
 	justify-content: flex-start;
 	width: 100%;
-	height: 559px;
 }
 
 .delivery-img {
@@ -302,42 +354,37 @@ a.header-logo:active,
 	flex-direction: row;
 	justify-content: center;
 	align-items: flex-start;
-	width: 480px;
+	max-width: 480px;
+	max-height: 559px;
 }
 
 .delivery-aside {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 540px;
-	height: 472px;
+	max-width: 540px;
+	padding-left: 60px;
 	margin: 30px auto auto 60px;
 }
 
 	.delivery-title {
-		padding: 0 0 6px 61px;
+		margin: 0 0 6px;
 	}
 
 	.delivery-list {
-		display: flex;
-		flex-direction: column;
 		list-style: none;
 		padding: 0;
-		margin: 0 0 20px 0;
-		width: 326px;
+		margin: 0 0 18px -60px;
 	}
 
 		.delivery-list a {
-			display: block;
-			color: inherit;
+			display: inline-flex;
+			color: #1e0606;
 			font-family: "Crimson Text", serif;
 			font-size: 26px;
 			font-style: italic;
-			font-weight: normal;
 			line-height: 32px;
 			text-decoration: none;
-			height: 55px;
-			padding: 11px 0 11px 60px;
+			min-height: 55px;
+			min-width: 326px;
+			padding: 11px 60px;
 		}
 
 		.delivery-list a:hover {
@@ -345,31 +392,24 @@ a.header-logo:active,
 			font-weight: bold;
 		}
 
+		.delivery-list-item-active {
+			background-color: rgba(112, 187, 220, 0.2);
+			font-weight: bold;
+		}
+
 	.delivery-aside p {
-		padding-left: 60px;
-		margin: 0 0 15px 0;
+		margin: 0 0 15px;
 	}
 
-	.learn-more-link {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		color: #fff;
-		font-weight: bold;
-		background-color: #000;
-		text-transform: uppercase;
-		text-decoration: none;
-		width: 149px;
-		height: 40px;
-		padding: 9px 22px;
-		margin: 11px 0 0 60px;
+	.learn-more-btn {
+		margin: 11px auto 0 0;
 	}
 
 /* 3. Partners
 	========================================================================== */
 
 .partners {
-	padding: 45px 0;
+	padding: 45px 0 25px;
 }
 
 .partners-container {
@@ -379,27 +419,63 @@ a.header-logo:active,
 	width: 100%;
 }
 
+.partners-list-wrapper {
+	overflow: hidden;
+}
+
 .partners-list {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 	flex-wrap: wrap;
+	justify-content: flex-start;
+	/*justify-content: space-between;*/
+	align-items: center;
 	list-style: none;
-	width: 100%;
+	/*width: 100%;*/
 	min-height: 61px;
 	padding: 0;
 	margin: 0;
+	/*margin: 0 -63px;*/
 }
 
 	.partners-list li {
 		display: flex;
 		flex-direction: row;
-		align-items: center;
+		/*min-width: 216px;*/
+
+		/*
+		Если ставлю минимальную ширину по самому
+		большему элементу, то в строчку влезает только 3 из 4
+		*/
+
+		margin: 0 127px 20px 0;
+		/*margin: 0 63px 20px;*/
+	}
+
+	/*.partners-list li:last-child {
+		margin-right: auto;
+		/*margin: 0;
+	}*/
+
+	.partners-list li:nth-child(4n) {
+		margin-right: auto;
+		/*margin: 0;*/
 	}
 
 		.partners-list img {
 			opacity: 0.8;
 		}
+
+	/*
+	В общем я оставил подход с flex-start и отступами српава,
+	но пока без учета других разрешений
+
+	Подход с отрицательными отступами мне больше понравился,
+	но из за space-between проблему не удалось решить с помощью
+	:last-child {margin: 0} или {margin: auto}, так как без переполнения 4-й (последний логотип)
+	обрезается визуально.
+	Если элементов больше 4-х то подход работает.
+	*/
 
 /* 4. Main-bottom
 		========================================================================== */
@@ -410,27 +486,42 @@ a.header-logo:active,
 */
 
 .main-bottom {
-	padding: 45px 0 60px 0;
+	padding: 60px 0 147px;
+	/*
+	Пришлось увеличить паддинги пропорцианально
+	отрицательным марджинам
+	*/
 }
 
 .main-bottom-container {
 	display: flex;
 	flex-direction: row;
+	align-items: flex-start;
 }
+
+	.main-bottom-col {
+		background-color: #e1f0f7;
+		max-width: 543px;
+		padding: 0 30px;
+	}
+
+		.main-bottom-title {
+			margin: -20px 0 20px;
+		}
+
+		.main-bottom-text {
+			margin: 0 0 20px;
+		}
 
 /* 4.1. Design Life Kids
     ========================================================================== */
 
 .dlk-aside-container {
-	background-color: #E1F0F7;
-	box-shadow: inset 0 26px #fff;
-	width: 543px;
-	height: 262px;
-	margin-right: 57px;
+	margin: 0 57px 0 0;
 }
 
 .dlk-aside-title {
-	margin: 0 0 10px 30px;
+	margin-bottom: 10px;
 }
 
 .dlk-aside-subtitle {
@@ -439,54 +530,29 @@ a.header-logo:active,
     font-style: italic;
     font-weight: normal;
     line-height: 32px;
-	margin: 0 0 10px 30px;
+	margin: 0 0 10px;
 }
 
-.dlk-aside-text {
-	margin: 0 30px 10px 30px;
-}
-
-.buy-now-btn {
-	color: #fff;
-	font-weight: bold;
-	background-color: #000;
-	text-transform: uppercase;
-	border: none;
-	border-radius: 0;
-	width: 123px;
-	height: 40px;
-	margin: 10px 0 10px 30px;
+.dlk-aside-btn {
+	margin: 0 0 35px;
 }
 
 /* 4.2. Contacts
     ========================================================================== */
 
-.contacts-aside-container {
-	background-color: #E1F0F7;
-	box-shadow: inset 0 26px #fff, inset 0 -114px #fff;
-	width: 543px;
-	height: 349px;
+/*.contacts-aside-container {
+	margin: 0 0 auto;
+}*/
+
+.contacts-aside-map {
+	overflow: hidden;
+	max-height: 196px;
+	margin: 0 0 -114px;
 }
 
-/*Первый вариант*/
-.contacts-aside-title,
-.contacts-aside-text {
-	margin: 0 30px 20px 30px;
-}
-
-/*Второй вариант
-
-.contacts-aside-title { 
-	margin: 0 30px 20px 30px;
-}
-.contacts-aside-text {
-	margin: 0 30px 20px 30px;
-}
-*/
-
-.contacts-aside-container img {
-	margin: 0 30px 0 30px;
-}
+	.contacts-aside-map img {
+		max-width: 100%;	
+	}
 
 /* III. CATALOG
 		========================================================================== */
@@ -511,18 +577,20 @@ a.header-logo:active,
 .breadcrumbs-list {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
 	list-style: none;
 	padding: 0;
-	margin: 15px 0 0 0;
+	margin: 15px 0 0;
 }
 
 	.breadcrumbs-list-item:not(:last-child):after {
-		content: url(/img/icons/stroke-next.svg);
+		content: url(../img/icons/stroke-next.svg);
 		margin: 0 20px;
 	}
 
+		.breadcrumbs-list-item,
 		.breadcrumbs-list-item a {
-			color: inherit;
+			color: #1e0606;
 			font-family: "Crimson Text", serif;
 			font-size: 20px;
 			font-style: italic;
@@ -531,80 +599,47 @@ a.header-logo:active,
 		}
 
 	.breadcrumbs-list-item:last-child {
-		opacity: 50%;
+		opacity: 0.5;
 	}
 
 /* 3. Catalog
 	========================================================================== */
 
 .catalog {
-	padding: 50px 0;
+	padding: 50px 0 27px;
 }
 
 .catalog-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
 	width: 100%;
-	height: 563px;
 	padding-right: 120px;
 }
 
 .catalog-list {
 	flex-wrap: wrap;
 	justify-content: flex-start;
+	margin: 0;
 }
 
-	.catalog-list li {
-		padding-right: 20px;
+	/*.catalog-list li {
+		margin-right: 20px;
 	}
-
+*/
 	.catalog-list li:nth-child(n+4) {
-		padding: 23px 0 0 20px;
+		margin: 0 0 23px 20px;
 	}
 
 	.catalog-list li:nth-child(4) {
 		margin-left: auto;
 	}
 
-		.products-list-item-wrapper {
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
-			width: 280px;
-			height: 270px;
-		}
-
-			.products-list-item-wrapper img {
-				position: relative;
-			}
-
-			.products-list-item-wrapper h3 {
-				max-width: 200px; 
-				position: absolute;
-			}
-
-		.bg-pink {
-			background-color: #F3D0DB;
-		}
-
-		.bg-blue {
-			background-color: #E5EAF8;
-		}
-
 /* 4. Text-content
 	========================================================================== */
 
 .text-content {
-	padding: 5px 0 55px 0;
+	padding: 5px 0 55px;
 }
 
 .text-content-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	min-height: 256px;
 	padding-left: 220px;
 }
 
@@ -615,7 +650,7 @@ a.header-logo:active,
 	.text-content-container p {
 		text-align: left;
 		max-width: 670px;
-		margin: 0 0 15px 0;
+		margin: 0 0 15px;
 	}
 
 	.text-content-container p:last-child {
@@ -634,31 +669,452 @@ a.header-logo:active,
 	========================================================================== */
 
 .filters {
-	padding-top: 50px;
+	background: rgba(125, 151, 218, 0.2);
+	margin-top: 50px;
+	padding: 42px 0;
 }
 
-.filters-container {
-	background-color: rgba(125, 151, 218, 0.2);
-	height: 254px;
+.filters-form {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
 }
+
+.filters-col {
+	color: #1e0606;
+	flex-shrink: 0;
+	font-size: 16px;
+	line-height: 22px;
+	min-width: 200px;
+}
+
+	.filters-col-title {
+		font-size: 16px;
+		font-weight: bold;
+		line-height: 22px;
+		margin: 0 0 15px;
+	}
+
+	.filters-list,
+	.filters-amount {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+		.filters-list li {
+			margin-bottom: 15px;
+		}
+
+		.filters-list li:last-child {
+			margin-bottom: 0;
+		}
+
+		.filters-list input[type="checkbox"],
+		.filters-list input[type="radio"],
+		.filters-amount input[type="radio"] {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip: rect(0 0 0 0);
+		}
+
+		.filters-list input[type="checkbox"] + label,
+		.filters-list input[type="radio"] + label {
+			position: relative;
+			padding: 0 0 0 29px;
+		}
+
+		.filters-list input[type="checkbox"] + label::before,
+		.filters-list input[type="radio"] + label::before {
+			border: 2px solid #c29974;
+			border-radius: 3px;
+			content: "";
+			position: absolute;
+			top: 1px;
+			left: 0;
+			height: 20px;
+			width: 20px;
+		}
+
+		.filters-list input[type="radio"] + label::before {
+			border-radius: 100%;
+		}
+
+		.filters-list input[type="checkbox"]:checked + label::before {
+			background: #fff url("../img/icons/checkbox-checked.svg") no-repeat 100% 0;
+			/*background-size: 12px 12px;*/
+		}
+
+		.filters-list input[type="radio"] + label::after {
+			content: "";
+			border-radius: 100%;
+			position: absolute;
+			top: 5px;
+			left: 4px;
+			height: 12px;
+			width: 12px;
+		}
+
+		.filters-list input[type="radio"]:checked + label::after {
+			background: #c29974;
+		}
+
+
+	.filters-amount {
+		display: flex;
+		flex-direction: row;
+	}
+
+		.filters-amount label {
+			background: #fff;
+			display: block;
+			flex-shrink: 0;
+			text-align: center;
+			line-height: 35px;
+			min-width: 80px;
+		}
+
+		.filters-amount input[type="radio"]:checked + label {
+			background: #F3D0DB;
+		}
+
+	.filters-col .btn {
+		margin: 37px 0 0;
+	}
 
 /* 4. Product-cards
 	========================================================================== */
 
-/*.product-cards {
+.product-cards {
 	padding: 60px 0;
 }
 
 .product-cards-container {
+	display: flex;
+	flex-direction: column;
 	width: 100%;
-	height: 1090px;
 }
-*/
+
+	.product-cards-list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+		.product-cards-item {
+			max-width: 380px;
+			margin: 0 20px 0 0;
+		}
+
+		.product-cards-item:nth-child(3n+3) {
+			margin-right: 0;
+		}
+
+		.product-cards-item:nth-child(n+4) {
+			margin-top: 20px;
+		}
+
+			.product-cards-item-img {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				height: 385px;
+				margin: 0 0 30px;
+			}
+
+				.product-cards-item-img img {
+					max-width: 100%;
+				}
+
+			.product-cards-item-info {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+				.product-cards-title {
+					font-family: "Open Sans", sans-serif;
+					font-weight: normal;
+					font-size: 14px;
+					line-height: 20px;
+					text-transform: uppercase;
+					margin: 0 0 15px;
+				}
+
+					.product-cards-title a {
+						color: #1e0606;
+						text-decoration: none;
+					}
+
+				.product-cards-price {
+					font-weight: bold;
+					text-transform: uppercase;
+					margin: 0 0 25px;
+				}
+
+	.content-pagination {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		margin: 50px 0 0;
+	}
+		
+		.content-pagination-arrow img {
+			display: block;
+		}
+
+		.content-pagination-list {
+			display: flex;
+			flex-direction: row;
+			list-style: none;
+			max-width: 1150px;
+			padding: 0;
+			margin: 0 auto;
+		}
+
+			.content-pagination-list li {
+				font-family: "Montserrat", sans-serif;
+				font-weight: bold;
+				line-height: 20px;
+				margin: 0 33px;
+			}
+
+				.content-pagination-list a {
+					color: #1e0606;
+					text-decoration: none;
+				}
+
+			.content-pagination-list span {
+				color: #C29974;
+			}
+
+		.content-pagination-list a:hover {
+			opacity: 0.5;
+		}
+
+		.content-pagination-list a:active {
+			opacity: 0.25;
+		}
+
 /* V. BLOG
     ========================================================================== */
 
+.blog-articles {
+	padding: 50px 0 60px;
+}
+
+.blog-articles-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+	.blog-articles-wrapper {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+		.blog-article {
+			max-width: 380px;
+			padding-bottom: 20px;
+			margin-bottom: 14px;
+		}
+
+			.blog-article-img {
+				display: block;
+				height: 220px;
+				margin-bottom: 20px;
+			}
+
+				.blog-article-img img {
+					max-width: 100%;
+				}
+
+			.blog-article time {
+				color: #818181;
+			}
+
+			.blog-article h3 {
+				font-family: "Montserrat", sans-serif;
+				font-weight: bold;
+				font-size: 24px;
+				line-height: 31px;
+				margin: 7px 0 15px;
+			}
+
+				.blog-article-title a {
+					color: #1e0606;
+					text-decoration: none;
+				}
+
+			.blog-article p {
+				font-size: 18px;
+				line-height: 25px;
+				margin: 0;
+			}
+
+.blog-articles-container .content-pagination {
+	margin-top: 16px;
+}
+	
 /* VI. CONTACT US
 	========================================================================== */
+
+.contact-us {
+	padding: 50px 0 60px;
+}
+
+.contact-us-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+}
+
+	.contact-us-form-wrapper {
+		background-color: #E5EAF8;
+		width: 680px;
+		padding: 42px 40px;
+	}
+
+	.contact-us-form {
+		display: block;
+	}
+
+		.contact-us-group {
+			display: block;
+			width: 100%;
+			margin-bottom: 20px;
+		}
+
+		.contact-us-row {
+			display: flex;
+			flex-direction: row;
+		}
+
+		.contact-us-row .contact-us-group {
+			width: 50%;
+		}
+
+		.contact-us-row .contact-us-group:nth-child(odd) {
+			margin-right: 20px;
+		}
+
+		/*
+		.contact-us-input-tel {
+			margin-right: 20px;
+			
+			Это один из вариантов, как я сделал отступ первому блоку
+			внутри row, с помощью отдельного класса.
+
+			Оставил пока вариант с нечетными блоками, думаю удобно будет
+			при добавлении новых инпутов у всех выбранных в этой группе 
+			будет отступ справа.
+
+			Если такой подход удачный, то впоследствии уберу отдельный класс
+			для блока с id="phone".
+		}
+		*/
+
+			.contact-us-label {
+				display: block;
+				font-size: 14px;
+				line-height: 19px;
+				margin-bottom: 4px;
+			}
+
+			.contact-us-field {
+				border: 1px solid rgba(0, 0, 0, 0.2);
+				border-radius: 0;
+				width: 100%;
+				height: 50px;
+				padding: 0 18px 0;
+			}
+
+				.contact-us-field::placeholder {
+					color: #1E0606;
+					/*font-size: 18px;*/
+					
+					/*
+					В макете шрифт у placeholder
+					задан отличный от стандартного,
+					для соотвествия пока оставил его в коментарии
+					*/
+					}
+
+			.contact-us-textarea {
+				resize: none;
+				height: 150px;
+				padding: 15px 18px;
+			}
+
+		.contact-us-checkbox {
+			margin-bottom: 17px;
+			/*
+			По макету отступ у контейнера такой же как и у остальных, 
+			но из-за чуть сдвинутого вниз переоформленного чекбокса,
+			я сделал отступ по лейблу, а не по инпуту
+			*/
+		}
+
+			.contact-us-form input[type="checkbox"] {
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				overflow: hidden;
+				clip: rect(0 0 0 0);
+			}
+
+			.contact-us-form input[type="checkbox"] + label {
+				position: relative;
+				padding: 0 0 0 34px;
+			}
+
+			.contact-us-form input[type="checkbox"] + label::before {
+				border: 2px solid #c29974;
+				border-radius: 3px;
+				content: "";
+				position: absolute;
+				bottom: 2px;
+				left: 0;
+				height: 20px;
+				width: 20px;
+			}
+
+			.contact-us-form input[type="checkbox"]:checked + label::before {
+				background: #fff url("../img/icons/checkbox-checked.svg") no-repeat 100% 0;
+				/*background-size: 12px 12px;*/
+			}
+		
+	.contact-us-aside {
+		max-width: 380px;
+	}
+
+		.contact-us-aside p {
+			padding: 0;
+			margin: 0 0 20px;
+		}
+
+		.contact-us-aside h4 {
+			color: #C29974;
+			font-family: "Montserrat", sans-serif;
+			font-weight: 600;
+			font-size: 26px;
+			line-height: 32px;
+			text-transform: uppercase;
+			padding: 0;
+			margin: 0 0 20px;
+		}
 
 /* VII. FOOTER
     ========================================================================== */
@@ -675,7 +1131,7 @@ a.header-logo:active,
 }
 
 .footer-col {
-	width: 380px;
+	min-width: 380px;
 	margin: 100px 20px 0 0;
 }
 
@@ -734,29 +1190,22 @@ a.header-logo:active,
 				padding-left: 15px;
 			}
 
+			/*
 			.footer-mail-btn {
-				color: #fff;
-				font-weight: 700;
-				line-height: 21px;
-				background-color: #000;
-				text-transform: uppercase;
-				border: none;
-				border-radius: 0;
-				width: 81px;
-				height: 40px;
-				padding: 9px 22px;
+
 			}
+			*/
 
 		.footer-socials-list {
 			display: flex;
 			flex-direction: row;
 			list-style: none;
 			padding: 0;
-			margin: 0;
+			margin: 25px 0 0;
 		}
 
 			.footer-socials-list li {
-				margin: 25px 10px 0 0;
+				margin: 0 10px 0 0;
 			}
 
 				.footer-col-list a {
@@ -770,15 +1219,138 @@ a.header-logo:active,
 }
 
 	.footer-bottom-col {
-		width: 380px;
+		min-width: 380px;
 		margin: 23px 0 100px 20px;
 	}
 
 	.footer-bottom-col:first-child {
-		margin: 23px 0 100px 0;
+		align-items: center;
+		margin: 23px 0 100px;
 	}
 
 		.footer-bottom-col a {
 			color: #a2a2a2;
 			text-decoration: none;
 		}
+
+		/*
+		.star-rating {
+			
+		}
+		*/
+
+		.star-rating-fieldset {
+			margin: 0;
+			padding: 3px 0 0 147px;
+			border: none;
+			position: relative;
+		}
+
+		.star-rating-title {
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.star-rating-container {
+			position: relative;
+			width: 80px;
+			height: 16px;
+			background-image: url("../img/icons/rating-star-disabled.svg");
+			background-size: 16px;
+			background-repeat: repeat-x;
+		}
+		
+		.star-rating-container:focus-within {
+			outline: solid 1px #fff;
+			outline-offset: 5px;
+		}
+		
+			.star-rating-input {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 16px;
+				height: 16px;
+				/*margin: 0 3px 0;*/
+				/*padding: 0 2px 0;*/
+				font-size: inherit;
+				background-size: 16px;
+				background-repeat: repeat-x;
+				appearance: none;
+			}
+
+			.star-rating-input:focus {
+				outline: none;
+			}
+
+			.star-rating-input:checked,
+			.star-rating-input:hover {
+				background-image: url("../img/icons/rating-star-enabled.svg");
+				
+			}
+
+			.star-rating-input:hover ~ .star-rating-input {
+				background-image: url("../img/icons/rating-star-disabled.svg");
+			}
+
+				.star-rating-input:nth-of-type(1) {
+					z-index: 5;
+					width: 16px;
+				}
+
+				.star-rating-input:nth-of-type(2) {
+					z-index: 4;
+					width: 32px;
+				}
+
+				.star-rating-input:nth-of-type(3) {
+					z-index: 3;
+					width: 48px;
+				}
+
+				.star-rating-input:nth-of-type(4) {
+					z-index: 2;
+					width: 64px;
+				}
+
+				.star-rating-input:nth-of-type(5) {
+					z-index: 1;
+					width: 80px;
+				}
+
+/* VIII. POPUP
+    ========================================================================== */
+
+.popup {
+	background-color: rgba(125, 151, 218, 0.8);
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.popup:target {
+	display: block;
+}
+
+	.popup-body {
+		min-height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+		.popup-content {
+			position: relative;
+		}
+
+			.popup-close {
+				position: absolute;
+				right: -25px;
+				top: 0;
+			}

@@ -14,18 +14,18 @@
     <header class="header">
         <div class="container header-container">
             <div class="header-logo">
-                <img src="img/icons/union.svg" alt="DLK company logo">
+                <img src="img/icons/logo.svg" alt="DLK company logo">
             </div>
             <nav class="header-nav">
                 <ul class="header-nav-list">
                     <li>
-                        <a href="#">Blog</a>
+                        <a href="blog.html">Blog</a>
                     </li>
                     <li>
                         <a href="catalog.html">Catalog</a>
                     </li>
                     <li>
-                        <a href="#">About Us</a>
+                        <a href="#popup">About Us</a>
                     </li>
                 </ul> 
             </nav>
@@ -38,7 +38,7 @@
                     </button>
                 </form>
 
-                <a class="header-contacts" href="#">Contact Us</a>
+                <a class="header-contacts" href="contact-us.html">Contact Us</a>
             </div>
         </div>
     </header>
@@ -63,7 +63,7 @@
                         </a>
                     </li>
                     <li class="products-list-item">
-                        <a href="#" class="products-list-item-wrapper bg-yellow">
+                        <a href="toys.html" class="products-list-item-wrapper bg-yellow">
                             <img src="img/toys.png" alt="Toys">
                             <h3 class="title-h3">Toys</h3>
                         </a>
@@ -102,7 +102,7 @@
                     <h2 class="title-h2 delivery-title">Delivery</h2>
                     <ul class="delivery-list">
                         <li>
-                            <a href="#">Delivery</a>
+                            <a class="delivery-list-item-active" href="#">Delivery</a>
                         </li>
                         <li>
                             <a href="#">Guarantee</a>
@@ -120,7 +120,7 @@
                         dlk has now become a truly happy place for me and i have you and 
                         all of the beautiful designers that we work with to thank!
                     </p>
-                    <a class="learn-more-link" href="#">Learn More</a>
+                    <a class="learn-more-btn btn" href="#">Learn More</a>
                 </div>  
             </div>
         </section>
@@ -130,51 +130,56 @@
                 <h2>
                     <span class="visually-hidden">Partners</span>
                 </h2>
-                <ul class="partners-list">
-                    <li>
-                        <a href="https://corp.mail.ru">
-                            <img src="img/mail.png" alt="Mail Group Company">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.apple.com">
-                            <img src="img/apple.png" alt="Apple Company">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://eltex-co.ru">
-                            <img src="img/eltex.png" alt="Eltex Company">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.owox.ru">
-                            <img src="img/owox.png" alt="Owox Company">
-                        </a>
-                    </li>
-                </ul>
+                <div class="partners-list-wrapper">
+                    <ul class="partners-list">
+                        <li>
+                            <a href="https://corp.mail.ru">
+                                <img src="img/mail.png" alt="Mail Group Company">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.apple.com">
+                                <img src="img/apple.png" alt="Apple Company">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://eltex-co.ru">
+                                <img src="img/eltex.png" alt="Eltex Company">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.owox.ru">
+                                <img src="img/owox.png" alt="Owox Company">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <section class="main-bottom">
             <div class="container main-bottom-container">
-                <div class="dlk-aside-container">
-                    <h2 class="title-h2 dlk-aside-title">Design Life Kids</h2>
+                <div class="dlk-aside-container main-bottom-col">
+                    <h2 class="title-h2 dlk-aside-title main-bottom-title">Design Life Kids</h2>
                     <h3 class="dlk-aside-subtitle">About Us</h3>
-                    <p class="dlk-aside-text">
+                    <p class="main-bottom-text">
                         Some days i feel like i've been working on dlk my entire life and there are other days that 
                         i am completely shocked that four years have flown by. It's simply magical.
                     </p>
-                    <button class="buy-now-btn">Buy Now</button>
+                    <a class="dlk-aside-btn btn">Buy Now</a>
                 </div>
                 
-                <div class="contacts-aside-container">
-                    <h2 class="title-h2 contacts-aside-title">Contacts</h2>
-                    <p class="contacts-aside-text">
+                <div class="contacts-aside-container main-bottom-col">
+                    <h2 class="title-h2 contacts-aside-title main-bottom-title">Contacts</h2>
+                    <p class="main-bottom-text">
                         Some days i feel like i've been working on dlk my entire life and there are other days that 
                         i am completely shocked that four years have flown by. It's simply magical.
                     </p>
-                    <img src="img/contacts-map.png" alt="Map">
-                </div>       
+
+                    <div class="contacts-aside-map">
+                        <img src="img/contacts-map.png" alt="Map">
+                    </div>
+                </div>      
             </div>
         </section>
     </main>
@@ -232,8 +237,8 @@
                 <h4 class="footer-col-title">Connect</h4>
                 <div class="footer-col-container">
                     <form class="footer-mail-form">
-                        <input class="footer-mail-input" type="text" placeholder="Email">
-                        <button class="footer-mail-btn" type="submit">Join</button>
+                        <input class="footer-mail-input" type="email" placeholder="Email">
+                        <button class="footer-mail-btn btn" type="submit">Join</button>
                     </form>
                     <div class="footer-socials-container">
                         <ul class="footer-socials-list">
@@ -266,8 +271,18 @@
         <div class="container footer-bottom">
             <div class="footer-bottom-wrapper">
                 <div class="footer-bottom-col">
-                    Company Rating
-                    <!--<div class="raiting-container"></div>-->
+                    <form class="star-rating">
+                        <fieldset class="star-rating-fieldset">
+                            <legend class="star-rating-title">Company Rating</legend>
+                            <div class="star-rating-container">
+                                <input class="star-rating-input" type="radio" name="stars" area-label="very bad" value="1" checked>
+                                <input class="star-rating-input" type="radio" name="stars" area-label="bad" value="2">
+                                <input class="star-rating-input" type="radio" name="stars" area-label="normal" value="3">
+                                <input class="star-rating-input" type="radio" name="stars" area-label="good" value="4">
+                                <input class="star-rating-input" type="radio" name="stars" area-label="excellent" value="5">
+                            </div>
+                        </fieldset>
+                    </form>
                 </div>
     
                 <div class="footer-bottom-col">
@@ -280,5 +295,53 @@
             </div>
         </div>
     </footer>
+    <div class="popup" id="popup">
+        <div class="popup-body container">
+            <div class="popup-content">
+                <div class="contact-us-form-wrapper">
+                    <form class="contact-us-form">
+                        <div class="contact-us-group">
+                            <label class="contact-us-label" for="name">Name</label>
+                            <input class="contact-us-field" type="text" id="name" placeholder="Ivan Ivanov">
+                        </div>
+    
+                        <div class="contact-us-row">
+                            <div class="contact-us-group contact-us-input-tel">
+                                <label class="contact-us-label" for="phone">Phone</label>
+                                <input class="contact-us-field" type="tel" id="phone">
+                            </div>
+        
+                            <div class="contact-us-group">
+                                <label class="contact-us-label" for="email">Email</label>
+                                <input class="contact-us-field" type="email" id="email">
+                            </div>
+                        </div>
+                        
+                        <div class="contact-us-group">
+                            <label class="contact-us-label" for="message">Message</label>
+                            <textarea class="contact-us-field contact-us-textarea" id="message"></textarea>
+                        </div>
+                        
+                        <div class="contact-us-group contact-us-checkbox">
+                            <input class="contact-us-field" type="checkbox" id="consent" checked>
+                            <label class="contact-us-label" for="consent">
+                                By clicking on the button, you consent to the processing 
+                                of your personal data
+                            </label>
+                        </div>
+
+                        <input class="submit-button btn" type="submit" value="Submit">
+                    </form> 
+                </div>
+
+                <a href="#" class="popup-close">
+                    <img src="img/icons/popup-close.svg" alt="Close window">
+                </a>
+                <!-- Здесь я делал у ссылки лишний хеш для того что бы
+                     при закрытии окна не было обновления страницы и она
+                     не дергалась к ее началу, а оставалась на том же месте -->
+            </div>
+        </div>
+    </div>
 </body>
 </html>
