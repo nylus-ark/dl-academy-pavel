@@ -121,7 +121,7 @@ body {
     ========================================================================== */
 
 .header {
-	padding: 50px 0;
+	padding: 50px 0 40px;
 }
 
 .header-container {
@@ -212,11 +212,158 @@ a.header-logo:active,
 		========================================================================== */
 
 /**
+ * 0. Slider
  * 1. Categories
  * 2. Delivery
  * 3. Partners
  * 4. Main-bottom
 */
+
+/* 0. Slider
+	========================================================================== */
+
+/*
+Решение для слайдера, который должен двигаться влева-вправо
+.slider {
+	overflow: hidden;
+}
+
+.slider-container {
+	display: flex;
+	flex-direction: row;
+
+	Чтобы показать второй слайд
+	transform: translate(-1180px, 0);
+	transition: transform 0.5s ease;
+}
+
+.slider-slide {
+	flex-shrink: 0;
+	height: 500px;
+	width: 100%;
+}
+*/
+
+/*
+	В случае когда у нас решение через аттрибут hidden можно оставить только общий элемент slider
+	slider-container не нужен
+*/
+
+.slider {
+	position: relative;
+	margin: 0 0 45px;
+}
+
+.slider-slide {
+	background: #EEE4DB;
+	box-shadow: inset 0 89px #fff;
+	height: 500px;
+	width: 100%;
+}
+
+.slider-slide-second {
+	background: #daedde;
+}
+
+.slider-slide-third {
+	background: #dfdaed;
+}
+
+.slider-slide-wrapper {
+	display: flex;
+	flex-direction: row;
+}
+
+.slider-counter {
+	color: rgba(30, 6, 6, 0.05);
+	font-family: "Montserrat", sans-serif;
+	font-size: 60px;
+	font-weight: 300;
+	line-height: 73px;
+
+	margin: 106px 22px 0 28px;
+}
+
+.slider-slide-info {
+	/*width: 307px;*/
+	margin: 178px 5px 0 22px;
+}
+
+	.slider-slide-title {
+		display: block;
+		font-family: "Montserrat", sans-serif;
+		font-weight: 700;
+		font-size: 40px;
+		line-height: 44px;
+		text-transform: uppercase;
+
+		max-width: 307px;
+		margin: 0 0 20px;
+	}
+
+	.slider-slide-description p {
+		font-family: "Crimson Text", serif;
+		font-size: 20px;
+		font-style: italic;
+		line-height: 25px;
+
+		margin: 0 0 20px;
+	}
+
+.slider-slide-img {
+	height: 461px;
+}
+
+	.slider-slide-img img {
+		max-width: 100%;
+	}
+
+.slider-notification {
+	color: #fff;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 16px;
+	text-transform: uppercase;
+	text-align: center;
+	background: rgba(194, 153, 116, 1);
+
+	width: 100%;
+	padding: 12px 0;
+	position: absolute;
+	bottom: 0;
+}
+
+.slider-nav {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 190px;
+	left: 31px;
+}
+
+	.slider-nav li {
+		line-height: 0;
+	}
+
+	.slider-nav-btn {
+		display: inline-flex;
+		background: rgba(214, 202, 194, 1);
+		border: none;
+		border-top: 3px;
+		border-radius: 0;
+		cursor: pointer;
+
+		width: 31px;
+		min-height: 3px;
+		margin: 0 0 11px;
+	}
+
+	.is-active {
+		background: rgba(30, 6, 6, 0.6);
+	}
+
+
 
 /* 1. Categories
 	========================================================================== */
@@ -784,6 +931,150 @@ a.header-logo:active,
 	.filters-col .btn {
 		margin: 37px 0 0;
 	}
+
+	/*Input type range*/
+
+	input[type=range] {
+		-webkit-appearance: none;
+		width: 188px;
+		background: transparent;
+	}
+	  
+		input[type=range]::-webkit-slider-thumb {
+			-webkit-appearance: none;
+		}
+		
+		input[type=range]:focus {
+			outline: none;
+		}
+		
+		input[type=range]::-ms-track {
+			width: 188px;
+			cursor: pointer;
+			
+			background: transparent; 
+			border-color: transparent;
+			color: transparent;
+		}
+
+	/* Styles for the Thumb */
+	
+	/* Special styling for WebKit/Blink */
+
+	input[type=range]::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		border: 8px solid #C29974;
+		height: 24px;
+		width: 24px;
+		border-radius: 100%;
+		background: #ffffff;
+		cursor: pointer;
+		margin-top: -10px; /* For Chrome */
+		/*box-shadow: -80px 0 0 80px #C29974;*/
+	}
+	
+	/* Styles for Firefox */
+
+	input[type=range]::-moz-range-thumb {
+		border: 8px solid #C29974;
+		height: 8px;
+		width: 8px;
+		border-radius: 100%;
+		background: #ffffff;
+		cursor: pointer;
+	}
+	
+	/* Styles for IE */
+
+	input[type=range]::-ms-thumb {
+		border: 8px solid #C29974;
+		height: 24px;
+		width: 24px;
+		border-radius: 100%;
+		background: #ffffff;
+		cursor: pointer;
+	}
+
+	/* Styles for the Track */
+
+	input[type=range]::-webkit-slider-runnable-track {
+		/*overflow: hidden;*/
+		width: 188px;
+		height: 4px;
+		cursor: pointer;
+		background: grey;
+		/*background: -webkit-linear-gradient(left, #C29974 0%, #C29974 25%, grey 25%, grey 100%);*/
+		/*opacity: 0.5;*/
+		border-radius: none;
+	}
+	  
+		/*input[type=range]:focus::-webkit-slider-runnable-track {
+			background: #C29974;
+		}*/
+		
+		input[type=range]::-moz-range-track {
+			width: 188px;
+			height: 4px;
+			cursor: pointer;
+			background: grey;
+			/*opacity: 0.5;*/
+			border-radius: none;
+		}
+		
+		input[type=range]::-ms-track {
+			width: 188px;
+			height: 4px;
+			cursor: pointer;
+			background: transparent;
+			border-color: transparent;
+			border-width: 16px 0;
+			color: transparent;
+		}
+
+	/* Styles for range progress in Firefox */
+
+	/*
+	У меня не получилось сделать закрашивание полоски 
+	при передвижении ползунка в Chrome и Edge.
+	Есть решение через box-shadow для ползунка, но оно не работает,
+	так как ползунок больше полоски и через {overflow: hidden} он
+	обрзается вместе с тенью по высоте полоски.
+	
+	Остальные решения используют js либо jquery.
+
+	Так как в Firefox с этим все ок, то все вышло без
+	проблем.
+
+	И вопрос, нужно ли делать стили для IE если он
+	больше не актуален?
+	*/
+
+	input[type="range"]::-moz-range-progress {
+		background-color: #C29974;
+		height: 4px;
+	}
+
+	/*input[type="range"]::-moz-range-track {  
+		background-color: grey;
+	}*/
+
+	/* Styles for range progress in IE */
+
+	input[type="range"]::-ms-fill-lower {
+		background-color: #C29974; 
+	}
+
+	input[type="range"]::-ms-fill-upper {  
+		background-color: grey;
+	}
+
+		/*input[type=range]:focus::-ms-fill-lower {
+			background: #3071a9;
+		}
+
+		input[type=range]:focus::-ms-fill-upper {
+			background: #367ebd;
+		}*/
 
 /* 4. Product-cards
 	========================================================================== */
