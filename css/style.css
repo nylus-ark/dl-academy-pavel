@@ -117,6 +117,19 @@ body {
 	*/
 }
 
+	.btn:hover {
+		background: #C29974;
+	}
+
+	.btn:active {
+		background: #C29974;
+		opacity: 0.5;
+	}
+
+	.btn:disabled {
+		opacity: 0.2;
+	}
+
 /* I. HEADER
     ========================================================================== */
 
@@ -198,12 +211,14 @@ body {
 
 a.header-logo:hover,
 .header-nav-list a:hover,
+.search-button:hover,
 .header-contacts:hover:not(.header-contacts-not-active) {
 	opacity: 0.5;
 }
 
 a.header-logo:active,
 .header-nav-list a:active,
+.search-button:active,
 .header-contacts:active:not(.header-contacts-not-active) {
 	opacity: 0.2;
 }
@@ -363,7 +378,9 @@ a.header-logo:active,
 		background: rgba(30, 6, 6, 0.6);
 	}
 
-
+	.slider-nav-btn:hover {
+		background: rgba(30, 6, 6, 0.6);
+	}
 
 /* 1. Categories
 	========================================================================== */
@@ -377,6 +394,7 @@ a.header-logo:active,
 }
 
 .categories-title {
+	display: inline-block;
 	margin-bottom: 30px;
 }
 
@@ -480,6 +498,27 @@ a.header-logo:active,
 		max-width: 550px;
 		margin: 0;
 	}
+
+.categories-title:hover {
+	opacity: 0.5;
+}
+
+.categories-title:active {
+	opacity: 0.2;
+}
+
+.products-list-item h3:hover {
+	text-decoration: underline;
+}
+
+.products-nav-btn:hover {
+	background-color: #EEE4DB;
+}
+
+.products-nav-btn:active {
+	background-color: #EEE4DB;
+	opacity: 0.5;
+}
 
 /* 2. Delivery
 	========================================================================== */
@@ -624,6 +663,14 @@ a.header-logo:active,
 	Если элементов больше 4-х то подход работает.
 	*/
 
+.partners-list a:hover {
+	opacity: 0.6;
+}
+
+.partners-list a:active {
+	opacity: 0.3;
+}
+
 /* 4. Main-bottom
 		========================================================================== */
 
@@ -715,7 +762,7 @@ a.header-logo:active,
 	========================================================================== */
 
 .content-header {
-	padding-top: 10px;
+	padding-top: 20px;
 }
 
 /* 2. Breadcrumbs
@@ -824,7 +871,7 @@ a.header-logo:active,
 .filters-form {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	/*justify-content: space-between;*/
 	align-items: flex-start;
 }
 
@@ -833,7 +880,23 @@ a.header-logo:active,
 	flex-shrink: 0;
 	font-size: 16px;
 	line-height: 22px;
-	min-width: 200px;
+	/*min-width: 200px;*/
+}
+
+.filters-col:nth-child(1) {
+	margin-right: 108px;
+}
+
+.filters-col:nth-child(2) {
+	margin-right: 124px;
+}
+
+.filters-col:nth-child(3) {
+	margin-right: 70px;
+}
+
+.filters-col:nth-child(4) {
+	margin-right: 62px;
 }
 
 	.filters-col-title {
@@ -852,6 +915,10 @@ a.header-logo:active,
 
 		.filters-list li {
 			margin-bottom: 15px;
+		}
+
+		.filters-col:nth-child(3) li {
+			margin-bottom: 10px;
 		}
 
 		.filters-list li:last-child {
@@ -936,9 +1003,25 @@ a.header-logo:active,
 
 	input[type=range] {
 		-webkit-appearance: none;
-		width: 188px;
+		width: 193px;
 		background: transparent;
+		position: relative;
+		padding-left: 5px;
 	}
+
+		input[type=range]::before {
+			content: attr(min);
+			position: absolute;
+			top: 20px;
+			left: 0;
+		}
+
+		input[type=range]::after {
+			content: attr(max);
+			position: absolute;
+			top: 20px;
+			left: 180px;
+		}
 	  
 		input[type=range]::-webkit-slider-thumb {
 			-webkit-appearance: none;
@@ -999,10 +1082,10 @@ a.header-logo:active,
 
 	input[type=range]::-webkit-slider-runnable-track {
 		/*overflow: hidden;*/
-		width: 188px;
+		width: 100%;
 		height: 4px;
 		cursor: pointer;
-		background: grey;
+		background: #666;
 		/*background: -webkit-linear-gradient(left, #C29974 0%, #C29974 25%, grey 25%, grey 100%);*/
 		/*opacity: 0.5;*/
 		border-radius: none;
@@ -1016,7 +1099,7 @@ a.header-logo:active,
 			width: 188px;
 			height: 4px;
 			cursor: pointer;
-			background: grey;
+			background: #666;
 			/*opacity: 0.5;*/
 			border-radius: none;
 		}
@@ -1329,7 +1412,8 @@ a.header-logo:active,
 				border-radius: 0;
 				width: 100%;
 				height: 50px;
-				padding: 0 18px 0;
+				padding: 0 18px;
+				outline: none;
 			}
 
 				.contact-us-field::placeholder {
@@ -1415,6 +1499,8 @@ a.header-logo:active,
 	color: #fff;
 }
 
+/* Footer container */
+
 .footer-container {
 	display: flex;
 	flex-direction: row;
@@ -1474,11 +1560,11 @@ a.header-logo:active,
 				border-radius: 0;
 				width: 299px;
 				height: 40px;
+				padding: 0 15px;
 			}
 
 			.footer-mail-input::placeholder {
 				color: #ebebeb;
-				padding-left: 15px;
 			}
 
 			/*
@@ -1499,9 +1585,26 @@ a.header-logo:active,
 				margin: 0 10px 0 0;
 			}
 
-				.footer-col-list a {
+				/*.footer-col-list a {
 					text-decoration: none;
-				}
+				}*/
+
+.footer-col-list a:hover,
+.footer-socials-list a:hover {
+	opacity: 0.5;
+}
+
+.footer-col-list a:active,
+.footer-socials-list a:active {
+	opacity: 0.2;
+}
+
+.footer-mail-input:hover {
+	border: 1px solid #FFFDFD;
+	padding-left: 14px;
+}
+
+/* Footer bottom */
 
 .footer-bottom-wrapper {
 	display: flex;
@@ -1524,93 +1627,102 @@ a.header-logo:active,
 			text-decoration: none;
 		}
 
-		/*
-		.star-rating {
-			
-		}
-		*/
+.footer-bottom-col a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
 
-		.star-rating-fieldset {
-			margin: 0;
-			padding: 3px 0 0 147px;
-			border: none;
-			position: relative;
-		}
+	/* Star raiting */
 
-		.star-rating-title {
-			margin: 0;
-			padding: 0;
+	.star-rating {
+		display: inline-block;
+	}
+
+	.star-rating-fieldset {
+		margin: 0;
+		padding: 3px 0 0 147px;
+		border: none;
+		position: relative;
+	}
+
+	.star-rating-title {
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.star-rating-container {
+		position: relative;
+		width: 80px;
+		height: 16px;
+		background-image: url("../img/icons/rating-star-disabled.svg");
+		background-size: 16px;
+		background-repeat: repeat-x;
+	}
+	
+	.star-rating-fieldset:focus-within {
+		outline: solid 1px #fff;
+		outline-offset: 5px;
+	}
+	
+		.star-rating-input {
 			position: absolute;
 			top: 0;
 			left: 0;
-		}
-
-		.star-rating-container {
-			position: relative;
-			width: 80px;
+			width: 16px;
 			height: 16px;
-			background-image: url("../img/icons/rating-star-disabled.svg");
+			/*margin: 0 3px 0;*/
+			/*padding: 0 2px 0;*/
+			font-size: inherit;
 			background-size: 16px;
 			background-repeat: repeat-x;
+			appearance: none;
 		}
-		
-		.star-rating-container:focus-within {
-			outline: solid 1px #fff;
-			outline-offset: 5px;
-		}
-		
-			.star-rating-input {
-				position: absolute;
-				top: 0;
-				left: 0;
+
+			.star-rating-input:nth-of-type(1) {
+				z-index: 5;
 				width: 16px;
-				height: 16px;
-				/*margin: 0 3px 0;*/
-				/*padding: 0 2px 0;*/
-				font-size: inherit;
-				background-size: 16px;
-				background-repeat: repeat-x;
-				appearance: none;
 			}
 
-			.star-rating-input:focus {
-				outline: none;
+			.star-rating-input:nth-of-type(2) {
+				z-index: 4;
+				width: 32px;
 			}
 
-			.star-rating-input:checked,
-			.star-rating-input:hover {
-				background-image: url("../img/icons/rating-star-enabled.svg");
-				
+			.star-rating-input:nth-of-type(3) {
+				z-index: 3;
+				width: 48px;
 			}
 
-			.star-rating-input:hover ~ .star-rating-input {
-				background-image: url("../img/icons/rating-star-disabled.svg");
+			.star-rating-input:nth-of-type(4) {
+				z-index: 2;
+				width: 64px;
 			}
 
-				.star-rating-input:nth-of-type(1) {
-					z-index: 5;
-					width: 16px;
-				}
+			.star-rating-input:nth-of-type(5) {
+				z-index: 1;
+				width: 80px;
+			}
 
-				.star-rating-input:nth-of-type(2) {
-					z-index: 4;
-					width: 32px;
-				}
+.star-rating-input:focus {
+	outline: none;
+}
 
-				.star-rating-input:nth-of-type(3) {
-					z-index: 3;
-					width: 48px;
-				}
+.star-rating-input:checked,
+.star-rating-input:hover {
+	background-image: url("../img/icons/rating-star-enabled.svg");
+	
+}
 
-				.star-rating-input:nth-of-type(4) {
-					z-index: 2;
-					width: 64px;
-				}
-
-				.star-rating-input:nth-of-type(5) {
-					z-index: 1;
-					width: 80px;
-				}
+.star-rating-input:hover ~ .star-rating-input {
+	background-image: url("../img/icons/rating-star-disabled.svg");
+}
+			
+.star-rating:hover {
+	color: #C29974;
+}
 
 /* VIII. POPUP
     ========================================================================== */
