@@ -796,6 +796,14 @@ a.header-logo:active,
 		opacity: 0.5;
 	}
 
+.breadcrumbs-list-item a:hover:not(.breadcrumbs-list-item:last-child) {
+	opacity: 0.5;
+}
+
+.breadcrumbs-list-item a:active:not(.breadcrumbs-list-item:last-child) {
+	opacity: 0.2;
+}
+
 /* 3. Catalog
 	========================================================================== */
 
@@ -935,14 +943,18 @@ a.header-logo:active,
 			clip: rect(0 0 0 0);
 		}
 
+		/* Filters input type checkbox & radio */
+
 		.filters-list input[type="checkbox"] + label,
 		.filters-list input[type="radio"] + label {
 			position: relative;
 			padding: 0 0 0 29px;
+			cursor: pointer;
 		}
 
 		.filters-list input[type="checkbox"] + label::before,
 		.filters-list input[type="radio"] + label::before {
+			background: #fff;
 			border: 2px solid #c29974;
 			border-radius: 3px;
 			content: "";
@@ -976,6 +988,17 @@ a.header-logo:active,
 			background: #c29974;
 		}
 
+.filters-list input[type="checkbox"] + label:hover,
+.filters-list input[type="radio"] + label:hover {
+	text-decoration: underline;
+}
+
+.filters-list input[type="checkbox"]:disabled + label,
+.filters-list input[type="radio"]:disabled + label {
+	opacity: 0.5;
+}
+
+	/* Filters amount */
 
 	.filters-amount {
 		display: flex;
@@ -988,6 +1011,7 @@ a.header-logo:active,
 			flex-shrink: 0;
 			text-align: center;
 			line-height: 35px;
+			cursor: pointer;
 			min-width: 80px;
 		}
 
@@ -998,6 +1022,11 @@ a.header-logo:active,
 	.filters-col .btn {
 		margin: 37px 0 0;
 	}
+
+.filters-amount label:hover:not(.filters-amount input[type="radio"]:checked + label) {
+	background: #F3D0DB;
+	opacity: 0.5;
+}
 
 	/*Input type range*/
 
@@ -1046,12 +1075,13 @@ a.header-logo:active,
 
 	input[type=range]::-webkit-slider-thumb {
 		-webkit-appearance: none;
+		background: #ffffff;
 		border: 8px solid #C29974;
+		border-radius: 100%;
+		cursor: pointer;
+
 		height: 24px;
 		width: 24px;
-		border-radius: 100%;
-		background: #ffffff;
-		cursor: pointer;
 		margin-top: -10px; /* For Chrome */
 		/*box-shadow: -80px 0 0 80px #C29974;*/
 	}
@@ -1078,18 +1108,40 @@ a.header-logo:active,
 		cursor: pointer;
 	}
 
+input[type=range]::-webkit-slider-thumb:hover {
+	opacity: 0.9;
+}
+
+input[type=range]::-moz-range-thumb:hover {
+	opacity: 0.9;
+}
+
+input[type=range]::-ms-thumb:hover {
+	opacity: 0.9;
+}
+
 	/* Styles for the Track */
 
-	input[type=range]::-webkit-slider-runnable-track {
-		/*overflow: hidden;*/
+	/*input[type=range]::-webkit-slider-runnable-track {
 		width: 100%;
 		height: 4px;
 		cursor: pointer;
-		background: #666;
-		/*background: -webkit-linear-gradient(left, #C29974 0%, #C29974 25%, grey 25%, grey 100%);*/
-		/*opacity: 0.5;*/
+		/*background: #666;*/
+		/*background: -webkit-linear-gradient(left, #C29974 0%, #C29974 25%, grey 25%, grey 100%);
+		background: linear-gradient(to right, #C29974 0%, #C29974 25%, #666 25%, #666 100%);
 		border-radius: none;
+		transition: background 450ms ease-in;
+	}*/
+
+	#myinput::-webkit-slider-runnable-track {
+		width: 100%;
+		height: 4px;
+		cursor: pointer;
+		background: linear-gradient(to right, #C29974 0%, #C29974 25%, #666 25%, #666 100%);
+		border-radius: none;
+		transition: background 450ms ease-in;
 	}
+
 	  
 		/*input[type=range]:focus::-webkit-slider-runnable-track {
 			background: #C29974;
@@ -1115,22 +1167,6 @@ a.header-logo:active,
 		}
 
 	/* Styles for range progress in Firefox */
-
-	/*
-	У меня не получилось сделать закрашивание полоски 
-	при передвижении ползунка в Chrome и Edge.
-	Есть решение через box-shadow для ползунка, но оно не работает,
-	так как ползунок больше полоски и через {overflow: hidden} он
-	обрзается вместе с тенью по высоте полоски.
-	
-	Остальные решения используют js либо jquery.
-
-	Так как в Firefox с этим все ок, то все вышло без
-	проблем.
-
-	И вопрос, нужно ли делать стили для IE если он
-	больше не актуален?
-	*/
 
 	input[type="range"]::-moz-range-progress {
 		background-color: #C29974;
@@ -1182,30 +1218,59 @@ a.header-logo:active,
 	}
 
 		.product-cards-item {
+			text-align: center;
 			max-width: 380px;
-			margin: 0 20px 0 0;
+			margin: 0 20px 20px 0;
 		}
 
 		.product-cards-item:nth-child(3n+3) {
 			margin-right: 0;
 		}
 
-		.product-cards-item:nth-child(n+4) {
+		/*.product-cards-item:nth-child(n+4) {
 			margin-top: 20px;
-		}
+		}*/
 
 			.product-cards-item-img {
-				display: flex;
+				/*display: flex;
 				flex-direction: row;
-				justify-content: center;
-				align-items: center;
-				height: 385px;
-				margin: 0 0 30px;
+				justify-content: center;*/
+				display: block;
+				/*align-items: center;*/
+				text-align: center;
+				color: #000;
+				text-decoration: none;
+				/*height: 385px;*/
+				/*margin: 0 0 30px;*/
+				position: relative;
 			}
 
-				.product-cards-item-img img {
-					max-width: 100%;
+				.product-cards-item-img-wrapper {
+					display: flex;
+					align-items: flex-start;
+					height: 385px;
+					margin-bottom: 30px;
 				}
+
+				/*.product-cards-item-img-wrapper img {
+					margin-top: 3px
+				}*/
+
+				/*.product-cards-item-img-wrapper img {
+					display: block;
+					max-width: 100%;
+					margin-bottom: 30px;
+				}*/
+
+				.product-cards-item-img img {
+					display: block;
+					max-width: 100%;
+					margin-bottom: 30px;
+				}
+
+				/*.product-cards-item-active {
+					display: none;
+				}*/
 
 			.product-cards-item-info {
 				display: flex;
@@ -1232,18 +1297,39 @@ a.header-logo:active,
 					text-transform: uppercase;
 					margin: 0 0 25px;
 				}
+				
+.product-cards-item-img:hover .product-cards-item-active {
+	display: block;
+	color: #000;
+	padding-top: 82px;
+	text-transform: uppercase;
+	text-decoration: none;
+	cursor: pointer;
+	background: rgba(229, 234, 248, 0.6);
+	width: 207px;
+	height: 207px;
+	position: absolute;
+	top: 89px;
+	left: 87px;
+}
+
+	/* Content pagination */
 
 	.content-pagination {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		margin: 50px 0 0;
+		margin: 28px 0 0;
 	}
 		
-		.content-pagination-arrow img {
-			display: block;
+		.content-pagination-arrow {
+			position: relative;
 		}
+
+			.content-pagination-arrow .content-pagination-arrow-img {
+				display: block;
+			}
 
 		.content-pagination-list {
 			display: flex;
@@ -1270,13 +1356,28 @@ a.header-logo:active,
 				color: #C29974;
 			}
 
-		.content-pagination-list a:hover {
-			opacity: 0.5;
-		}
+.content-pagination-list a:hover {
+	opacity: 0.5;
+}
 
-		.content-pagination-list a:active {
-			opacity: 0.25;
-		}
+.content-pagination-list a:active {
+	opacity: 0.25;
+}
+
+.content-pagination-arrow:hover .content-pagination-arrow-img-active {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.content-pagination-arrow:active .content-pagination-arrow-img-active {
+	display: block;
+	opacity: 0.5;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
 
 /* V. BLOG
     ========================================================================== */
@@ -1339,6 +1440,10 @@ a.header-logo:active,
 
 .blog-articles-container .content-pagination {
 	margin-top: 16px;
+}
+
+.blog-article:hover h3 {
+	text-decoration: underline;
 }
 	
 /* VI. CONTACT US
@@ -1646,6 +1751,7 @@ a.header-logo:active,
 	}
 
 	.star-rating-title {
+		cursor: pointer;
 		margin: 0;
 		padding: 0;
 		position: absolute;
@@ -1675,6 +1781,7 @@ a.header-logo:active,
 			height: 16px;
 			/*margin: 0 3px 0;*/
 			/*padding: 0 2px 0;*/
+			cursor: pointer;
 			font-size: inherit;
 			background-size: 16px;
 			background-repeat: repeat-x;
@@ -1713,15 +1820,18 @@ a.header-logo:active,
 .star-rating-input:checked,
 .star-rating-input:hover {
 	background-image: url("../img/icons/rating-star-enabled.svg");
-	
 }
 
 .star-rating-input:hover ~ .star-rating-input {
 	background-image: url("../img/icons/rating-star-disabled.svg");
 }
-			
+
 .star-rating:hover {
 	color: #C29974;
+	/*
+	Проверь визуализацию состояний наведения
+	для star-raiting, все ли в порядке?
+	*/
 }
 
 /* VIII. POPUP
@@ -1757,3 +1867,11 @@ a.header-logo:active,
 				right: -25px;
 				top: 0;
 			}
+
+.popup-close:hover {
+	opacity: 0.5;
+}
+
+.popup-close:active {
+	opacity: 0.2;
+}
