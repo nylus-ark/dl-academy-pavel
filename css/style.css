@@ -237,33 +237,6 @@ a.header-logo:active,
 /* 0. Slider
 	========================================================================== */
 
-/*
-Решение для слайдера, который должен двигаться влева-вправо
-.slider {
-	overflow: hidden;
-}
-
-.slider-container {
-	display: flex;
-	flex-direction: row;
-
-	Чтобы показать второй слайд
-	transform: translate(-1180px, 0);
-	transition: transform 0.5s ease;
-}
-
-.slider-slide {
-	flex-shrink: 0;
-	height: 500px;
-	width: 100%;
-}
-*/
-
-/*
-	В случае когда у нас решение через аттрибут hidden можно оставить только общий элемент slider
-	slider-container не нужен
-*/
-
 .slider {
 	position: relative;
 	margin: 0 0 45px;
@@ -879,7 +852,6 @@ a.header-logo:active,
 .filters-form {
 	display: flex;
 	flex-direction: row;
-	/*justify-content: space-between;*/
 	align-items: flex-start;
 }
 
@@ -933,68 +905,217 @@ a.header-logo:active,
 			margin-bottom: 0;
 		}
 
-		.filters-list input[type="checkbox"],
-		.filters-list input[type="radio"],
-		.filters-amount input[type="radio"] {
+	/*Input type range*/
+
+	.custom-range {
+		-webkit-appearance: none;
+		width: 193px;
+		background: transparent;
+		position: relative;
+		padding-left: 5px;
+	}
+
+		.custom-range::before {
+			content: attr(min);
 			position: absolute;
-			width: 1px;
-			height: 1px;
-			overflow: hidden;
-			clip: rect(0 0 0 0);
-		}
-
-		/* Filters input type checkbox & radio */
-
-		.filters-list input[type="checkbox"] + label,
-		.filters-list input[type="radio"] + label {
-			position: relative;
-			padding: 0 0 0 29px;
-			cursor: pointer;
-		}
-
-		.filters-list input[type="checkbox"] + label::before,
-		.filters-list input[type="radio"] + label::before {
-			background: #fff;
-			border: 2px solid #c29974;
-			border-radius: 3px;
-			content: "";
-			position: absolute;
-			top: 1px;
+			top: 20px;
 			left: 0;
-			height: 20px;
-			width: 20px;
 		}
 
-		.filters-list input[type="radio"] + label::before {
-			border-radius: 100%;
-		}
-
-		.filters-list input[type="checkbox"]:checked + label::before {
-			background: #fff url("../img/icons/checkbox-checked.svg") no-repeat 100% 0;
-			/*background-size: 12px 12px;*/
-		}
-
-		.filters-list input[type="radio"] + label::after {
-			content: "";
-			border-radius: 100%;
+		.custom-range::after {
+			content: attr(max);
 			position: absolute;
-			top: 5px;
-			left: 4px;
-			height: 12px;
-			width: 12px;
+			top: 20px;
+			left: 180px;
+		}
+	  
+		.custom-range::-webkit-slider-thumb {
+			-webkit-appearance: none;
+		}
+		
+		.custom-range:focus {
+			outline: none;
+		}
+		
+		.custom-range::-ms-track {
+			width: 188px;
+			cursor: pointer;
+			
+			background: transparent; 
+			border-color: transparent;
+			color: transparent;
 		}
 
-		.filters-list input[type="radio"]:checked + label::after {
-			background: #c29974;
+	/* Styles for the Thumb */
+	
+	/* Special styling for WebKit/Blink */
+
+	.custom-range::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		background: #ffffff;
+		border: 8px solid #C29974;
+		border-radius: 100%;
+		cursor: pointer;
+
+		height: 24px;
+		width: 24px;
+		margin-top: -10px; /* For Chrome */
+	}
+	
+	/* Styles for Firefox */
+
+	.custom-range::-moz-range-thumb {
+		border: 8px solid #C29974;
+		height: 8px;
+		width: 8px;
+		border-radius: 100%;
+		background: #ffffff;
+		cursor: pointer;
+	}
+	
+	/* Styles for IE */
+
+	.custom-range::-ms-thumb {
+		border: 8px solid #C29974;
+		height: 24px;
+		width: 24px;
+		border-radius: 100%;
+		background: #ffffff;
+		cursor: pointer;
+	}
+
+.custom-range::-webkit-slider-thumb:hover {
+	opacity: 0.9;
+}
+
+.custom-range::-moz-range-thumb:hover {
+	opacity: 0.9;
+}
+
+.custom-range::-ms-thumb:hover {
+	opacity: 0.9;
+}
+
+	/* Styles for the Track */
+
+	#input-range {
+		--slider-position: 25%;
+	}
+
+	.custom-range::-webkit-slider-runnable-track {
+		background: linear-gradient(to right, #C29974 0, #C29974 var(--slider-position), #666 var(--slider-position), #666 100%);
+		border-radius: none;
+		cursor: pointer;
+		width: 100%;
+		height: 4px;
+		/*transition: background 450ms ease-in;*/
+	}
+		
+	.custom-range::-moz-range-track {
+		width: 188px;
+		height: 4px;
+		cursor: pointer;
+		background: #666;
+		border-radius: none;
+	}
+		
+	.custom-range::-ms-track {
+		width: 188px;
+		height: 4px;
+		cursor: pointer;
+		background: transparent;
+		border-color: transparent;
+		border-width: 16px 0;
+		color: transparent;
+	}
+
+	/* Styles for range progress in Firefox */
+
+	.custom-range::-moz-range-progress {
+		background-color: #C29974;
+		height: 4px;
+	}
+
+	/* Styles for range progress in IE */
+
+	.custom-range::-ms-fill-lower {
+		background-color: #C29974; 
+	}
+
+	.custom-range::-ms-fill-upper {  
+		background-color: grey;
+	}
+
+		.custom-range:focus::-ms-fill-lower {
+			background: #C29974;
 		}
 
-.filters-list input[type="checkbox"] + label:hover,
-.filters-list input[type="radio"] + label:hover {
+		.custom-range:focus::-ms-fill-upper {
+			background: grey;
+		}
+
+	/* Filters input type checkbox & radio */
+
+	.custom-checkbox,
+	.custom-radio,
+	.filters-amount input[type="radio"] {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+	}
+
+	.custom-checkbox + label,
+	.custom-radio + label {
+		position: relative;
+		padding: 0 0 0 29px;
+		cursor: pointer;
+	}
+
+	.custom-checkbox + label::before,
+	.custom-radio + label::before {
+		background: #fff;
+		border: 2px solid #c29974;
+		border-radius: 3px;
+		content: "";
+		position: absolute;
+		top: 1px;
+		left: 0;
+		height: 20px;
+		width: 20px;
+	}
+
+	.custom-radio + label::before {
+		border-radius: 100%;
+	}
+
+	.custom-checkbox:checked + label::before {
+		background: #fff url("../img/icons/checkbox-checked.svg") no-repeat 100% 0;
+		/*background-size: 12px 12px;*/
+	}
+
+	.custom-radio + label::after {
+		content: "";
+		border-radius: 100%;
+		position: absolute;
+		top: 5px;
+		left: 4px;
+		height: 12px;
+		width: 12px;
+	}
+
+	.custom-radio:checked + label::after {
+		background: #c29974;
+	}
+
+.custom-checkbox + label:hover,
+.custom-radio + label:hover {
 	text-decoration: underline;
 }
 
-.filters-list input[type="checkbox"]:disabled + label,
-.filters-list input[type="radio"]:disabled + label {
+.custom-checkbox:disabled + label,
+.custom-radio:disabled + label {
 	opacity: 0.5;
 }
 
@@ -1027,174 +1148,6 @@ a.header-logo:active,
 	background: #F3D0DB;
 	opacity: 0.5;
 }
-
-	/*Input type range*/
-
-	input[type=range] {
-		-webkit-appearance: none;
-		width: 193px;
-		background: transparent;
-		position: relative;
-		padding-left: 5px;
-	}
-
-		input[type=range]::before {
-			content: attr(min);
-			position: absolute;
-			top: 20px;
-			left: 0;
-		}
-
-		input[type=range]::after {
-			content: attr(max);
-			position: absolute;
-			top: 20px;
-			left: 180px;
-		}
-	  
-		input[type=range]::-webkit-slider-thumb {
-			-webkit-appearance: none;
-		}
-		
-		input[type=range]:focus {
-			outline: none;
-		}
-		
-		input[type=range]::-ms-track {
-			width: 188px;
-			cursor: pointer;
-			
-			background: transparent; 
-			border-color: transparent;
-			color: transparent;
-		}
-
-	/* Styles for the Thumb */
-	
-	/* Special styling for WebKit/Blink */
-
-	input[type=range]::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		background: #ffffff;
-		border: 8px solid #C29974;
-		border-radius: 100%;
-		cursor: pointer;
-
-		height: 24px;
-		width: 24px;
-		margin-top: -10px; /* For Chrome */
-		/*box-shadow: -80px 0 0 80px #C29974;*/
-	}
-	
-	/* Styles for Firefox */
-
-	input[type=range]::-moz-range-thumb {
-		border: 8px solid #C29974;
-		height: 8px;
-		width: 8px;
-		border-radius: 100%;
-		background: #ffffff;
-		cursor: pointer;
-	}
-	
-	/* Styles for IE */
-
-	input[type=range]::-ms-thumb {
-		border: 8px solid #C29974;
-		height: 24px;
-		width: 24px;
-		border-radius: 100%;
-		background: #ffffff;
-		cursor: pointer;
-	}
-
-input[type=range]::-webkit-slider-thumb:hover {
-	opacity: 0.9;
-}
-
-input[type=range]::-moz-range-thumb:hover {
-	opacity: 0.9;
-}
-
-input[type=range]::-ms-thumb:hover {
-	opacity: 0.9;
-}
-
-	/* Styles for the Track */
-
-	/*input[type=range]::-webkit-slider-runnable-track {
-		width: 100%;
-		height: 4px;
-		cursor: pointer;
-		/*background: #666;*/
-		/*background: -webkit-linear-gradient(left, #C29974 0%, #C29974 25%, grey 25%, grey 100%);
-		background: linear-gradient(to right, #C29974 0%, #C29974 25%, #666 25%, #666 100%);
-		border-radius: none;
-		transition: background 450ms ease-in;
-	}*/
-
-	/*#input-range {}*/
-
-	.filters-col input::-webkit-slider-runnable-track {
-		background: linear-gradient(to right, #C29974 0%, #C29974 25%, #666 25%, #666 100%);
-		border-radius: none;
-		cursor: pointer;
-		width: 100%;
-		height: 4px;
-		transition: background 450ms ease-in;
-	}
-	  
-		/*input[type=range]:focus::-webkit-slider-runnable-track {
-			background: #C29974;
-		}*/
-		
-		input[type=range]::-moz-range-track {
-			width: 188px;
-			height: 4px;
-			cursor: pointer;
-			background: #666;
-			/*opacity: 0.5;*/
-			border-radius: none;
-		}
-		
-		input[type=range]::-ms-track {
-			width: 188px;
-			height: 4px;
-			cursor: pointer;
-			background: transparent;
-			border-color: transparent;
-			border-width: 16px 0;
-			color: transparent;
-		}
-
-	/* Styles for range progress in Firefox */
-
-	input[type="range"]::-moz-range-progress {
-		background-color: #C29974;
-		height: 4px;
-	}
-
-	/*input[type="range"]::-moz-range-track {  
-		background-color: grey;
-	}*/
-
-	/* Styles for range progress in IE */
-
-	input[type="range"]::-ms-fill-lower {
-		background-color: #C29974; 
-	}
-
-	input[type="range"]::-ms-fill-upper {  
-		background-color: grey;
-	}
-
-		/*input[type=range]:focus::-ms-fill-lower {
-			background: #3071a9;
-		}
-
-		input[type=range]:focus::-ms-fill-upper {
-			background: #367ebd;
-		}*/
 
 /* 4. Product-cards
 	========================================================================== */
@@ -1527,7 +1480,7 @@ input[type=range]::-ms-thumb:hover {
 					/*font-size: 18px;*/
 					
 					/*
-					В макете шрифт у placeholder
+					В макете размер шрифта у placeholder
 					задан отличный от стандартного,
 					для соотвествия пока оставил его в коментарии
 					*/
@@ -1540,7 +1493,7 @@ input[type=range]::-ms-thumb:hover {
 			}
 
 		.contact-us-checkbox {
-			margin-bottom: 17px;
+			margin: -5px 0 17px;
 			/*
 			По макету отступ у контейнера такой же как и у остальных, 
 			но из-за чуть сдвинутого вниз переоформленного чекбокса,
@@ -1548,33 +1501,9 @@ input[type=range]::-ms-thumb:hover {
 			*/
 		}
 
-			.contact-us-form input[type="checkbox"] {
-				position: absolute;
-				width: 1px;
-				height: 1px;
-				overflow: hidden;
-				clip: rect(0 0 0 0);
-			}
-
-			.contact-us-form input[type="checkbox"] + label {
-				position: relative;
-				padding: 0 0 0 34px;
-			}
-
-			.contact-us-form input[type="checkbox"] + label::before {
-				border: 2px solid #c29974;
-				border-radius: 3px;
-				content: "";
-				position: absolute;
-				bottom: 2px;
-				left: 0;
-				height: 20px;
-				width: 20px;
-			}
-
-			.contact-us-form input[type="checkbox"]:checked + label::before {
-				background: #fff url("../img/icons/checkbox-checked.svg") no-repeat 100% 0;
-				/*background-size: 12px 12px;*/
+			.contact-us-checkbox .custom-checkbox + label,
+			.popup-body .custom-checkbox + label {
+				padding: 3px 0 0 34px;
 			}
 		
 	.contact-us-aside {
@@ -1669,15 +1598,13 @@ input[type=range]::-ms-thumb:hover {
 				padding: 0 15px;
 			}
 
-			.footer-mail-input::placeholder {
+			.footer-mail-input {
 				color: #ebebeb;
 			}
 
-			/*
-			.footer-mail-btn {
-
-			}
-			*/
+				.footer-mail-input::placeholder {
+					color: #ebebeb;
+				}
 
 		.footer-socials-list {
 			display: flex;

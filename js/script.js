@@ -1,17 +1,75 @@
-// .chrome styling
 
-// document.getElementById("input-range").oninput = function() {
-//  this.style.background = 'linear-gradient(to right, #C29974 0%, #C29974 ' + this.value + '%, #666 ' + this.value + '%, #666 100%)'
-//};
+// Script for input-range
 
-// .chrome
+// Сначала проверяем, есть ли вообще такой элемент на странице
+if (document.getElementById('input-range')) {
+  /*
+      Задаем начальное значение, чтобы оно бралось из html
+      Берем значение, которое у нас указано в value и делим на значение, которое указано в аттрибуте max
+      После этого получается процент, который мы прописываем в переменную --slider-position
+      В CSS используем --slider-position для оформления градиента
+  */
+  document.getElementById('input-range').style.setProperty('--slider-position', Math.ceil(document.getElementById('input-range').value / document.getElementById('input-range').max * 100) + '%');
 
-//$( '.chrome input' ).on( 'input', function( ) {
-//  $( this ).css( 'background', 'linear-gradient(to right, green, #005555 ' + this.value + '%, blue)' );
-//} );
+  /*
+      Добавляем обработку события на изменение #input-range
+      Делаем по сути все тоже самое, что и выше. 
+      Значение, которое будет у input при изменении делим на максимум
+  */
+  document.getElementById('input-range').addEventListener('input', function() {
+      this.style.setProperty('--slider-position', Math.ceil(this.value / this.max * 100) + '%');
+  });
+}
 
-// .chrome styling
+// Script for slider-slide
 
-$( '.filters-col input::-webkit-slider-runnable-track' ).on( 'input::-webkit-slider-runnable-track', function( ) {
-  $( this ).css( 'background', 'linear-gradient(to right, #C29974 0%, #C29974 ' + this.value + '%, #666 ' + this.value + '%, #666 100%)' );
-} );
+/* ES5 способ */
+
+// Получаем все элементы с классом slider-nav-btn
+var sliderNavBtns = document.querySelectorAll('.slider-nav-btn');
+var i = 0;
+// Пробегаемся по ним циклом
+for (i = 0; i < sliderNavBtns.length; i++) {
+    // На каждый элемент "навешиваем" событие на клик. Когда по элементу будут кликать, будет вызываться эта функция
+    sliderNavBtns[i].addEventListener('click', function () {
+        // Получаем все слайды в слайдере
+        var slides = document.querySelectorAll('.slider-slide');
+        var k;
+
+        for (k = 0; k < slides.length; k++) {
+            // Добавляем всем слайдам аттрибут hidden
+            slides[k].hidden = true;
+            // Убираем с кнопок активный класс
+            sliderNavBtns[k].classList.remove('is-active');
+        }
+        // Кнопке, по которой кликнули, добавляем активный класс
+        this.classList.add('is-active');
+        // Ищем текущий слайд и убираем у него аттрибут hidden
+        var currentSlide = document.querySelector('#slide-' + this.dataset.slide);
+        if (currentSlide) {
+            currentSlide.hidden = false;
+        }
+    })
+}
+
+/* ES6 способ */
+
+/*
+let sliderNavBtns = document.querySelectorAll('.slider-nav-btn');
+sliderNavBtns.forEach((sliderBtn) => {
+    sliderBtn.addEventListener('click', function () {
+        let slides = document.querySelectorAll('.slider-slide');
+        slides.forEach((slide) => {
+            slide.hidden = true;
+        });
+
+        document.querySelector('.slider-nav-btn.is-active').classList.remove('is-active');
+        this.classList.add('is-active');
+
+        let currentSlide = document.querySelector('#slide-' + this.dataset.slide);
+        if (currentSlide) {
+            currentSlide.hidden = false;
+        }
+    });
+});
+*/

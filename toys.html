@@ -4,12 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,400;1,700&family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,400;1,700&family=Montserrat:wght@300;700&family=Open+Sans&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-
-    <script src="js/script.js"></script>
 
     <title>Toy For Kids</title>
 </head>
@@ -62,9 +60,9 @@
         <section class="filters">
             <h2 class="visually-hidden">Filters</h2>
             <form class="filters-form container" action="https://echo.htmlacademy.ru/" method="get">
-                <div class="filters-col chrome">
+                <div class="filters-col">
                     <div class="filters-col-title">Cost</div>
-                    <input type="range" id="input-range" name="cost" value="100" min="0" max="500" />
+                    <input class="custom-range" type="range" id="input-range" name="cost" value="100" min="0" max="500">
                 </div>
 
                 <div class="filters-col">
@@ -72,19 +70,19 @@
 
                     <ul class="filters-list">
                         <li>
-                            <input type="checkbox" id="color-black" name="color" value="black" checked>
+                            <input class="custom-checkbox" type="checkbox" id="color-black" name="color" value="black" checked>
                             <label for="color-black">Black</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="color-blue" name="color" value="blue">
+                            <input class="custom-checkbox" type="checkbox" id="color-blue" name="color" value="blue">
                             <label for="color-blue">Blue</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="color-green" name="color" value="green">
+                            <input class="custom-checkbox" type="checkbox" id="color-green" name="color" value="green">
                             <label for="color-green">Green</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="color-white" name="color" value="white">
+                            <input class="custom-checkbox" type="checkbox" id="color-white" name="color" value="white">
                             <label for="color-white">White</label>
                         </li>
                     </ul>
@@ -95,11 +93,11 @@
 
                     <ul class="filters-list">
                         <li>
-                            <input type="radio" id="delivery-free" name="delivery" value="free">
+                            <input class="custom-radio" type="radio" id="delivery-free" name="delivery" value="free">
                             <label for="delivery-free">Free shipping</label>
                         </li>
                         <li>
-                            <input type="radio" id="delivery-fast" name="delivery" value="fast" checked>
+                            <input class="custom-radio" type="radio" id="delivery-fast" name="delivery" value="fast" checked>
                             <label for="delivery-fast">Fast shipping</label>
                         </li>
                     </ul>
@@ -210,9 +208,8 @@
                                 Думаю так для всех img нужно обернуть.
                             -->
 
-                            <h3 class="product-cards-title">
-                                <a href="#">Tangle spinning tea light</a>
-                            </h3>
+                            <h3 class="product-cards-title">Tangle spinning tea light</h3>
+                            
                             <span class="product-cards-price">&#36;56.00 usd</span>
 
                             <div class="product-cards-item-active title-h3" hidden>Learn more</div>
@@ -360,4 +357,5 @@
         </div>
     </footer>
 </body>
+<script src="js/script.js"></script>
 </html>
