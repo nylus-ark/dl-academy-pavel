@@ -257,6 +257,10 @@ a.header-logo:active,
 	background: #dfdaed;
 }
 
+.slider-slide-fourth {
+	background: #eddada;
+}
+
 .slider-slide-wrapper {
 	display: flex;
 	flex-direction: row;

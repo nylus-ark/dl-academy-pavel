@@ -45,7 +45,7 @@ for (i = 0; i < sliderNavBtns.length; i++) {
         // Кнопке, по которой кликнули, добавляем активный класс
         this.classList.add('is-active');
         // Ищем текущий слайд и убираем у него аттрибут hidden
-        var currentSlide = document.querySelector('#slide-' + this.dataset.slide);
+        var currentSlide = document.querySelector(this.getAttribute('href'));
         if (currentSlide) {
             currentSlide.hidden = false;
         }
