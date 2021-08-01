@@ -27,7 +27,7 @@ body {
 	color: #1e0606;
 	font-family: "Open Sans", sans-serif;
 	font-size: 16px;
-	line-height: 22px;
+	line-height: calc(22 / 16);
 	margin: 0;
 	padding: 0;
 
@@ -53,7 +53,7 @@ body {
 	font-family: "Montserrat", sans-serif;
 	font-weight: bold;
 	font-size: 40px;
-	line-height: 49px;
+	line-height: calc(49 / 40);
 	text-transform: uppercase;
 	margin: 0;
 }
@@ -64,7 +64,7 @@ body {
 	font-family: "Montserrat", sans-serif;
 	font-weight: bold;
 	font-size: 38px;
-	line-height: 47px;
+	line-height: calc(47 / 38);
 	text-decoration: none;
 	text-transform: uppercase;
 	margin: 0;
@@ -75,7 +75,7 @@ body {
 	font-family: "Montserrat", sans-serif;
 	font-size: 26px;
 	font-weight: 700;
-	line-height: 31px;
+	line-height: calc(31 / 26);
 	text-align: center;
 	text-transform: uppercase;
 	margin: 0;
@@ -101,9 +101,7 @@ body {
 	font-family: "Open Sans", sans-serif;
 	font-weight: bold;
 	font-size: 16px;
-	line-height: 22px;
-	/*line-height: 40px;*/
-	/*height: 40px;*/
+	line-height: calc(22 / 16);
 	text-decoration: none;
 	text-transform: uppercase;
 	vertical-align: top;
@@ -160,7 +158,7 @@ body {
 
 	.header-nav-list li {
 		font-size: 14px;
-		line-height: 19px;
+		line-height: calc(19 / 14);
 		text-transform: uppercase;
 		margin: 0 10px;
 	}
@@ -168,7 +166,7 @@ body {
 		.header-nav-list a {
 			color: #1e0606;
 			font-size: 14px;
-			line-height: 19px;
+			line-height: calc(19 / 14);
 			text-decoration: none;
 			text-transform: uppercase;
 		}
@@ -190,7 +188,7 @@ body {
 		}
 
 		.search-button {
-			background: url('../img/icons/icon-search.svg') no-repeat 50% 50%;
+			background: url('../img/svg/icon-search.svg') no-repeat 50% 50%;
 			border: none;
 			box-sizing: border-box;
 			padding: 0;
@@ -204,7 +202,7 @@ body {
 		color: #1e0606;
 		font-size: 14px;
 		font-weight: bold;
-		line-height: 19px;
+		line-height: calc(19 / 14);
 		text-transform: uppercase;
 		text-decoration: none;
 	}
@@ -271,13 +269,12 @@ a.header-logo:active,
 	font-family: "Montserrat", sans-serif;
 	font-size: 60px;
 	font-weight: 300;
-	line-height: 73px;
+	line-height: calc(73 / 60);
 
 	margin: 106px 22px 0 28px;
 }
 
 .slider-slide-info {
-	/*width: 307px;*/
 	margin: 178px 5px 0 22px;
 }
 
@@ -286,7 +283,7 @@ a.header-logo:active,
 		font-family: "Montserrat", sans-serif;
 		font-weight: 700;
 		font-size: 40px;
-		line-height: 44px;
+		line-height: calc(44 / 40);
 		text-transform: uppercase;
 
 		max-width: 307px;
@@ -297,7 +294,7 @@ a.header-logo:active,
 		font-family: "Crimson Text", serif;
 		font-size: 20px;
 		font-style: italic;
-		line-height: 25px;
+		line-height: calc(25 / 20);
 
 		margin: 0 0 20px;
 	}
@@ -314,7 +311,7 @@ a.header-logo:active,
 	color: #fff;
 	font-size: 12px;
 	font-weight: 700;
-	line-height: 16px;
+	line-height: calc(16 / 12);
 	text-transform: uppercase;
 	text-align: center;
 	background: rgba(194, 153, 116, 1);
@@ -464,11 +461,11 @@ a.header-logo:active,
 		}
 
 		.products-nav-btn-prev {
-			background-image: url('../img/icons/btn-previous.svg');
+			background-image: url('../img/svg/btn-previous.svg');
 		}
 
 		.products-nav-btn-next {
-			background-image: url('../img/icons/btn-next.svg');
+			background-image: url('../img/svg/btn-next.svg');
 		}
 
 	.products-nav-text {
@@ -484,7 +481,7 @@ a.header-logo:active,
 	opacity: 0.2;
 }
 
-.products-list-item h3:hover {
+.products-list-item-wrapper:hover h3 {
 	text-decoration: underline;
 }
 
@@ -543,7 +540,7 @@ a.header-logo:active,
 			font-family: "Crimson Text", serif;
 			font-size: 26px;
 			font-style: italic;
-			line-height: 32px;
+			line-height: calc(32 / 26);
 			text-decoration: none;
 			min-height: 55px;
 			min-width: 326px;
@@ -630,7 +627,7 @@ a.header-logo:active,
 		}
 
 	/*
-	В общем я оставил подход с flex-start и отступами српава,
+	В общем я оставил подход с flex-start и отступами справа,
 	но пока без учета других разрешений
 
 	Подход с отрицательными отступами мне больше понравился,
@@ -651,11 +648,6 @@ a.header-logo:active,
 /* 4. Main-bottom
 		========================================================================== */
 
-/**
- * 4.1. Design Life Kids
- * 4.2. Contacts
-*/
-
 .main-bottom {
 	padding: 60px 0 147px;
 	/*
@@ -674,56 +666,43 @@ a.header-logo:active,
 		background-color: #e1f0f7;
 		max-width: 543px;
 		padding: 0 30px;
+		margin: 0 57px 0 0;
 	}
+
+		.main-bottom-col:last-child {
+			margin: 0;
+		}
 
 		.main-bottom-title {
 			margin: -20px 0 20px;
+		}
+
+		.main-bottom-subtitle {
+			font-family: "Crimson Text", serif;
+			font-size: 26px;
+			font-style: italic;
+			font-weight: normal;
+			line-height: calc(32 / 26);
+			margin: 0 0 10px;
 		}
 
 		.main-bottom-text {
 			margin: 0 0 20px;
 		}
 
-/* 4.1. Design Life Kids
-    ========================================================================== */
+		.main-bottom-btn {
+			margin: 0 0 35px;
+		}
 
-.dlk-aside-container {
-	margin: 0 57px 0 0;
-}
+		.main-bottom-map {
+			overflow: hidden;
+			max-height: 196px;
+			margin: 0 0 -114px;
+		}
 
-.dlk-aside-title {
-	margin-bottom: 10px;
-}
-
-.dlk-aside-subtitle {
-	font-family: "Crimson Text", serif;
-    font-size: 26px;
-    font-style: italic;
-    font-weight: normal;
-    line-height: 32px;
-	margin: 0 0 10px;
-}
-
-.dlk-aside-btn {
-	margin: 0 0 35px;
-}
-
-/* 4.2. Contacts
-    ========================================================================== */
-
-/*.contacts-aside-container {
-	margin: 0 0 auto;
-}*/
-
-.contacts-aside-map {
-	overflow: hidden;
-	max-height: 196px;
-	margin: 0 0 -114px;
-}
-
-	.contacts-aside-map img {
-		max-width: 100%;	
-	}
+			.main-bottom-map img {
+				max-width: 100%;	
+			}
 
 /* III. CATALOG
 		========================================================================== */
@@ -755,7 +734,7 @@ a.header-logo:active,
 }
 
 	.breadcrumbs-list-item:not(:last-child):after {
-		content: url(../img/icons/stroke-next.svg);
+		content: url(../img/svg/stroke-next.svg);
 		margin: 0 20px;
 	}
 
@@ -765,7 +744,7 @@ a.header-logo:active,
 			font-family: "Crimson Text", serif;
 			font-size: 20px;
 			font-style: italic;
-			line-height: 25px;
+			line-height: calc(25 / 20);
 			text-decoration: none;
 		}
 
@@ -863,7 +842,7 @@ a.header-logo:active,
 	color: #1e0606;
 	flex-shrink: 0;
 	font-size: 16px;
-	line-height: 22px;
+	line-height: calc(22 / 16);
 	/*min-width: 200px;*/
 }
 
@@ -886,7 +865,7 @@ a.header-logo:active,
 	.filters-col-title {
 		font-size: 16px;
 		font-weight: bold;
-		line-height: 22px;
+		line-height: calc(22 / 16);
 		margin: 0 0 15px;
 	}
 
@@ -1062,7 +1041,7 @@ a.header-logo:active,
 
 	.custom-checkbox,
 	.custom-radio,
-	.filters-amount input[type="radio"] {
+	.custom-amount {
 		position: absolute;
 		width: 1px;
 		height: 1px;
@@ -1095,7 +1074,7 @@ a.header-logo:active,
 	}
 
 	.custom-checkbox:checked + label::before {
-		background: #fff url("../img/icons/checkbox-checked.svg") no-repeat 100% 0;
+		background: #fff url("../img/svg/checkbox-checked.svg") no-repeat 100% 0;
 		/*background-size: 12px 12px;*/
 	}
 
@@ -1135,12 +1114,12 @@ a.header-logo:active,
 			display: block;
 			flex-shrink: 0;
 			text-align: center;
-			line-height: 35px;
+			line-height: calc(35 / 16);
 			cursor: pointer;
 			min-width: 80px;
 		}
 
-		.filters-amount input[type="radio"]:checked + label {
+		.custom-amount:checked + label {
 			background: #F3D0DB;
 		}
 
@@ -1148,7 +1127,7 @@ a.header-logo:active,
 		margin: 37px 0 0;
 	}
 
-.filters-amount label:hover:not(.filters-amount input[type="radio"]:checked + label) {
+.filters-amount label:hover:not(.custom-amount:checked + label) {
 	background: #F3D0DB;
 	opacity: 0.5;
 }
@@ -1185,21 +1164,11 @@ a.header-logo:active,
 			margin-right: 0;
 		}
 
-		/*.product-cards-item:nth-child(n+4) {
-			margin-top: 20px;
-		}*/
-
 			.product-cards-item-img {
-				/*display: flex;
-				flex-direction: row;
-				justify-content: center;*/
 				display: block;
-				/*align-items: center;*/
 				text-align: center;
 				color: #000;
 				text-decoration: none;
-				/*height: 385px;*/
-				/*margin: 0 0 30px;*/
 				position: relative;
 			}
 
@@ -1210,45 +1179,20 @@ a.header-logo:active,
 					margin-bottom: 30px;
 				}
 
-				/*.product-cards-item-img-wrapper img {
-					margin-top: 3px
-				}*/
-
-				/*.product-cards-item-img-wrapper img {
-					display: block;
-					max-width: 100%;
-					margin-bottom: 30px;
-				}*/
-
-				.product-cards-item-img img {
-					display: block;
-					max-width: 100%;
-					margin-bottom: 30px;
-				}
-
-				/*.product-cards-item-active {
-					display: none;
-				}*/
-
-			.product-cards-item-info {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-			}
+					.product-cards-item-img-wrapper img {
+						display: block;
+						max-width: 100%;
+						margin-bottom: 30px;
+					}
 
 				.product-cards-title {
 					font-family: "Open Sans", sans-serif;
 					font-weight: normal;
 					font-size: 14px;
-					line-height: 20px;
+					line-height: calc(20 / 14);
 					text-transform: uppercase;
 					margin: 0 0 15px;
 				}
-
-					.product-cards-title a {
-						color: #1e0606;
-						text-decoration: none;
-					}
 
 				.product-cards-price {
 					font-weight: bold;
@@ -1301,7 +1245,7 @@ a.header-logo:active,
 			.content-pagination-list li {
 				font-family: "Montserrat", sans-serif;
 				font-weight: bold;
-				line-height: 20px;
+				line-height: calc(20 / 14);
 				margin: 0 33px;
 			}
 
@@ -1381,7 +1325,7 @@ a.header-logo:active,
 				font-family: "Montserrat", sans-serif;
 				font-weight: bold;
 				font-size: 24px;
-				line-height: 31px;
+				line-height: calc(31 / 24);
 				margin: 7px 0 15px;
 			}
 
@@ -1392,7 +1336,7 @@ a.header-logo:active,
 
 			.blog-article p {
 				font-size: 18px;
-				line-height: 25px;
+				line-height: calc(25 / 18);
 				margin: 0;
 			}
 
@@ -1466,7 +1410,7 @@ a.header-logo:active,
 			.contact-us-label {
 				display: block;
 				font-size: 14px;
-				line-height: 19px;
+				line-height: calc(19 / 14);
 				margin-bottom: 4px;
 			}
 
@@ -1481,12 +1425,12 @@ a.header-logo:active,
 
 				.contact-us-field::placeholder {
 					color: #1E0606;
-					/*font-size: 18px;*/
+					/* font-size: 18px; */
 					
 					/*
-					В макете размер шрифта у placeholder
-					задан отличный от стандартного,
-					для соотвествия пока оставил его в коментарии
+						В макете размер шрифта у placeholder
+						задан отличный от стандартного,
+						для соотвествия пока оставил его в коментарии
 					*/
 					}
 
@@ -1499,9 +1443,9 @@ a.header-logo:active,
 		.contact-us-checkbox {
 			margin: -5px 0 17px;
 			/*
-			По макету отступ у контейнера такой же как и у остальных, 
-			но из-за чуть сдвинутого вниз переоформленного чекбокса,
-			я сделал отступ по лейблу, а не по инпуту
+				По макету отступ у контейнера такой же как и у остальных, 
+				но из-за чуть сдвинутого вниз переоформленного чекбокса,
+				я сделал отступ по лейблу, а не по инпуту
 			*/
 		}
 
@@ -1509,6 +1453,11 @@ a.header-logo:active,
 			.popup-body .custom-checkbox + label {
 				padding: 3px 0 0 34px;
 			}
+
+.contact-us-field:hover,
+.contact-us-field:active {
+	border: 1px solid #C29974;
+}
 		
 	.contact-us-aside {
 		max-width: 380px;
@@ -1524,7 +1473,7 @@ a.header-logo:active,
 			font-family: "Montserrat", sans-serif;
 			font-weight: 600;
 			font-size: 26px;
-			line-height: 32px;
+			line-height: calc(32 / 26);
 			text-transform: uppercase;
 			padding: 0;
 			margin: 0 0 20px;
@@ -1558,7 +1507,7 @@ a.header-logo:active,
 	.footer-col-title {
 		color: #aaaaaa;
 		font-weight: 400;
-		line-height: 22px;
+		line-height: calc(22 / 16);
 		text-align: left;
 		border-bottom: 1px solid #666;
 		padding-bottom: 23px;
@@ -1577,7 +1526,7 @@ a.header-logo:active,
 
 			.footer-col-list a {
 				color: #fff;
-				line-height: 22px;
+				line-height: calc(22 / 16);
 				text-decoration: none;
 			}
 
@@ -1622,10 +1571,6 @@ a.header-logo:active,
 				margin: 0 10px 0 0;
 			}
 
-				/*.footer-col-list a {
-					text-decoration: none;
-				}*/
-
 .footer-col-list a:hover,
 .footer-socials-list a:hover {
 	opacity: 0.5;
@@ -1664,10 +1609,10 @@ a.header-logo:active,
 			text-decoration: none;
 		}
 
-.footer-bottom-col a:hover {
-	color: #fff;
-	text-decoration: underline;
-}
+		.footer-bottom-col a:hover {
+			color: #fff;
+			text-decoration: underline;
+		}
 
 	/* Star raiting */
 
@@ -1695,7 +1640,7 @@ a.header-logo:active,
 		position: relative;
 		width: 80px;
 		height: 16px;
-		background-image: url("../img/icons/rating-star-disabled.svg");
+		background-image: url("../img/svg/rating-star-disabled.svg");
 		background-size: 16px;
 		background-repeat: repeat-x;
 	}
@@ -1751,18 +1696,18 @@ a.header-logo:active,
 
 .star-rating-input:checked,
 .star-rating-input:hover {
-	background-image: url("../img/icons/rating-star-enabled.svg");
+	background-image: url("../img/svg/rating-star-enabled.svg");
 }
 
 .star-rating-input:hover ~ .star-rating-input {
-	background-image: url("../img/icons/rating-star-disabled.svg");
+	background-image: url("../img/svg/rating-star-disabled.svg");
 }
 
 .star-rating:hover {
 	color: #C29974;
 	/*
-	Проверь визуализацию состояний наведения
-	для star-raiting, все ли в порядке?
+		Проверь визуализацию состояний наведения
+		для star-raiting, все ли в порядке?
 	*/
 }
 

@@ -15,8 +15,9 @@
     <header class="header">
         <div class="container header-container">
             <a href="index.html" class="header-logo">
-                <img src="img/icons/logo.svg" alt="DLK company logo">
+                <img src="img/svg/logo.svg" alt="DLK company logo">
             </a>
+
             <nav class="header-nav">
                 <ul class="header-nav-list">
                     <li>
@@ -108,15 +109,15 @@
 
                     <ul class="filters-amount">
                         <li>
-                            <input type="radio" id="amount-0" name="amount" value="0-5" checked>
+                            <input class="custom-amount" type="radio" id="amount-0" name="amount" value="0-5" checked>
                             <label for="amount-0">0-5</label>
                         </li>
                         <li>
-                            <input type="radio" id="amount-10" name="amount" value="10-20">
+                            <input class="custom-amount" type="radio" id="amount-10" name="amount" value="10-20">
                             <label for="amount-10">10-20</label>
                         </li>
                         <li>
-                            <input type="radio" id="amount-20" name="amount" value="20-50">
+                            <input class="custom-amount" type="radio" id="amount-20" name="amount" value="20-50">
                             <label for="amount-20">20-50</label>
                         </li>
                     </ul>
@@ -134,66 +135,63 @@
                 <ul class="product-cards-list">
                     <li class="product-cards-item">
                         <a href="#" class="product-cards-item-img">
-                            <img src="/img/shark.png" alt="Picture of 'Sharky been bag chair cover' product">
+                            <div class="product-cards-item-img-wrapper">
+                                <img src="/img/shark.png" alt="Picture of 'Sharky been bag chair cover' product">
+                            </div>
+                            
                             <h3 class="product-cards-title">Sharky bean bag chair cover</h3>
+                            <span class="product-cards-price">&#36;60.00 usd</span>
 
                             <div class="product-cards-item-active title-h3" hidden>Learn more</div>
                         </a>
-
-                        <!-- 
-                            Я использовал ссылку как обертку для элементов что бы при наведении
-                            на нее они все отображали состояние наведения, допустимо ли это?
-
-                            Пока что я отсавил это состояние первой карточке для теста, если
-                            все правильно то оберну и остальные так же.
-
-                        -->
-
-                        <span class="product-cards-price">&#36;60.00 usd</span>
                     </li>
                     <li class="product-cards-item">
                         <a href="#" class="product-cards-item-img">
-                            <img src="/img/brass.png" alt="Picture of 'Brass deco frames' product">
-                        </a>
-                        <div class="product-cards-item-info">
-                            <h3 class="product-cards-title">
-                                <a href="#">Brass deco frames</a>
-                            </h3>
+                            <div class="product-cards-item-img-wrapper">
+                                <img src="/img/brass.png" alt="Picture of 'Brass deco frames' product">
+                            </div>
+
+                            <h3 class="product-cards-title">Brass deco frames</h3>
                             <span class="product-cards-price">&#36;66.00 usd</span>
-                        </div>
+
+                            <div class="product-cards-item-active title-h3" hidden>Learn more</div>
+                        </a>
                     </li>
                     <li class="product-cards-item">
                         <a href="#" class="product-cards-item-img">
-                            <img src="/img/cibo.png" alt="Picture of 'Cibo full apron' product">
-                        </a>
-                        <div class="product-cards-item-info">
-                            <h3 class="product-cards-title">
-                                <a href="#">Cibo full apron</a>
-                            </h3>
+                            <div class="product-cards-item-img-wrapper">
+                                <img src="/img/cibo.png" alt="Picture of 'Cibo full apron' product">
+                            </div>
+
+                            <h3 class="product-cards-title">Cibo full apron</h3>
                             <span class="product-cards-price">&#36;60.00 usd</span>
-                        </div>
+
+                            <div class="product-cards-item-active title-h3" hidden>Learn more</div>
+                        </a>
                     </li>
                     <li class="product-cards-item">
                         <a href="#" class="product-cards-item-img">
-                            <img src="/img/gatcha.png" alt="Picture of 'Gatcha gatcha gumball machine' product">
-                        </a>
-                        <div class="product-cards-item-info">
-                            <h3 class="product-cards-title">
-                                <a href="#">Gatcha gatcha gumball machine</a>
-                            </h3>
+                            <div class="product-cards-item-img-wrapper">
+                                <img src="/img/gatcha.png" alt="Picture of 'Gatcha gatcha gumball machine' product">
+                            </div>
+
+                            <h3 class="product-cards-title">Gatcha gatcha gumball machine</h3>
                             <span class="product-cards-price">&#36;56.00 usd</span>
-                        </div>
+
+                            <div class="product-cards-item-active title-h3" hidden>Learn more</div>
+                        </a>
                     </li>
                     <li class="product-cards-item">
                         <a href="#" class="product-cards-item-img">
-                            <img src="/img/christmas.png" alt="Picture of 'Christmas advent scented candle' product">
-                        </a>
-                        <div class="product-cards-item-info">
-                            <h3 class="product-cards-title">
-                                <a href="#">Christmas advent scented candle</a>
-                            </h3>
+                            <div class="product-cards-item-img-wrapper">
+                                <img src="/img/christmas.png" alt="Picture of 'Christmas advent scented candle' product">
+                            </div>
+
+                            <h3 class="product-cards-title">Christmas advent scented candle</h3>
                             <span class="product-cards-price">&#36;29.00 usd</span>
-                        </div>
+
+                            <div class="product-cards-item-active title-h3" hidden>Learn more</div>
+                        </a>
                     </li>
                     <li class="product-cards-item">
                         <a href="#" class="product-cards-item-img">
@@ -201,15 +199,7 @@
                                 <img src="/img/tangle.png" alt="Picture of 'Tangle spinning tea light' product">
                             </div>
 
-                            <!--
-                                Изображения обернул в отдельный div, так как оно меньше по высоте
-                                чем остальные, что бы его сдвинуть ниже (по макету).
-
-                                Думаю так для всех img нужно обернуть.
-                            -->
-
                             <h3 class="product-cards-title">Tangle spinning tea light</h3>
-                            
                             <span class="product-cards-price">&#36;56.00 usd</span>
 
                             <div class="product-cards-item-active title-h3" hidden>Learn more</div>
@@ -219,8 +209,8 @@
 
                 <div class="content-pagination">
                     <a class="content-pagination-arrow" href="#">
-                        <img class="content-pagination-arrow-img" src="img/icons/icon-arrow-prev.svg" alt="Previous page">
-                        <img class="content-pagination-arrow-img-active" src="img/icons/icon-arrow-prev-hover.svg" alt="Previous page" hidden>
+                        <img class="content-pagination-arrow-img" src="img/svg/icon-arrow-prev.svg" alt="Previous page">
+                        <img class="content-pagination-arrow-img-active" src="img/svg/icon-arrow-prev-hover.svg" alt="Previous page" hidden>
                     </a>
                     <ul class="content-pagination-list">
                         <li>
@@ -237,8 +227,8 @@
                         </li>
                     </ul>
                     <a class="content-pagination-arrow" href="#">
-                        <img class="content-pagination-arrow-img" src="img/icons/icon-arrow-next.svg" alt="Next page">
-                        <img class="content-pagination-arrow-img-active" src="img/icons/icon-arrow-next-hover.svg" alt="Next page" hidden>
+                        <img class="content-pagination-arrow-img" src="img/svg/icon-arrow-next.svg" alt="Next page">
+                        <img class="content-pagination-arrow-img-active" src="img/svg/icon-arrow-next-hover.svg" alt="Next page" hidden>
                     </a>
                 </div>
             </div>
@@ -304,23 +294,23 @@
                     <div class="footer-socials-container">
                         <ul class="footer-socials-list">
                             <li>
-                                <a href="#">
-                                    <img src="img/icons/facebook.svg" alt="Facebook">
+                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                                    <img src="img/svg/facebook.svg" alt="Facebook">
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <img src="img/icons/twitter.svg" alt="Twitter">
+                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                                    <img src="img/svg/twitter.svg" alt="Twitter">
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <img src="img/icons/pinterest.svg" alt="Pinterest">
+                                <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">
+                                    <img src="img/svg/pinterest.svg" alt="Pinterest">
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <img src="img/icons/instagram.svg" alt="Instagram">
+                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                                    <img src="img/svg/instagram.svg" alt="Instagram">
                                 </a>
                             </li>
                         </ul>
@@ -356,6 +346,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
-<script src="js/script.js"></script>
 </html>
