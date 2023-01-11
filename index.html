@@ -4,18 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,400;1,700&family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,400;1,700&family=Montserrat:wght@300;700&family=Open+Sans&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+
     <title>DLK - Design Life Kids</title>
 </head>
 <body>
     <header class="header">
         <div class="container header-container">
             <div class="header-logo">
-                <img src="img/icons/logo.svg" alt="DLK company logo">
+                <img src="img/svg/logo.svg" alt="DLK company logo">
             </div>
+
             <nav class="header-nav">
                 <ul class="header-nav-list">
                     <li>
@@ -43,7 +45,109 @@
         </div>
     </header>
     <main>
-        <!--<div class="main-slider"></div>-->
+        <div class="container">
+            <div class="slider">
+                <div class="slider-slide" id="slide-1">
+                    <div class="slider-slide-wrapper">
+                        <div class="slider-counter">01</div>
+
+                        <div class="slider-slide-info">
+                            <h2 class="slider-slide-title">The ooh noo collection</h2>
+                            <div class="slider-slide-description">
+                                <p>Designed in Slovenia</p>
+                            </div>
+                            <a href="#" class="btn">Explore now</a>
+                        </div>
+
+                        <div class="slider-slide-img">
+                            <img src="img/soft-toy.png" alt="Picture with soft toy on a wooden cart">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-slide slider-slide-second" id="slide-2" hidden>
+                    <div class="slider-slide-wrapper">
+                        <div class="slider-counter">02</div>
+
+                        <div class="slider-slide-info">
+                            <h2 class="slider-slide-title">A summer's breeze collection</h2>
+                            <div class="slider-slide-description">
+                                <p>Designed in Slovenia</p>
+                            </div>
+                            <a href="#" class="btn">Explore now</a>
+                        </div>
+
+                        <div class="slider-slide-img">
+                            <img src="img/soft-toy.png" alt="Picture with soft toy on a wooden cart">
+                        </div>
+                    </div>  
+                </div>
+
+                <div class="slider-slide slider-slide-third" id="slide-3" hidden>
+                    <div class="slider-slide-wrapper">
+                        <div class="slider-counter">03</div>
+
+                        <div class="slider-slide-info">
+                            <h2 class="slider-slide-title">The Keepers of sleep collection</h2>
+                            <div class="slider-slide-description">
+                                <p>Designed in Slovenia</p>
+                            </div>
+                            <a href="#" class="btn">Explore now</a>
+                        </div>
+
+                        <div class="slider-slide-img">
+                            <img src="img/soft-toy.png" alt="Picture with soft toy on a wooden cart">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-slide slider-slide-fourth" id="slide-4" hidden>
+                    <div class="slider-slide-wrapper">
+                        <div class="slider-counter">04</div>
+
+                        <div class="slider-slide-info">
+                            <h2 class="slider-slide-title">The Pets collection</h2>
+                            <div class="slider-slide-description">
+                                <p>Designed in Slovenia</p>
+                            </div>
+                            <a href="#" class="btn">Explore now</a>
+                        </div>
+
+                        <div class="slider-slide-img">
+                            <img src="img/soft-toy.png" alt="Picture with soft toy on a wooden cart">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-notification">
+                    Free (continental) USA shipping on all orders of $100 USD or more!
+                </div>
+
+                <ul class="slider-nav">
+                    <li class="slider-nav-item">
+                        <a class="slider-nav-btn is-active" href="#slide-1">
+                            <span class="visually-hidden">Go to slide 01</span>
+                        </a>
+                    </li>
+                    <li class="slider-nav-item">
+                        <a class="slider-nav-btn" href="#slide-2">
+                            <span class="visually-hidden">Go to slide 02</span>
+                        </a>
+                    </li>
+                    <li class="slider-nav-item">
+                        <a class="slider-nav-btn" href="#slide-3">
+                            <span class="visually-hidden">Go to slide 03</span>
+                        </a>
+                    </li>
+                    <li class="slider-nav-item">
+                        <a class="slider-nav-btn" href="#slide-4">
+                            <span class="visually-hidden">Go to slide 04</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
         <section class="categories">
             <div class="container categories-container">
                 <h2 class="title-h2 categories-title">
@@ -98,6 +202,7 @@
                 <div class="delivery-img">
                     <img src="img/imagewoman.jpg" alt="Picture with woman">
                 </div>
+
                 <div class="delivery-aside">
                     <h2 class="title-h2 delivery-title">Delivery</h2>
                     <ul class="delivery-list">
@@ -120,7 +225,7 @@
                         dlk has now become a truly happy place for me and i have you and 
                         all of the beautiful designers that we work with to thank!
                     </p>
-                    <a class="learn-more-btn btn" href="#">Learn More</a>
+                    <a class="delivery-btn btn" href="#">Learn More</a>
                 </div>  
             </div>
         </section>
@@ -133,22 +238,22 @@
                 <div class="partners-list-wrapper">
                     <ul class="partners-list">
                         <li>
-                            <a href="https://corp.mail.ru">
+                            <a href="https://corp.mail.ru" target="_blank" rel="noopener noreferrer">
                                 <img src="img/mail.png" alt="Mail Group Company">
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.apple.com">
+                            <a href="https://www.apple.com" target="_blank" rel="noopener noreferrer">
                                 <img src="img/apple.png" alt="Apple Company">
                             </a>
                         </li>
                         <li>
-                            <a href="https://eltex-co.ru">
+                            <a href="https://eltex-co.ru" target="_blank" rel="noopener noreferrer">
                                 <img src="img/eltex.png" alt="Eltex Company">
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.owox.ru">
+                            <a href="https://www.owox.ru" target="_blank" rel="noopener noreferrer">
                                 <img src="img/owox.png" alt="Owox Company">
                             </a>
                         </li>
@@ -159,24 +264,24 @@
 
         <section class="main-bottom">
             <div class="container main-bottom-container">
-                <div class="dlk-aside-container main-bottom-col">
-                    <h2 class="title-h2 dlk-aside-title main-bottom-title">Design Life Kids</h2>
-                    <h3 class="dlk-aside-subtitle">About Us</h3>
+                <div class="main-bottom-col">
+                    <h2 class="title-h2 main-bottom-title">Design Life Kids</h2>
+                    <h3 class="main-bottom-subtitle">About Us</h3>
                     <p class="main-bottom-text">
                         Some days i feel like i've been working on dlk my entire life and there are other days that 
                         i am completely shocked that four years have flown by. It's simply magical.
                     </p>
-                    <a class="dlk-aside-btn btn">Buy Now</a>
+                    <a class="main-bottom-btn btn" href="#">Buy Now</a>
                 </div>
                 
-                <div class="contacts-aside-container main-bottom-col">
-                    <h2 class="title-h2 contacts-aside-title main-bottom-title">Contacts</h2>
+                <div class="main-bottom-col">
+                    <h2 class="title-h2 main-bottom-title">Contacts</h2>
                     <p class="main-bottom-text">
                         Some days i feel like i've been working on dlk my entire life and there are other days that 
                         i am completely shocked that four years have flown by. It's simply magical.
                     </p>
 
-                    <div class="contacts-aside-map">
+                    <div class="main-bottom-map">
                         <img src="img/contacts-map.png" alt="Map">
                     </div>
                 </div>      
@@ -192,7 +297,7 @@
                         <a href="#">About Us</a>
                     </li>
                     <li>
-                        <a href="#">Blog</a>
+                        <a href="blog.html">Blog</a>
                     </li>
                     <li>
                         <a href="#">Design Services</a>
@@ -213,7 +318,7 @@
                 <h4 class="footer-col-title">Customer Information</h4>
                 <ul class="footer-col-list">
                     <li>
-                        <a href="#">Contact Us</a>
+                        <a href="contact-us.html">Contact Us</a>
                     </li>
                     <li>
                         <a href="#">Sale Exclusions</a>
@@ -240,30 +345,29 @@
                         <input class="footer-mail-input" type="email" placeholder="Email">
                         <button class="footer-mail-btn btn" type="submit">Join</button>
                     </form>
-                    <div class="footer-socials-container">
-                        <ul class="footer-socials-list">
-                            <li>
-                                <a href="#">
-                                    <img src="img/icons/facebook.svg" alt="Facebook">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="img/icons/twitter.svg" alt="Twitter">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="img/icons/pinterest.svg" alt="Pinterest">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="img/icons/instagram.svg" alt="Instagram">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+
+                    <ul class="footer-socials-list">
+                        <li>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                                <img src="img/svg/facebook.svg" alt="Facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                                <img src="img/svg/twitter.svg" alt="Twitter">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">
+                                <img src="img/svg/pinterest.svg" alt="Pinterest">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                                <img src="img/svg/instagram.svg" alt="Instagram">
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </section>
         </div>
@@ -290,7 +394,7 @@
                 </div>
     
                 <div class="footer-bottom-col">
-                    <a href="#">Web Design — Direct Line Academy</a>
+                    <a href="https://dlacademy.ru/" target="_blank" rel="noopener noreferrer">Web Design — Direct Line Academy</a>
                 </div>
             </div>
         </div>
@@ -299,7 +403,7 @@
         <div class="popup-body container">
             <div class="popup-content">
                 <div class="contact-us-form-wrapper">
-                    <form class="contact-us-form">
+                    <form class="contact-us-form" action="https://echo.htmlacademy.ru/" method="get">
                         <div class="contact-us-group">
                             <label class="contact-us-label" for="name">Name</label>
                             <input class="contact-us-field" type="text" id="name" placeholder="Ivan Ivanov">
@@ -323,25 +427,24 @@
                         </div>
                         
                         <div class="contact-us-group contact-us-checkbox">
-                            <input class="contact-us-field" type="checkbox" id="consent" checked>
+                            <input class="contact-us-field custom-checkbox" type="checkbox" id="consent">
                             <label class="contact-us-label" for="consent">
                                 By clicking on the button, you consent to the processing 
                                 of your personal data
                             </label>
                         </div>
 
-                        <input class="submit-button btn" type="submit" value="Submit">
+                        <input class="submit-button btn" type="submit" value="Submit" disabled>
                     </form> 
                 </div>
 
                 <a href="#" class="popup-close">
-                    <img src="img/icons/popup-close.svg" alt="Close window">
+                    <img src="img/svg/popup-close.svg" alt="Close window">
                 </a>
-                <!-- Здесь я делал у ссылки лишний хеш для того что бы
-                     при закрытии окна не было обновления страницы и она
-                     не дергалась к ее началу, а оставалась на том же месте -->
             </div>
         </div>
     </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
